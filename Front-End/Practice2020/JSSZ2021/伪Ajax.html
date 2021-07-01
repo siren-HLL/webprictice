@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>伪造Ajax</title>
+	</head>
+	<body>
+		<div>
+			<p>请输入要加载的地址：<span id="currentTime"></span></p>
+			<input type="text" id="url" value="https://www.baidu.com/">
+			<input type="button" value="提交" onclick="loadPage()"/>
+		</div>
+		<div>
+			<h3>加载页位置</h3>
+			<iframe id="iframePosition" width="100%" height="500px" src="https://www.baidu.com/"></iframe>
+		</div>
+		<script type="text/javascript">
+			window.onload = function f(){
+				var myDate = new Date();
+				document.getElementById("currentTime").innerHTML = myDate.getTime();
+			}
+			function loadPage(){
+				var targetURL = document.getElementById("url").value;
+				document.getElementById("iframePosition").src = targetURL;
+			}
+		</script>
+	</body>
+</html>

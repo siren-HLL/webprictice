@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单注册</title>
+        <link rel="stylesheet" href="./BootStrap3/css/bootstrap.min.css" />
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #loginForm input{
+                width: 270px;
+            }
+        </style>
+	</head>
+	<body>
+        <div class="container">
+            <div class="row">
+                <div id="loginForm" class="col-lg-6 col-md-6">
+                    <form>
+                         <table class="table table-hover table-striped">
+                        <tr class="row">
+                            <td class="col-lg-2 col-md-2"><label>注册邮箱：</label></td>
+                            <td class="col-lg-7 col-md-7"><input type="email" id="email" name="email" placeholder="Email"></td>
+                            <td class="col-lg-3 col-md-3"><p id="emailTip"></p></td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-lg-2 col-md-2"><label>用&nbsp;户&nbsp;名：</label></td>
+                            <td class="col-lg-7 col-md-7"><input type="text" id="username" name="username" placeholder="UserName"></td>
+                            <td class="col-lg-3 col-md-3"></td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-lg-2 col-md-2"><label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label></td>
+                            <td class="col-lg-7 col-md-7"><input type="password" id="password" name="password" placeholder="Password"></td>
+                            <td class="col-lg-3 col-md-3"></td>
+                        </tr>
+                    </table>
+                    </form>
+		        </div>
+            </div>
+        </div>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.0.0/jquery.js"></script> 
+        <script src="../A_pre/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+		$(function(){
+            $("#email").on("blur",function(){
+                $("#emailTip");
+                var data = $(this).serialize();
+                console.log(data);
+                $.ajax({
+                    "url":"http://localhost:8087/dvd1.0/InfoValidateServlet",
+                    "type":"POST",
+                    "data":data,
+                    "success":function(res){
+                        console.log(res);
+                        if(res != ""){
+                                if(res == "true"){
+                                $("#emailTip").show().text("该邮箱可以使用").css("color","green");
+                            }else{
+                                $("#emailTip").show().text("该邮箱已被注册").css("color","red");
+                            }
+                        }else{
+                            $("#emailTip").hide();
+                        }
+                        
+                    }
+                })
+            })
+		})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>插入节点练习</title>
+	</head>
+	<body>
+		<h2 id="h">在上面插入节点</h2>
+		<form id="frm" name="frm">
+			输入文本：<input type="text" name="txt"/>
+			<input type="button" value="前插入" onclick="insertNode('h',document.frm.txt.value);"><!--新节点，-->
+		</form>
+		<script type="text/javascript">
+			function crNode(str){//创建节点
+				var newP = document.createElement("p");//创建P
+				var newText = document.createTextNode(str);//文本节点
+				newP.appendChild(newText);//向p追加文本节点
+				return newP;//？
+			}
+			function insertNode(nodeId,str){
+				var node = document.getElementById(nodeId);
+				var newNode = crNode(str);
+				if(node.parentNode)//判断是否拥有父节点
+				node.parentNode.insertBefore(newNode,node);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>练习1</title>
+		<style type="text/css">
+			p{
+				width: 300px;
+				height: 100px;
+				text-align: center;
+				border: #000000 1px solid;
+				
+			}
+		</style>
+		<script type="text/javascript" src="../jquery-1.9.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("p").click(function(){
+					$(this).css({"background-color":"red","line-height":"100px"});
+				});
+				$("#show").click(function(){
+					$("p").toggle();
+					$("p").css({"background-color":"white","line-height":"20px"});
+				})
+			});
+			// $("p").css("background-color","red");
+			// css({"propertyname":"value","propertyname":"value",...});
+
+		</script>
+	</head>
+	<body>
+		<input id="show" value="点击我" />
+		<p>if you click me ,I will disappear</p>
+	</body>
+</html>

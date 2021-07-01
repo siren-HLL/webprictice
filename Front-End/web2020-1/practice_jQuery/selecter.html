@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选择器</title>
+		<script src="../jquery-1.9.0.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("li:first").css("background-color","blue");
+				//:first所有同类标签第一个
+				$("li:last").css("background-color","green");
+				//:not(selecter)除他以外
+				$("li:not(#li1)").css("color","red");
+				//:even偶数（从0开始）；：odd奇数
+				$("tr:even").css("background-color","green");
+				// $("li:eq(0)").css("background-color","pink");eq() 方法将匹配元素集缩减值指定 index 上的一个。
+			})
+		</script>
+	</head>
+	<body>
+		<div id="demo1">
+			<ul>
+				<li id="li1">11</li>
+				<li>12</li>
+				<li>13</li>
+				<li>14</li>
+			</ul>
+			<ul>
+				<li>21</li>
+				<li>22</li>
+				<li>23</li>
+				<li>24</li>
+			</ul>
+			<ul>
+				<li>31</li>
+				<li>32</li>
+				<li>33</li>
+				<li>34</li>
+			</ul>
+		</div>
+		<div id="demo2">
+			<table width="200" border="1">
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表格的合并操作</title>
+		<style type="text/css">
+			.whole{
+				width:1050px;
+				margin: 0 auto;
+				border: 2px solid green;
+				border-collapse: collapse;
+			}
+			.whole th,.whole td{
+				border: 2px solid green;
+				padding:5px;
+			}
+			td{
+				width:160px;
+			}
+			.whole .ys{
+				width:140px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<table class="whole" >
+				<caption><h2>2019-2020-2学期信管课程表</h2></caption>
+				<tr>
+					<th colspan="2" class="ys">星期</th>
+					<th rowspan="2">星期一</th>
+					<th rowspan="2">星期二</th>
+					<th rowspan="2">星期三</th>
+					<th rowspan="2">星期四</th>
+					<th rowspan="2">星期五</th>
+				</tr>
+				<tr>
+					<th colspan="2" class="ys">时间</th>
+				</tr>
+				<tr>
+					<th rowspan="2">上午</th>
+					<td>1-2</td>
+					<td>专业发展指导</br>B511</td>
+					<td>计算机网络基础概论</br>F507</td>
+					<td></td>
+					<td></td>
+					<td>数据库应用技术</br>F506</td>
+				</tr>
+				<tr>
+					<td>3-4</td>
+					<td>思想道德修养与法律基础</br>E101</td>
+					<td></td>
+					<td>中国文化概论</br>D604</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<th rowspan="2">下午</th>
+					<td>5-6</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>实用英语</br>D305</td>
+					<td>应用文写作</br>D406</td>
+				</tr>
+				<tr>
+					<td>7-8</td>
+					<td>Web前端静态页面开发技术</br>F507</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>思想道德修养与法律基础</br>D406</td>
+				</tr>
+				<tr>
+					<th rowspan="2">晚上</th>
+					<td>9-10</td>
+					<td>体育训练I-乒乓球22班</br>足球场</td>
+					<td>Web前端静态页面开发技术</br>F508</td>
+					<td>实用英语II</br>D306</td>
+					<td>Web前端静态页面开发技术</br>F504</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>11-12</td>
+					<td></td>
+					<td>数据库应用技术</br>F505</td>
+					<td></td>
+					<td>创新创业教育</br>B510</td>
+					<td></td>
+				</tr>
+				
+			</table>
+		</div>
+	</body>
+</html>

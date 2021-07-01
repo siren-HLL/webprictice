@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>二级菜单</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wraper{
+				background: url(img-all/640B2003E5B4EB46D1120AB1C649531D.jpg)no-repeat left top;
+				background-attachment:fixed;/*页面固定，scroll,inhrit*/
+				background-size: cover;/*等比例自适应*/
+				/*background-size: auto 100%;宽*/
+				/* background-size: 100% auto;高 */
+			}
+			#whole{
+				position: relative;
+				width: 1000px;
+				height: 1000px;
+				margin: 0 auto;
+			}
+			/*导航*/
+			nav{
+				width: 760px;
+				margin: 0 auto;
+			}
+			ul{
+				list-style-type: none;
+			}
+			#first>li{
+				position: relative;
+			}
+			#second{
+				position: absolute;
+			}
+			#first li ul{
+				display: none;
+			}
+			li{
+				float: left;
+				border: #008B8B 1px solid;
+				width: 150px;
+				text-align: center;
+				height: 40px;
+				line-height: 40px;
+				background-color: white;
+				z-index: 800;
+				opacity: 0.9;
+			}
+			li:hover>a{
+				color: #1E90FF;
+			}
+			a{
+				text-decoration: none;
+				color: #001424;
+			}
+			
+			/*无缝循环*/
+			#scroll{
+				width: 1000px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				border: #001424 1px solid;
+				overflow: hidden;
+				background-color: #BBBBBB;
+				position: absolute;
+				top: 60px;
+			}
+			#scrollbox{
+				width: 900px;
+				height: 40px;
+				margin: 0 auto;
+				white-space: nowrap;/* 文本不换行 */
+				overflow: hidden;	
+			}
+			#scroll #part1,#scroll #part2{
+				display: inline-block;
+			}
+			.scnr {
+				color: darkred;
+				text-decoration: none;
+				padding-left: 10px;
+			}
+			.scnr:hover{
+				color: red;
+				text-decoration: underline;
+			}
+			
+			/*计时器*/
+			#jishiqi{
+				display: none;
+				position: absolute;
+				top: 130px;
+				left: 240px;
+				width: 500px;
+				height: 300px;
+				border: #008B8B solid 2px;
+				background-color: #008B8B ;
+				opacity: 0.8;
+				z-index: 600;
+			}
+			#timebox{
+				margin: 50px auto;
+				border: #001424 solid 1px;
+				width: 400px;
+				height: 150px;
+				line-height: 150px;
+				font-size: 28px;
+				background-color: #001424;
+				color: mediumpurple;
+				text-align: center;
+			}
+			#anniu{
+				position: absolute;
+				top: 220px;
+				left: 100px;
+			}
+			#anniu input{
+				width: 60px;
+				height: 30px;
+				line-height: 40px;
+				text-align: center;
+				margin-right: 60px;
+			}
+			
+			/*计算器*/
+			#jisuanqi{
+				display: none;
+				position: absolute;
+				top: 130px;
+				left: 295px;
+				width: 400px;
+				height: 470px;
+				border: #008B8B solid 2px;
+				background-color: #5F9EA0;
+				opacity: 0.9;
+				z-index: 600;
+			}
+			#text{
+				width: 350px;
+				height: 80px;
+				line-height: 80px;
+				margin: 25px 25px 15px 25px;
+				background-color: #222222;
+				color: white;
+				border: #000000 1px solid;
+				font-size: 28px;
+			}
+			#anjian{
+				margin-left: 25px;
+			}
+			#anjian input[type=button]{
+				width: 80px;
+				height: 50px;
+				line-height: 50px;
+				margin-right: 5px;
+				margin-bottom: 10px;
+				border: darkgray 1px solid;
+				font-size: 20px;
+			}
+			#equ{
+				width: 350px;
+				height: 50px;
+				margin-left: 25px;
+			}
+			.gj{
+				background-color: coral;
+				border: darkgray 1px solid;
+				font-size: 20px;
+				color: white;
+			}
+			/*选项卡*/
+			#botbar{
+				width: 304px;
+				height: 88px;
+				position: absolute;
+				top: 180px;
+				left: 200px;
+				z-index: 600;
+			}
+			#botbar div{
+				width: 304px;
+				height: 88px;
+			}
+			.yinc{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wraper">
+			<div id="whole">
+				<nav>
+					<ul id="first">
+						<li onclick="fhsy()"><a href="#">首页</a></li>
+						<li id="nav2" onmouseover="onOver(this)" onmouseout="onMove(this)"><a href="#">学校简介</a>
+							<ul id="second">
+								<li onclick="showli(this)" nrli="xxwh"><a href="#">学校文化</a></li>
+								<li onclick="showli(this)" nrli="xxsz"><a href="#">学校师资</a></li>
+								<li onclick="showli(this)" nrli="xsfz"><a href="#">学生发展</a></li>
+							</ul>
+						</li>
+						<li><a href="#">教务管理</a></li>
+						<li><a href="#">学生管理</a></li>
+						<li onmouseover="onOver(this)" onmouseout="onMove(this)"><a href="#">小工具</a>
+							<ul id="second2">
+								<li id="jsq" onclick="timerxs()">计时器</li>
+								<li id="jisuanq" onclick="jisuanqixs()">计算器</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div id="scroll">
+					<div id="scrollbox">
+						<div id="part1" class="qingchu">
+							<a href="#" class="scnr">1.招生简讯</a>
+							<a href="#" class="scnr">2.10月处分公示</a>
+							<a href="#" class="scnr">3.2020年奖学金评定公示</a>
+							<a href="#" class="scnr">4.2020年国家助学金公示</a>
+							<a href="#" class="scnr">5.特大喜讯：我校19级同学获得...</a>
+							<a href="#" class="scnr">6.教务处人事变动公示</a>
+						</div>
+						<div id="part2" class="qingchu"></div>
+					</div>
+				</div>
+				<div id="botbar">
+					<div class="yinc" id="xxwh">
+						<ul>
+							<li><a href="#">特色项目</a></li>
+							<li><a href="#">图书馆资源</a></li>
+							<li><a href="#">学校简介</a></li>
+							<li><a href="#">校园导航</a></li>
+						</ul>
+					</div>
+					<div class="yinc" id="xxsz">
+						<ul>
+							<li><a href="#">教师名单</a></li>
+							<li><a href="#">教研成果</a></li>
+							<li><a href="#">现任领导</a></li>
+							<li><a href="#">党员之家</a></li>
+						</ul>
+					</div>
+					<div class="yinc" id="xsfz">
+						<ul>
+							<li><a href="#">获奖项目</a></li>
+							<li><a href="#">青春学工</a></li>
+							<li><a href="#">比赛信息</a></li>
+							<li><a href="#">活动展示</a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="jishiqi">
+					<div id="timebox"></div>
+					<div id="anniu">
+						<input type="button" name="" value="开始" id="start" onclick="start()"/>
+						<input type="button" name="" value="暂停" id="stop" onclick="stop()"/>
+						<input type="reset" name="" value="重置" id="reset" onclick="reset_time()"/>
+					</div>
+				</div>
+				<div id="jisuanqi">
+					<input type="text" id="text" name="text" value=""/><br/>
+					<div id="anjian">
+					<input type="button" name="" value="7" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="8" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="9" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="AC" onclick="calcu(this.value)"/ class="gj"><br/>
+					<input type="button" name="" value="4" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="5" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="6" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="+" onclick="calcu(this.value)" class="gj"/><br/>
+					<input type="button" name="" value="1" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="2" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="3" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="-" onclick="calcu(this.value)" class="gj"/><br/>
+					<input type="button" name="" value="0" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="." onclick="calcu(this.value)"/>
+					<input type="button" name="" value="/" onclick="calcu(this.value)" class="gj"/>
+					<input type="button" name="" value="*" onclick="calcu(this.value)" class="gj"/><br/>
+					</div>
+					<input type="button" name="" value="=" id="equ"  onclick="calcu(this.value)" class="gj"/>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function onOver(obj){
+				var ul=obj.getElementsByTagName("ul");//li下面的ul数组
+				ul[0].style.display="block";//第一个ul
+			}
+			//this指向当前标签
+			function onMove(obj){
+				var ul=obj.getElementsByTagName("ul");
+				ul[0].style.display="none";
+			}
+			
+			/*计时器*/
+			function timerxs(){//计时器显示
+				hidexxk();
+				var jishiqi = document.getElementById("jishiqi");
+				var jisuanqi = document.getElementById("jisuanqi");
+				if(jisuanqi.style.display="block"){
+					jisuanqi.style.display="none";
+				}
+				jishiqi.style.display="block";
+			}
+			
+			var timebox = document.getElementById("timebox");
+			var hour = 0;
+			var minute = 0;
+			var seconds = 0;
+			var ms = 0;
+			var timer = 0;
+			
+			function time(){
+				ms = ms+50;
+				if(ms >= 1000){
+					ms=0;
+					seconds = seconds+1;
+				}
+				if(seconds >= 60){
+					seconds = 0;
+					minute += 1;
+				}
+				if(minute >= 60){
+					minute = 0;
+					hour += 1;
+				}
+				var showtime = hour +"时"+minute+"分"+seconds+"秒"+ms+"毫秒";//函数循环执行变化，所以变量需要放在这个位置
+				timebox.innerHTML = showtime;
+			}
+			function start(){
+				clearInterval(timer);//保证不小心点击两次的时候不出错
+				timer = setInterval(time,50);
+			}
+			function stop(){
+				clearInterval(timer);
+			}
+			function reset_time(){
+				clearInterval(timer);
+				ms=seconds=minute=hour=0;
+				timebox.innerHTML='00时00分00秒000毫秒';
+			}
+			
+			/*计算器*/
+			function jisuanqixs(){
+				hidexxk();
+				var jisuanqi = document.getElementById("jisuanqi");
+				var miaobiao = document.getElementById("jishiqi");
+				if(miaobiao.style.display="block"){
+					miaobiao.style.display="none";
+				}
+				jisuanqi.style.display="block";
+			}
+			function calcu(val){//calcu(this.value)
+				var result = document.getElementById("text");
+				switch(val){
+					case "AC":
+						result.value = "";
+						break;
+					case "=":
+						result.value = eval(result.value);//计算字符串
+						break;
+					default:
+						result.value = result.value + val;
+						break;
+				}
+			}
+			
+			/*选项卡*/
+			function showli(obj){
+				hidegj();
+				var second = document.getElementById("second");
+				var lis = document.getElementsByTagName("li");
+				for(var i=0; i<lis.length; i++){
+					lis[i].style.backgroundColor="white";
+					lis[i].style.opacity="0.9";
+				}
+				obj.style.backgroundColor="#5F9EA0";
+				var divs = document.getElementById("botbar").getElementsByTagName("div");
+				for(var i=0; i<divs.length; i++){
+					divs[i].style.display = "none";
+				}
+				var divid = obj.getAttribute("nrli");
+				var divnr = document.getElementById(divid);
+				divnr.style.display = "block";
+			}
+			
+			/*无缝滚动*/
+			var scrollbox = document.getElementById("scrollbox");
+			var part1 = document.getElementById("part1");
+			var part2 = document.getElementById("part2");
+			var distance = 0;
+			part2.innerHTML = part1.innerHTML;
+			function changeinfo(){
+				distance++;
+				scrollbox.scrollLeft = distance;
+				if(part1.offsetWidth == scrollbox.scrollLeft){
+					distance = 0;
+					scrollbox.scrollLeft = 0;
+				}
+			 }
+			var scrollSet = setInterval("changeinfo()",50);
+			scrollbox.onmouseover = function(){
+				clearInterval(scrollSet);
+			}
+			scrollbox.onmouseout = function(){
+				scrollSet = setInterval("changeinfo()",50);
+			}
+			
+			/*返回首页*/
+			function fhsy(){
+				hidexxk();
+				hidegj();
+			}
+			function hidegj(){
+				var jishiqi = document.getElementById("jishiqi");
+				var jisuanqi = document.getElementById("jisuanqi");
+				jishiqi.style.display="none";
+				jisuanqi.style.display="none";
+			}
+			function hidexxk(){
+				var divs = document.getElementById("botbar").getElementsByTagName("div");
+				for(var i=0; i<divs.length; i++){
+					divs[i].style.display = "none";
+				}
+			}
+		</script>
+	</body>
+</html>

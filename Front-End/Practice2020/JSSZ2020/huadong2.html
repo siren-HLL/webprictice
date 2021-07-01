@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>滑动练习</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.whole{
+				width: 370px;
+				height: 660px;
+				overflow: hidden;
+			}
+			.pagebox{
+				transition: 0.5s;
+			}
+			.page{
+				width: 370px;
+				height: 660px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="whole">
+			<div class="pagebox">
+				<div id="whole1" class="page page1" style="background-color: hotpink;">第一页</div>
+				<div id="whole2" class="page page2" style="background-color:  #008B8B;">第二页</div>
+				<div id="whole3" class="page page3" style="background-color:  #001424;">第三页</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			document.documentElement.addEventListener("touchstart",touchStart);
+			document.documentElement.addEventListener("touchend",touchEnd);
+			
+			var pagebox = document.getElementsByClassName("pagebox")[0];
+			var startX = "";
+			var startY = "";
+			var endX = "";
+			var endY = "";
+			
+			function touchStart(e){
+				startX = e.touches[0].pageX;
+				startY = e.touches[0].pageY;
+				console.log(startX,startY);
+			}
+			
+			function touchEnd(e){
+				endX = e.changedTouches[0].pageX;
+				endY = e.changedTouches[0].pageY;
+				touchMove();
+			}
+			
+			function touchMove(){
+				var move = (startY-endY);
+				if(Math.abs(move )> 100){
+					if(move > 0){
+						pageMove("down");
+					}
+					else{
+						pageMove("up");
+					}
+				}
+			}
+			
+			var index = 1;
+			var position = 0;
+			var moveD = 660;
+			function pageMove(a){
+				if(a=="up" && index==1)return;
+				if(a=="down" && index==3)return;
+				if(a=="down"){
+					position -= moveD;
+					index++;
+				}
+				if(a=="up"){
+					position += moveD;
+					index--;
+				}
+				pagebox.style.transform = 'translate(0,'+position+'px)';
+			}
+			/*touches: 当前屏幕上所有触摸点的列表;targetTouches: 当前对象上所有触摸点的列表;changedTouches: 涉及当前(引发)事件的触摸点的列表*/
+			/*一、clientX、clientY点击位置距离当前body可视区域的x，y坐标
+			二、pageX、pageY对于整个页面来说，包括了被卷去的body部分的长度
+			三、screenX、screenY点击位置距离当前电脑屏幕的x，y坐标
+			四、offsetX、offsetY相对于带有定位的父盒子的x，y坐标*/
+		</script>
+	</body>
+</html>

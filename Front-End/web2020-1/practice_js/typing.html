@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>打字机特效</title>
+		<style type="text/css">
+			div{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="typingbox"></div>
+		<script type="text/javascript">
+			let typingbox = document.getElementById("typingbox");
+			let str = '美中不足的是，抬望眼，总看见园中西隅，剩下的那两棵意大利柏树中间，露出一块楞楞的空白来，缺口当中，映着湛湛青空，悠悠白云，那是一道女娲炼石也无法弥补的天裂。';
+			
+			let i = 0;
+			let timer = 0;
+			
+			function typing(){
+				if(i < str.length){
+					typingbox.innerHTML = str.slice(0,i++)+"_";
+					timer = setTimeout(typing,200);
+				}else{
+					clearTimeout(timer);
+					typingbox.innerHTML = str;
+				}
+			}
+			typing();
+		</script>
+	</body>
+</html>

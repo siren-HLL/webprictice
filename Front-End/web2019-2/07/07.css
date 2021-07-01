@@ -1,0 +1,45 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.bd{
+	background-image: url(./img07/bg.png);
+}
+.top{
+	background-color: #CC3300;
+	text-align: center;
+	height: 60px;
+}
+.zt{
+	font-size: 30px;
+	color: #FFFFFF;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.content{
+	padding-top: 80px;
+	text-align: center;
+	margin: auto;
+	width: 70%;/*百分百时无效果*/
+}
+p span{
+	color: brown;
+}
+p{
+	padding-top: 20px;
+	font-size: 28px;
+	color: #666666;
+	padding-bottom: 20px;
+}
+a:link,a:visited{
+	color: #DDDDDD;
+	display: block;/*连接框，将行标签a变成块级*/
+	background-color: dimgray;
+	width: 120px;
+	height: 30px;
+	padding-top: 5px;
+	text-align: center;
+	margin: auto;
+	border: 2px solid;
+	border-radius:10px ;/*椭圆选项*/
+	}

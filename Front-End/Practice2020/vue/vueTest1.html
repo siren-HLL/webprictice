@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue测试</title>
+		<style type="text/css">
+			.active{
+				font-size: 20px;
+				color: green;
+			}
+			.error{
+				color: red;
+			}
+		</style>
+		<script src="../../A_pre/vue.js"></script>
+	</head>
+	<body>
+		<!-- v-model 指令，它能轻松实现表单输入和应用状态之间的双向绑定。 -->
+		<div id="testBox">
+			{{message}}
+			<p>{{message2}}</p>
+			<input v-model="message2" />
+		</div>
+		<div id="testBox2">
+		  <span v-bind:title="msg">
+		    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+		  </span>
+		</div>
+		<input id="btn" type="button" v-on:click="counter" value="点击按钮"/>
+		<!-- v-for 指令可以绑定数组的数据来渲染一个项目列表： -->
+		<div id="testBox3">
+			<ol>
+				<li v-for="a in todos">
+					{{a.text}}
+				</li>
+			</ol>
+		</div>
+		<!-- 内联样式绑定 -->
+		<div id="testBox4">
+			<div v-bind:class="[{'active':isActive},errorCls]">
+				测试文本
+			</div>
+			<div :style="{'color':color,'fontSize':fontsize+'px'}">
+				测试css
+			</div>
+			<div :style="[styleA,styleB]">
+				测试css2
+			</div>
+		</div>
+		
+		<!-- 计算属性 -->
+		<div id="testBox5">
+			<div id="test501">{{text}}</div>
+			<div id="test502"><p>输出:{{reversedText}}</p></div>
+		</div>
+		
+		<script type="text/javascript">
+			var testBox = new Vue({//创建一个vue实例对象
+				el: '#testBox',//指定页面中的一个已经存在dom元素挂载vue
+				data:{
+					message: 'hello vue!',
+					message2: 'xixi'
+				}
+			})
+			
+			var testBox2 = new Vue({
+				el: '#testBox2',
+				data:{
+					msg : '页面加载于 ' + new Date().toLocaleString()
+				}
+			})
+			
+			var btn = new Vue({
+				el: "#btn",
+				methods:{
+					counter : function(){
+						console.log("调用了counter方法")
+					}
+				}
+			})
+			
+			var lis = new Vue({//testBox3
+				el:"#testBox3",
+				data:{
+					todos:[
+						{text:"hello"},
+						{text:"vue"},
+						{text:"js"}
+					]
+				}
+			})
+			
+			var testBox4 =new Vue({
+				el:"#testBox4",
+				data:{
+					isActive : true,
+					errorCls:'error',
+					color:'yellow',
+					fontsize:24,
+					styleA:{fontSize:'30px'},
+					styleB:{color:'blue'}
+				}
+			});
+			
+			var testBox501 = new Vue({
+				el:"#test501",
+				data:{text:'123,456'}
+			});
+			var testBox502 = new Vue({
+				el:"#test502",
+				data:{},
+				computed:{
+					reversedText:function(){
+						return testBox501.text.split(',').reverse().join(',');
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

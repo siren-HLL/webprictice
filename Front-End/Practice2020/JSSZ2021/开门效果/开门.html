@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>demo4-7</title>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+.beij{
+	background: url(images/logo.jpg) no-repeat center;
+	width: 388px;
+	height: 453px;
+}
+#zuo{
+	float: left;
+	background: url(images/meng1.jpg) no-repeat left bottom;
+	width: 194px;
+	height: 453px;
+	animation: 10s mydong1 linear forwards;
+}
+#you{
+	float: left;
+	background: url(images/meng.jpg) no-repeat left bottom;
+	width: 194px;
+	height: 453px;
+	animation: 10s mydong linear forwards;
+}
+@keyframes mydong{
+	from{ transform: rotateY(0deg);
+    transform-origin: right ;}
+	to{transform: rotateY(-90deg);
+	transform-origin: right ;}
+}
+@keyframes mydong1{
+	from{ transform: rotateY(0deg);
+    transform-origin: left ;}
+	to{transform: rotateY(90deg);
+	transform-origin: left ;}
+}
+</style>
+</head>
+
+<body>
+<div class="beij">
+	<div id="zuo">
+	</div>
+ 	 <div id="you">
+	</div>
+</div>
+</body>
+</html>

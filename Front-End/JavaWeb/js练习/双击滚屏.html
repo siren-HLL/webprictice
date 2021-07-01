@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>双击滚屏</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.page{
+				width: 100%;
+				height: 1000px;
+				font-size: 30px;
+			}
+			.page1{
+				background-color: mediumpurple;
+			}
+			.page2{
+				background-color: lightblue;
+			}
+			.page3{
+				background-color: lightpink;
+			}
+			.page4{
+				background-color: lightsalmon;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="whole">
+			<div id="wraperBox" ondblclick="scrollTest()" >
+				<div class="page page1">屏幕1</div>
+				<div class="page page2">屏幕2</div>
+				<div class="page page3">屏幕3</div>
+				<div class="page page4">屏幕4</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//实现滚动
+			function slideTo(targetPageY) {//targetPageY 目标元素位置(pageY)
+			  var timer = setInterval(function () {
+				  var currentY = document.documentElement.scrollTop || document.body.scrollTop;//当前及滑动中任意时刻位置
+				  var distance = targetPageY > currentY ? targetPageY - currentY : currentY - targetPageY;//剩余距离
+				  var speed = Math.ceil(distance/10);//每时刻速度(减速运动)
+			      if (currentY == targetPageY) {
+			       clearInterval(timer);
+			      } else {
+			       window.scrollTo(0,targetPageY > currentY ? currentY + speed : currentY - speed);//scrollTo(x,y)把内容滚动到指定的坐标
+			      }
+				},100);
+			 }
+			 
+			 //双击事件
+			 function scrollTest(){
+				 var wraperBox = document.getElementById("wraperBox").offsetHeight;
+				 slideTo(wraperBox);
+
+			 }
+		</script>
+	</body>
+</html>

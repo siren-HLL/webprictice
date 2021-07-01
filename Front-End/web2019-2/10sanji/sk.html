@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>三级列表课堂版</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			.daoh{
+				width: 1000px;
+				margin: 10px auto;
+				background: url(img10/title.jpg) repeat-x left top;
+			}
+			.qingchu:after{
+				content:'.';
+				height: 0;
+				visibility: hidden;
+				overflow: hidden;
+				display: block;
+				clear: both;
+			}
+			.daoh ul{
+				list-style-type: none;
+			}
+			.daoh a{
+				color: black;
+				text-decoration: none;
+			}
+			.daoh li{
+				width: 100px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+			}
+			.daoh .yiji>li{
+				float: left;/*到这一步不会有背景，因为浮动起来后不占据空间,使用清除浮动解决这一问题*/
+			}
+			.daoh .yiji ul{
+				display: none;
+			}
+			.daoh .erji>li{
+				background: url(img10/title.jpg) no-repeat left top;
+			}
+			.daoh .sanji>li{
+				background: url(img10/title2.jpg) no-repeat left top;
+			}
+			.daoh .yiji>li:hover>a{
+				color: #008000;
+			}
+			.daoh .yiji>li:hover .erji{
+				display:block;
+			}
+			.daoh .yiji>li:hover .erji>li>a{
+				color: #FF0000;
+			}
+			.daoh .erji>li:hover{
+				position: relative;
+			}
+			.daoh .erji>li:hover .sanji{
+				display: block;
+				position: absolute;
+				left:100px;
+				top:0px;
+			}
+			
+			.daoh .erji>li:hover .sanji>li>a{
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="lieb">
+		<h3>嵌套的列表</h3>
+		<nav class="daoh qingchu">
+			<ul class="yiji">
+				<li class="top"><a href="#">咖啡</a></li>
+				<li class="top zgc"><a href="#">茶</a>
+					<ul class="erji">
+						<li class="mid"><a href="#">红茶</a></li>
+						<li class="mid"><a href="#">绿茶</a>
+							<ul class="sanji">
+								<li class="sub"><a href="#">中国茶</a></li>
+								<li class="sub"><a href="#">非洲茶</a></li>
+							</ul>
+							</li>
+					</ul>
+					</li>
+				<li class="top"><a href="#">牛奶</a></li>
+				<li class="top ts"><a href="#">碳酸饮料</a>
+					<ul class="erji">
+						<li class="mid"><a href="#">可口可乐</a>
+							<ul class="sanji">
+								<li class="sub"><a href="#">百事</a></li>
+								<li class="sub"><a href="#">天府</a></li>
+							</ul>
+							</li>
+						<li class="mid"><a href="#">雪碧</a></li>
+					</ul>
+					</li>
+					<!--<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li> -->
+			</ul>
+		</nav>
+		</div>
+	</body>
+</html>

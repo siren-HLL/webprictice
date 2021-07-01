@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单验证</title>
+		<style type="text/css">
+			#whole{
+				width: 400px;
+			}
+			.message{
+				display: inline-block;
+				color: #0000FF;
+			}
+			.wrong{
+				color: red;
+			}
+			.right{
+				color: green;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="whole">
+			<input type="password"  />
+			<p class="message">请输入密码</>
+		</div>
+		<script type="text/javascript">
+			ipt = document.querySelector("input");
+			msg = document.querySelector("p");
+			ipt.onblur = function(){
+				if(ipt.value.length < 6 || ipt.value.length>16){
+					msg.className="message wrong";
+					msg.innerHTML = "你输入的位数不对，要求6~16位"
+				}else{
+					msg.className="message right";
+					msg.innerHTML = "输入成功"
+				}
+			}
+		</script>
+	</body>
+</html>

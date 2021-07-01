@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图片轮播</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#lbbox{
+				position: relative;
+				width: 1000px;
+				height: 350px;
+			}
+			/* 轮播框 */
+			#lbul{
+				width: 1000px;
+				height: 350px;
+				border: 3px #001424 solid;
+				overflow: hidden;
+				text-align: center;
+				list-style-type: none;
+			}
+			#lbul>li{
+				width: 1000px;
+				height: 350px;
+				font-size: 50px;
+			}
+			/* 下标框 */
+			#lbbot{
+				position: absolute;
+				right: 20px;
+				bottom: 20px;
+			}
+			#lbbot>span{
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				border: 1px #001424 solid;
+				margin-right: 5px;
+				display: inline-block;
+				text-align: center;
+			}
+			.on{/* 所选下标框样式 */
+				background-color: #008B8B;
+				opacity: 0.9;
+				color: white;
+			}
+			/* 图片切换按钮 */
+			#prebutton{
+				border: #001424 1px solid;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				position: absolute;
+				top: 150px;
+				left: 10px;
+				text-align: center;
+				font-size: 30px;
+				background-color: white;
+				opacity: 0.9;
+			}
+			#nextbutton{
+				border: #001424 1px solid;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				position: absolute;
+				top: 150px;
+				right: 10px;
+				text-align: center;
+				font-size: 30px;
+				background-color: white;
+				opacity: 0.9;
+			}	
+			/* 背景图片样式 */
+			.lbPic{
+				display: inline-block;
+				width: 100%;
+				max-width: 100%;
+				height: 100%;
+			}
+			/* .qingchu::after{
+				content: ".";
+				display: block;
+				height: 0;
+				overflow: hidden;
+				visibility: hidden;
+				clear: both;
+			}
+			#test{
+				list-style: none;
+				
+			}
+			#test li #d1{
+				width: 300px;
+				height: 300px;
+				border: #000000 solid 1px;
+				float: left;
+			}
+			#d2,#d3{
+				float: right;
+				width: 150px;
+				height: 150px;
+				border: #00008B solid 1px;
+			} */
+		</style>
+	</head>
+	<body>
+		<div id="lbbox">
+			<!-- 轮播框 -->
+			<ul id="lbul">
+				<li onmouseover="show_current_pic(1)" onmouseout="lbgoon()"><img src="testImg/1.jpg" class="lbPic" alt="1"></li>
+				<li onmouseover="show_current_pic(2)" onmouseout="lbgoon()"><img src="testImg/2.jpg" class="lbPic" alt="2"></li>
+				<li onmouseover="show_current_pic(3)" onmouseout="lbgoon()"><img src="testImg/3.jpg" class="lbPic" alt="3"></li>
+				<li onmouseover="show_current_pic(4)" onmouseout="lbgoon()"><img src="testImg/4.jpg" class="lbPic" alt="4"></li>
+				<li onmouseover="show_current_pic(5)" onmouseout="lbgoon()"><img src="testImg/5.jpg" class="lbPic" alt="5"></li>
+			</ul>
+			<!-- 下标框 -->
+			<div id="lbbot">
+				<span class="on" onmouseover="show_current_pic(1)" onmouseout="lbgoon()">1</span>
+				<span onmouseover="show_current_pic(2)" onmouseout="lbgoon()">2</span>
+				<span onmouseover="show_current_pic(3)" onmouseout="lbgoon()">3</span>
+				<span onmouseover="show_current_pic(4)" onmouseout="lbgoon()">4</span>
+				<span onmouseover="show_current_pic(5)" onmouseout="lbgoon()">5</span>
+			</div>
+			<!-- 切换按钮 -->
+			<div id="prebutton" onclick="prePic()"> &lt; </div>
+			<div id="nextbutton" onclick="nextPic()"> &gt; </div>
+		</div>
+		<!-- <ul id="test" class="qingchu">
+			<li>
+				<div id="d1"></div>
+				<div id="d2"></div>
+				<div id="d3"></div>
+			</li>
+		</ul> -->
+		<script type="text/javascript">
+			var lbul = document.getElementById("lbul");
+			var lblis = lbul.getElementsByTagName("li");
+			var lbbot = document.getElementById("lbbot");
+			var lbspans = lbbot.getElementsByTagName("span");
+			var no = 0;//计数
+			function show_pic(){//图片轮播
+				for(var i=0; i< lblis.length; i++){//遍历隐藏图片
+					lblis[i].style.display = "none";
+					lbspans[i].className = "";
+				}
+				no ++;//显示图片
+				if(no ==5){
+					no = 0;
+				}
+				lblis[no].style = "block";
+				lbspans[no].className = "on";
+			}
+			var lbintervar = setInterval("show_pic()",1500);
+			
+			function show_current_pic(index){//鼠标移至下标，切换
+				clearInterval(lbintervar);
+				for(var i=0; i< lblis.length; i++){
+					lblis[i].style.display = "none";
+					lbspans[i].className = "";
+				}
+				lblis[index-1].style.display ="block";
+				lbspans[index-1].className = "on";//下标样式显示
+				no = index-1;//对应的图片显示要重新计数
+			}
+			function lbgoon(){//鼠标移开，定时器运行
+				lbintervar = setInterval("show_pic()",1000);
+			}
+			
+			// 前后按钮切换图片
+			var pre = document.getElementById("prebutton");
+			var next = document.getElementById("nextbutton");
+			function prePic(){//向前翻页
+				clearInterval(lbintervar);
+				var current_index = no;
+				for(var i=0; i< lblis.length; i++){
+					lblis[i].style.display = "none";
+					lbspans[i].className = "";
+				}
+				current_index--;
+				if(current_index < 0){
+					current_index = 4;
+				}
+				lblis[current_index].style.display = "block";
+				lbspans[current_index].className = "on";
+				no = current_index;//计数等于当前停留的页面索引
+			}
+			function nextPic(){//向后翻页
+				clearInterval(lbintervar);
+				var current_index = no;
+				for(var i=0; i< lblis.length; i++){
+					lblis[i].style.display = "none";
+					lbspans[i].className = "";
+				}
+				current_index++;
+				if(current_index == 5){
+					current_index = 0;
+				}
+				lblis[current_index].style.display = "block";
+				lbspans[current_index].className = "on";
+				no = current_index;
+			}
+		</script>
+	</body>
+</html>

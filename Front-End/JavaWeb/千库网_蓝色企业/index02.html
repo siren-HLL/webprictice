@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>千库网_蓝色企业_我们的故事2</title>
+		<link rel="stylesheet" href="./css/blueC_main.css">
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<style type="text/css">
+			#page{
+				position: relative;
+			}
+			#contenter2{/*内容板块*/
+				position: absolute;
+				top: 350px;
+				left: 100px;
+				width: 800px;
+				/* border:yellow 2px solid; */
+			}
+			
+			/*选项卡*/
+			#c2SelectBar{/*选择导航栏*/
+				list-style-type: none;
+				width: 510px;
+				margin: 0 auto;
+				margin-bottom: 40px;
+			}
+			#c2SelectBar li{
+				float: left;
+				width: 100px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 18px;
+				margin-right: 25px;
+				color: white;
+				border: #FFFDEF 1px solid;
+				letter-spacing: 3px;
+			}
+			#c2showBox>div{/*选项卡显示板块*/
+				width: 800px;
+				border: #FFFDEF solid 1px;
+				background-color: white;
+				box-shadow: 0px 0px 2px lightgray;
+			}
+			#companyTitle{/*我们是谁*/
+				width: 800px;
+				height: 100px;
+				margin-top: 30px;
+				text-align: center;
+			}
+			#companyTitle h2{
+				margin-bottom: 10px;
+			}
+			.companyTitleBorder{
+				color: rgb(0,79,169);
+				font-size: 20px;
+				vertical-align: bottom;
+			}
+			.companyTitleBorder span{
+				text-decoration: underline;
+				display: inline-block;
+				margin-left: 5px;
+				margin-right: 3px;
+			}
+			#c2showBoxTop{/*content顶部*/
+				width: 800px;
+				margin-bottom: 30px;
+			}
+			#c2showBoxLeft{
+				display: block;
+				float: left;
+				width: 500px;
+				margin: 10px 10px 10px 15px;
+			}
+			#c2showBoxLeft p{
+				margin-bottom: 5px;
+			}
+			#c2showBoxRight{
+				float: left;
+				width: 250px;
+				height: 400px;
+				margin-left: 10px;
+				margin-top: 15px;
+				background: url(img_blueC/index02_building.jpg) no-repeat;
+				/* border: #000000 1px solid; */
+			}
+			.c2hide{/*选项卡隐藏板块样式*/
+				display: none;
+				text-align: center;
+				font-size: 30px;
+				width: 800px;
+				height: 700px;
+			}
+			.c2on{/*选项卡已选li样式*/
+				background-color: rgb(0,79,169) ;
+				opacity: 0.8;
+			}
+			
+			/*历史节点*/
+			#historyNode{
+				/* margin: 0 auto; */
+				/* border: red 1px solid; */
+			}
+			#histpryNodeTitle{
+				text-align: center;
+				margin-bottom: 20px;
+			}
+			#historyNodePic{
+				/* border: blue solid 1px; */
+				margin-bottom: 60px;
+				display: block;
+				text-align: center;
+			}
+			
+			
+			#contenter2fix{/*调整脱离文档流的部分*/
+				width: 1000px;
+				height: 1000px;
+				background-color: white;
+				/* border: #004E91 2px solid; */
+			}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<!-- 顶部板块 -->
+			<div id="header" class="qingchu">
+				<!-- 顶部板块最上层 -->
+				<div id="headerTopBar" class="qingchu">
+					<div id="headerTopLeft">合作单位</div>
+					<div id="language"><a href="#">English</a>&nbsp;|&nbsp;<a href="#">中文</a></div>
+				</div>
+				<!-- 顶部板块中间 -->
+				<div id="headerMiddleBar" class="qingchu">
+					<!-- 顶部logo -->
+					<div id="logo"><img src="./img_blueC/logo.png" alt="logo"></div>
+					<!-- 顶部导航 -->
+					<nav id="headerNav" class="qingchu">
+						<ul id="headerUl" class="qingchu">
+							<li><a href="#">重点项目</a></li>
+							<li><a href="#">业务布局</a></li>
+							<li><a href="#">公司公告</a></li>
+							<li><a href="#">行业资讯</a></li>
+							<li><a href="#">关于我们</a>
+								<ul id="headerUl2">
+									<li><a href="#">我们的故事</a></li>
+									<li><a href="#">我们的合作</a></li>
+									<li><a href="#">联系我们</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<!-- 顶部板块底部图片部分 -->
+				<div id="headerBottom" class="qingchu">
+					<div id="headerPicBar"><img src="img_blueC/background.png" alt="背景图片"></div>
+					<div id="headerText">
+						<h1>我们的故事</h1>
+						<!-- <h3>WELCOME TO QIANYE TECHNOLOGY CO,LTD</h3> -->
+					</div>
+				</div>
+			</div>
+			<!-- 内容板块 -->
+			<div id="contenter2" class="qingchu">
+				<!-- 选项卡选择导航 -->
+				<ul id="c2SelectBar" class="qingchu">
+					<li class="c2on">公司</li>
+					<li>发展</li>
+					<li>历史过程</li>
+					<li>董事长</li>
+				</ul>
+				<!-- 选项卡显示板块 -->
+				<div id="c2showBox" class="qingchu">
+					<div class="qingchu">
+						<div id="companyTitle" class="qingchu">
+							<h2>我们是谁？</h2>
+							<div class="companyTitleBorder">&#46;<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&#46;</div>
+						</div>
+						<div id="c2showBoxTop" class="qingchu">
+								<div id="c2showBoxLeft" class="qingchu">
+									<p>苹果公司（Apple Inc.）是美国的一家高科技公司，2007年由苹果电脑公司（Apple Computer, Inc.）更名而来，核心业务为电子科技产品，总部位于加利福尼亚州的库比蒂诺。苹果公司由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和Ron Wayne在1976年4月1日创立，在高科技企业中以创新而闻名，知名的产品有Apple II、Macintosh电脑、Macbook笔记本电脑、iPod音乐播放器、iTunes商店、iMac一体机、iPhone手机和iPad平板电脑等，它在高科技企业中以创新而闻名。</p>
+									
+									<p>2016年4月22日，苹果公司证实苹果两大互联网服务——iTunes Movies和iBooks Store在中国区关闭。9月，苹果中国第一家研发中心落户北京中关村朝阳园成立。11月25日，苹果更新了iPhone在中国的保修政策，不再以换代修。2017年2月，Brand Finance发布2017年度全球500强品牌榜单，苹果公司排名第二。7月12日，苹果宣布在贵州省建立中国的第一个数据中心。10月25日，苹果宣布收购新西兰无线充电公司PowerbyProxi。2018年5月25日，三星因侵犯iPhone专利被判向苹果赔偿5.39亿美元。12月11日，中国法院裁定禁售iPhone，苹果提起上诉，要求撤销中国对iPhone的销售禁令。 2019年4月16日，苹果与高通两家公司签订芯片供应协议，苹果向高通支付一笔专利费继续使用高通的移动芯片。</p>
+									
+								</div>
+								<div id="c2showBoxRight" class="qingchu"></div>
+						</div>
+						<!-- 历史节点 -->
+						<div id="historyNode" class="qingchu">
+							<div id="histpryNodeTitle">
+								<h3 class="qingchu">历史节点</h3>
+								<div class="companyTitleBorder">&#46;<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&#46;</div>
+							</div>
+							<div id="historyNodePic">
+								<img src="img_blueC/index02_history.png" alt="节点图片"/>
+							</div>
+						</div>
+					</div>
+					<div class="c2hide">发展</div>
+					<div class="c2hide">企业文化</div>
+					<div class="c2hide">董事长</div>
+				</div>
+			</div>
+			<div id="contenter2fix"></div>
+			<!-- 版权板块 -->
+			<div id="footer" class="qingchu">
+				<div id="footerInfor" class="qingchu">
+					<div id="footerContact">
+						<h3><span class="footerSpan">联系</span>我们</h3>
+						<ul>
+							<li>商务合作:sirenhll@gmail.com</li>
+							<li>媒体合作:1193772868@qq.com</li>
+						</ul>
+					</div>
+					<div id="footerCooper">
+						<h4><span class="footerSpan">合作</span>伙伴</h4>
+						<ul>
+							<li><a href="#">中国金融认证中心</a></li>
+							<li><a href="#">华为云鲲鹏中心</a></li>
+							<li><a href="#">正确教育集团</a></li>
+							<li><a href="#">重庆仲裁委员会</a></li>
+							<li><a href="#">重庆互联网诉讼平台</a></li>
+							<li><a href="#">重庆互联网公证平台</a></li>
+						</ul>
+					</div>
+					<div id="footerLink">
+						<h4><span class="footerSpan">友情</span>链接</h4>
+						<ul>
+							<li><a href="#">火讯财经</a></li>
+							<li><a href="#">鸵鸟区块链</a></li>
+							<li><a href="#">IPFS</a></li>
+							<li><a href="#">区块链社区</a></li>
+							<li><a href="#">真牛财经</a></li>
+							<li><a href="#">SearchChain</a></li>
+						</ul>
+					</div>
+					<div id="footerAbout" class="qingchu">
+						<h4><span class="footerSpan">关于</span>我们</h4>
+						<ul>
+							<li><a href="#">常驻作者</a></li>
+							<li><a href="#">往期活动</a></li>
+							<li><a href="#">活动场地</a></li>
+							<li><a href="#">活动介绍</a></li>
+							<li><a href="#">线下商店</a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="copyright">Copyright&copy;2021-2025 余晓枫0410190109 All right reserved.</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./js/main.js"></script>
+	</body>
+</html>
+

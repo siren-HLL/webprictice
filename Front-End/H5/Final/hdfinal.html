@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>滑动</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="./css/final.css" />
+	</head>
+	<body>
+		<div class="wholepage">
+			<div class="page-box">
+				<div id="whole2" class="page">
+					<audio id="bgm" src="./media/bgm.mp3" loop="loop" autoplay="autoplay">该浏览器不支持audio</audio>
+					<div id="music" onclick="mplay()"><img id="yinfu" src="img/yinfu.png"/></div>
+					<p class="textp2">|聊美食</br>我是专业的</p>
+					<div class="food">
+						<div id="huangjiu"><div class="zizhuan"><img class="jiu" src="img/p2_huangjiu.png"/></div></div>
+						<div id="bingtang"><div class="zizhuan"><img class="btang" src="img/p2_bingtang.png"/></div></div>
+						<div id="bajiao"><div class="zizhuan"><img class="bjiao" src="img/p2_bajiao.png"/></div></div>
+						<div id="wuhuarou"><div class="zizhuan"><img class="rou" src="img/p2_zhurou.png"/></div></div>
+						<div id="dacong"><div class="zizhuan"><img class="dcong" src="img/p2_dacong.png"/></div></div>
+					</div>
+					<p id="ljzf">了解做法</p>
+					<div id="jiantou" onclick="tiaozhuan3()"><img id="jt" src="img/jiantou.png"/></div>
+				</div>
+			</div>
+		</div>
+		<div id="whole3" class="page p3">
+			<audio id="bgm" src="./media/bgm.mp3" loop="loop" autoplay="autoplay">该浏览器不支持audio</audio>
+			<div id="music" onclick="mplay()"><img id="yinfu" src="img/yinfu.png"/></div>
+			<p><img id="bg3-1" src="img/p3-1_topmeat.png"/></p>
+			<div id="textp3-1">
+				<p class="top3-1">猪肉焯水，</br>切成大小适宜的方块。</p>
+				<p class="mid3-1">肥瘦适当、层层肥瘦相间，比例接近。</p>
+				<p class="sub3-1">——五花肉挑选经验</p>
+			</div>
+			<div id="buttom">
+				<div id="shine1" class="fgk"></div>
+				<img id="pic1" class="pic" onclick="anniu1()" src="img/p3_meat.png"/>
+				<div id="shine2" class="fgk"></div>
+				<img id="pic2" class="pic" onclick="anniu2()" src="img/p3_dacong.png"/>
+				<div id="shine3" class="fgk"></div>
+				<img id="pic3" class="pic" onclick="anniu3()" src="img/p3_bingtang.png"/>
+			</div>
+			<div id="jiantou" onclick="tiaozhuan4()"><img id="jt" src="img/jiantou.png"/></div>
+		</div>
+		<script type="text/javascript" src="./js/final.js"></script>
+	</body>
+</html>

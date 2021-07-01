@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>横向无缝循环实验</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#scroll{
+				width: 1000px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				border: #001424 1px solid;
+				overflow: hidden;
+				background-color: #BBBBBB;
+			}
+			#scrollbox{
+				width: 900px;
+				height: 40px;
+				margin: 0 auto;
+				white-space: nowrap;/* 文本不换行 */
+				overflow: hidden;	
+			}
+			#scroll #part1,#scroll #part2{
+				display: inline-block;
+			}
+			.scnr {
+				color: darkred;
+				text-decoration: none;
+				padding-left: 10px;
+			}
+			.scnr:hover{
+				color: red;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="scroll">
+			<div id="scrollbox">
+				<div id="part1" class="qingchu">
+					<a href="#" class="scnr">1.招生简讯</a>
+					<a href="#" class="scnr">2.10月处分公示</a>
+					<a href="#" class="scnr">3.2020年奖学金评定公示</a>
+					<a href="#" class="scnr">4.2020年国家助学金公示</a>
+					<a href="#" class="scnr">5.特大喜讯：我校19级同学获得...</a>
+					<a href="#" class="scnr">6.教务处人事变动公示</a>
+				</div>
+				<div id="part2" class="qingchu"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var scrollbox = document.getElementById("scrollbox");
+			var part1 = document.getElementById("part1");
+			var part2 = document.getElementById("part2");
+			var distance = 0;
+			part2.innerHTML = part1.innerHTML;
+			function changeinfo(){
+				distance++;
+				scrollbox.scrollLeft = distance;
+				if(part1.offsetWidth == scrollbox.scrollLeft){
+					distance = 0;
+					scrollbox.scrollLeft = 0;
+				}
+			 }
+			var scrollSet = setInterval("changeinfo()",50);
+			scrollbox.onmouseover = function(){
+				clearInterval(scrollSet);
+			}
+			scrollbox.onmouseout = function(){
+				scrollSet = setInterval("changeinfo()",50);
+			}
+		</script>
+	</body>
+</html>

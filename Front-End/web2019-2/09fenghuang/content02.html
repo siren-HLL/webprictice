@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图文混排2</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;	
+			}
+			.daoh{
+				width: 550px;
+				margin: auto;
+				position: relative;
+				z-index: 2;
+			}
+			.daoh ul{
+				list-style: none;
+			}
+			.daoh .mydh>li{/*子元素选择器，缩小后代范围*/
+				float: left;
+			}
+			.daoh .mydh li{
+				width: 100px;
+				height: 30px;
+				background-color: darkgreen;
+				border-right: 1px solid white;
+				text-align: center;
+				line-height: 30px;/*垂直居中*/
+			}
+			.daoh li a{
+				color: #000000;
+				text-decoration: none;
+				display: block;/*点击整个区域都可*/
+			}
+			.daoh .mydh2{
+				display: none;/*二级列表默认不显示*/
+			}
+			.daoh .mydh>li:hover .mydh2{
+				display: block;
+			}
+			.daoh .mydh>li:hover{
+				background-color: chartreuse;
+			}
+			.daoh .mydh>li:hover>a,.daoh .mydh2>li:hover>a{
+			color: white;	
+			}
+			/*分割*/
+			.tuwen{
+				margin: 0 auto;
+				width: 400px;
+				font-family: "楷体","宋体";
+			}
+			.tuwen a{
+				text-decoration: none;
+				color: #666666;
+			}
+			.tuwen h3 a,.tuwen h4 a,.tuwen h5 a{
+				color: #1E90FF;
+			}
+			.tuwen a:hover{
+				text-decoration: underline;
+			}
+			.tuwen h3 a:hover,.tuwen h4 a:hover,.tuwen h5 a:hover{
+				text-decoration: underline;
+				color:red;
+			}
+			.tuwen .fudong .rwen ul{
+				list-style: none;
+			}
+			.tuwen ul{
+				font-size: 14px;
+			}
+			.tuwen h3{
+				background-image: url(img09/tit_bg.png)/*no-repeat left bottom*/ ;
+				
+				display: block;
+				height: 56px;
+				line-height: 56px;
+			}
+			.tuwen h4{
+				padding: 20px 0;
+			}
+			.tuwen .fudong .ftup,.tuwen .fudong .rwen{
+				float: left;
+			}
+			.qingchu:after{
+				content: '.';
+				height: 0;
+				visibility: hidden;
+				overflow: hidden;
+				display: block;
+				clear: both;
+			}
+			.tuwen .fudong .rwen li,.tuwen .xiaw li{
+				margin-left: 15px;
+				margin-bottom: 5px;
+			}
+			.tuwen .xiaw{
+				margin-left: 10px;
+				color: #666666;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="whole">
+			<nav class="daoh qingchu">
+				<ul class="mydh">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">魅力九寨</a>
+						<ul class="mydh2">
+							<li><a href="#">九寨沟概况</a></li>
+							<li><a href="#">图片九寨沟</a></li>
+						</ul>
+					</li>
+					<li><a href="#">人文文化</a>
+						<ul class="mydh2">
+							<li><a href="#">九寨沟概况</a></li>
+							<li><a href="#">图片九寨沟</a></li>
+						</ul>
+					</li>
+					<li><a href="#">自然风光</a>
+						<ul class="mydh2">
+							<li><a href="#">原始森林</a></li>
+							<li><a href="#">图片九寨沟</a></li>
+						</ul>
+					</li>
+					<li><a href="#">旅游服务</a>
+						<ul class="mydh2">
+							<li><a href="#">九寨沟概况</a></li>
+							<li><a href="#">图片九寨沟</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		
+		<section class="tuwen">
+			<h3><a href="#">智库</a>&bull;凤凰网</h3>
+			<h4><a href="#">大咖云集！2017凤凰国际论坛邀您与世界对话</a></h4>
+			<div class="fudong qingchu">
+				<div class="ftup">
+					<img src="./img09/newspic.jpg">
+				</div>
+				<div class="rwen">
+					<ul>
+						<li><a href="#">年内国际油价会有大突破么？</a></li>
+						<li><a href="#">中国年轻人比美国同龄人还能花钱</a></li>
+						<li><a href="#">捧回诺贝尔经济学奖的大佬是谁</a></li>
+						<li><a href="#">诺贝尔经济学奖对中国有何启发？</a></li>
+						<li><a href="#">关爱地球，我们的生活够环保吗？</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="xiaw">
+				<ul>
+					<li ><h5><a href="#" ><span>罗马垃圾围城引发的政治纷争</span></a></h5></li>
+					<li><a href="#">又香又糯啥原理？告诉你东北大米为什么好吃</a></li>
+					<li><a href="#">穿得太奢侈被罚款？五百年前的欧洲人在想啥</a></li>
+					<li><a href="#">凤凰国际智库发布前任专家数据库</a></li>
+					<li><a href="#">海外动乱频发，中企安全保护如何吸取成功经验？</a></li>
+					<li><a href="#">企业家首先要思考发展的战略和资源</a></li>
+				</ul>
+			</div>
+		</section>
+	</div>
+		
+	</body>
+</html>

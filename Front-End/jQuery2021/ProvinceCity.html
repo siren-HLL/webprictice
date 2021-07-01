@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>省市联动三级列表</title>
+	</head>
+	<body>
+		<div>
+			<select name="province" id="province">
+			</select>
+			<select name="city" id="city">	
+			</select>
+			<select name="district" id="district">	
+			</select>
+		</div>
+		<script src="jquery-1.9.0.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			//onchange事件需要写在上一级数据拿取之后（异步请求的特点），如果onchange跟ajax同级则会先执行onchange再拿数据
+			$.ajax({
+				//省级渲染
+				"url":"http://localhost:8087/dvd1.0/ProvinceServlet",
+				"type":"POST",
+				"success":function(result){
+					//eval("("+result+")");
+					result = $.parseJSON(result);//转换成json
+					console.log(result);
+					for(var i=0 ;i< result.length ; i++){
+						$("<option>").text(result[i].cname)
+							.val(result[i].id)
+							.appendTo("#province")
+					} 
+					//市级渲染
+					$("#province").on("change",function(){
+						var data = $(this).serialize();
+						console.log(data)
+						$.ajax({
+							"url":"http://localhost:8087/dvd1.0/CityServlet",
+							"type":"POST",
+							"data":data,
+							"success":function(result){
+								//eval("("+result+")");
+								$("#city").empty();
+								result = $.parseJSON(result);//转换成json
+								console.log(result);
+								for(var i=0 ;i< result.length ; i++){
+									$("<option>").text(result[i].cname)
+										.val(result[i].id)
+										.appendTo($("#city"))
+								} 
+								//区级渲染
+								$("#city").on("change",function(){
+									var data = $(this).serialize();
+									console.log(data);
+									$.ajax({
+										"url":"http://localhost:8087/dvd1.0/DistrictServlet",
+										"type":"POST",
+										"data":data,
+										"success":function(result){
+											//eval("("+result+")");
+											$("#district").empty();
+											result = $.parseJSON(result);//转换成json--$==jQuery
+											console.log(result);
+											for(var i=0 ;i< result.length ; i++){
+												$("<option>").text(result[i].cname)
+													.val(result[i].id)
+													.appendTo($("#district"))
+											} 
+										}
+									})
+								}).trigger("change");
+							}
+						})
+					}).trigger("change");//trigger方法触发被选元素的指定事件类型
+
+					
+
+				}
+			})
+			
+		})
+		
+		
+		
+		</script>
+	</body>
+</html>

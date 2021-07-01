@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单验证</title>
+		<link rel="stylesheet" href="./BootStrap3/css/bootstrap.min.css" />
+		<script src="jquery-1.9.0.js"></script>
+		<script src="BootStrap3/js/bootstrap.min.js"></script>
+		<script src="BootStrap3/plugin/jquery.validate.js"></script>
+	</head>
+	<body>
+		<form class="form-horizontal" id="signupForm">
+		  <div class="form-group">
+		    <label for="email" class="col-sm-2 col-lg-3 control-label">Email</label>
+		    <div class="col-sm-10 col-lg-5">
+		      <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="username" class="col-sm-2 col-lg-3 control-label">Username</label>
+		    <div class="col-sm-10 col-lg-5">
+		      <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="password" class="col-sm-2 col-lg-3 control-label">Password</label>
+		    <div class="col-sm-10 col-lg-5">
+		      <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="repassword" class="col-sm-2 col-lg-3 control-label">Repassword</label>
+		    <div class="col-sm-10 col-lg-5">
+		      <input type="password" class="form-control" id="repassword" placeholder="Repassword" name="repassword">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <div class="checkbox">
+		        <label>
+		          <input type="checkbox"> Remember me
+		        </label>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-default">Sign in</button>
+		    </div>
+		  </div>
+		</form>
+		<script>
+			$().ready(function() {
+			 $("#signupForm").validate({
+			   rules: {
+			   	username: "required",
+			   	email: {
+			    required: true,
+			    email: true
+			   },
+			   password: {
+			    required: true,
+			    minlength: 5
+			   },
+			   repassword: {
+			    required: true,
+			    minlength: 5,
+			    equalTo: "#password"
+			   }
+			  },
+			   messages: {
+			   username: "请输入姓名",
+			   email: {
+			    required: "请输入Email地址",
+			    email: "请输入正确的email地址"
+			   },
+			   password: {
+			    required: "请输入密码",
+			    minlength: jQuery.format("密码不能小于{0}个字 符")
+			   },
+			   repassword: {
+			    required: "请输入确认密码",
+			    minlength: "确认密码不能小于5个字符",
+			    equalTo: "两次输入密码不一致不一致"
+			   }
+			  }
+			    });
+			});
+		</script>
+		
+	</body>
+</html>

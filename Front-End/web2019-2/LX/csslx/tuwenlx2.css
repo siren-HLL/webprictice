@@ -1,0 +1,105 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "楷体","宋体"；
+}
+.whole .daoh ul{
+	list-style-type: none;
+}
+.qingchu:after{
+	content:".";
+	height: 0px;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	clear: both;
+}
+
+  .whole .daoh{
+	width: 550px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 5;
+}
+.whole .daoh ul li{
+	background: #006400;
+	border-right: #FFFFFF solid 1px;
+	height: 30px;
+	line-height: 30px;
+	width: 100px;
+	text-align: center;
+}
+.whole .daoh .nav1>li{/*只有一级导航是横向排列的*/
+	float:left;
+}
+.whole .daoh a{
+	text-decoration: none;
+	color: #000000;
+	display: block;
+}
+.whole .daoh .nav1>li:hover>a,.nav2>li:hover>a{
+	color: #FFFFFF;
+}
+.whole .daoh .nav2{
+	display: none;
+}
+.whole .daoh .nav1>li:hover .nav2{
+	display: block;
+}
+.whole .daoh .nav1>li:hover {
+	background: #7FFF00;
+}
+/*分界线*/
+.whole .wenz{
+	width: 400px;
+	margin: 0 auto;
+}
+.whole .wenz ul{
+	font-size: 14px;
+}
+.whole .wenz .shangwen ul{
+	list-style-type: none;
+}
+.whole .wenz a{
+	text-decoration: none;
+	color: #666666;
+}
+.whole .wenz a:hover{
+	text-decoration: underline;
+}
+.whole .wenz h3{
+	background: url(../imglx/tit_bg1.png) no-repeat left bottom ;
+	display: block;
+	width: 360px;
+	height: 56px;
+	line-height: 56px;
+}
+.whole .wenz h3 a,.whole .wenz h4 a, .whole .wenz h5 a{
+	color: deepskyblue;
+}
+.wenz h3 a:hover,.wenz h4 a:hover,.wenz h5 a:hover{
+				text-decoration: underline;
+				color:red;
+			}
+.whole .wenz h4{
+	margin: 15px 0px ;
+}
+.whole .tup{
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+.whole .wenz .fdtp .shangwen li{
+	padding:0px 0px 5px 0px;
+	margin-left: 15px;
+}
+.whole .wenz .xiawen h5{
+	font-size: 14px;
+}
+.whole .wenz .xiawen{
+	color: #666666;
+	margin-left: 15px;
+}
+.whole .wenz .xiawen li{
+	padding: 0px 0px 5px 0px;
+}

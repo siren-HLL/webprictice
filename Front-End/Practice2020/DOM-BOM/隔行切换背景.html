@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>切换背景</title>
+		<style type="text/css">
+			table{
+				border-collapse: collapse;
+			}
+			td{
+				width: 100px;
+				height: 30px;
+				border: #000000 1px solid;
+			}
+			.bg{
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<td>1head</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>2</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<script type="text/javascript">
+			var trs = document.querySelector('tbody').querySelectorAll('tr');
+			for(i=0;i<trs.length;i++){
+				trs[i].onmouseover = function(){
+					this.className = 'bg';
+				}
+			}
+			for(i=0;i<trs.length;i++){
+				trs[i].onmouseout = function(){
+					this.className = ' ';
+				}
+			}
+		</script>
+	</body>
+</html>

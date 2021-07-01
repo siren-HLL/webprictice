@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text1"  value="我是text1"/>
+		<input type="text" id="text2"  value="我是text2"/>
+		<input type="button" value="单击按钮1" onclick="fun1()" />
+		<input type="button" value="单击按钮2" onclick="fun2()" />
+		<script type="text/javascript">
+			//原始方法
+			// function fun1(){
+			// 	var obj = document.getElementById("text1");
+			// 	alert(obj.value);
+			// }
+			// function fun2(){
+			// 	var obj = document.getElementById("text2");
+			// 	alert(obj.value);
+			// }
+			//自定义方法，获取js中的dom对象,$是一个函数的名称
+			function $(domId){
+				var obj = document.getElementById(domId);
+				return obj;
+			}
+			function fun1(){
+				var obj = $("text1");
+				alert(obj.value);
+			}
+			function fun2(){
+				var obj = $("text2");
+				alert(obj.value);
+			}
+		</script>
+	</body>
+</html>

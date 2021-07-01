@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>识海教育</title>
+		<script src="font_2401770_pq2iv37r7o/iconfont.js"></script>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0 auto;
+			}
+			.qingchu:after{
+				content: ".";
+				height: 0;
+				display: block;
+				visibility: hidden;
+				overflow: hidden;
+				clear: both;
+			}
+			.icon {
+			    width: 1.5em;/* 24px */
+			    height: 1.5em;
+			    vertical-align: -0.35em;
+				margin-right: 1em;
+			    fill: currentColor;
+			    overflow: hidden;
+				display: inline-block;
+			  }
+			#page{
+				width: 1252px;
+				/* width: 100%; */
+				height: 100%;
+				background-color: rgb(234,238,242);
+			}
+			/* 左侧边栏 */
+			#leftBar{
+				width: 250px;
+				height: 860px;
+				/* border: #000000 1px solid; */
+				float: left;
+				background-color: white;
+				position: relative;
+			}
+			#blueBox .shihaiTitle{/* 头像框标题 */
+				color: white;
+				height: 25px;
+				line-height: 25px;
+				position: absolute;
+				top: 25px;
+				left: 70px;
+				letter-spacing: 2px;
+				font-size: 18px;
+			}
+			#blueBox .shihaiTitle img{
+				width: 20px;
+				height: 20px;
+				margin-right: 10px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			#blueBox .botBlue{/* 头像框蓝色背景 */
+				width: 250px;
+				height: 150px;
+				border-radius: 0 0 50% 50%;
+				background-color: rgb(51,128,255);
+			}
+			#messageBox{/* 头像框及信息 */
+				width: 250px;
+				height: 250px;
+				background-color: white;
+				position: relative;
+			}
+			.messagePosition div{
+				width: 60px;
+				height: 60px;
+				border-radius: 50px;
+				border: #FFFFFF 1px solid;
+				box-shadow:0px 2px 3px #00BFFF;
+			}
+			.circle img{
+				width: 100%;
+				height: 100%;
+				display: inline-block;
+				border-radius: 50px;
+			}
+			.messagePosition{
+				text-align: center;
+				position: absolute;
+				bottom: 30px;
+				left: 30px;
+			}
+			.messagePosition span{
+				color: #666666;
+				font-size: 12px;
+			}
+			#navBar ul{/* 左侧导航栏 */
+				list-style-type: none;
+				margin-top: 30px;
+			}
+			#navBar ul li{
+				width: 150px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+			}
+			#navBar ul li a:hover{
+				color: #1E90FF;
+				background-color: rgb(247,247,247);
+			}
+			#navBar ul li a{
+				color: #000000;
+				text-decoration: none;
+				display: inline-block;
+			}
+			.boticon{/* 导航栏底部标志 */
+				position: absolute;
+				bottom: 80px;
+				left: 110px;
+			}
+			/* 右边内容 */
+			#content{
+				width: 1000px;
+				height: 100%;
+				/* border: red 1px solid; */
+				float: left;
+			}
+			#header{/* 右边顶部搜索栏 */
+				width: 1000px;
+				height: 70px;
+				background-color: white;
+				position: relative;
+			}
+			.headerLeft{
+				height: 70px;
+				line-height: 70px;
+				margin-left: 20px;
+				float: left;
+			}
+			.headerLeft .headerPic{
+				width: 1.5em;
+				height: 1.5em;
+				padding-right: 15px;
+			}
+			#headerSearch{
+				width: 220px;
+				height: 30px;
+				line-height: 30px;
+				margin-top: 15px;
+				position: absolute;
+				right: 300px;
+			}
+			#headerul{
+				list-style-type: none;
+				float: right;
+				margin-top: 10px;
+			}
+			#headerul li{
+				float: left;
+				padding: 5px;
+				height: 30px;
+				line-height: 30px;
+			}
+			#headerul li a{
+				text-decoration: none;
+				color: dimgray;
+			}
+			.guanji{
+				border-left: 1px solid dimgray;
+			}
+			#main{
+				margin: 20px;
+				width: 960px;
+				/* border: #000000 1px solid; */
+			}
+			#banner{/* 信息板块 */
+				margin-bottom: 20px;
+			}
+			.bannerIn{
+				display: inline-block;
+				height: 70px;
+				margin-top: 15px;
+				width: 195px;
+			}
+			.bannerText{
+				float: left;
+				width: 70px;
+				height: 70px;
+				line-height: 35px;
+				font-size: 20px;
+				margin-left: 30px;
+			}
+			.bannerPic{
+				float: right;
+				height: 70px;
+				width: 70px;
+			}
+			.PicO{
+				width: 215px;
+				height: 100px;
+				line-height: 100px;
+				display: inline-block;
+				background-color: rgb(253,245,225);
+				border: 1px solid rgb(255,188,69);
+				margin-right: 25px;
+			}
+			.picOO{
+				border-left: 5px solid rgb(255,188,69);
+			}
+			.PicO span{ color: rgb(255,188,69);}
+			.PicY{
+				width: 215px;
+				height: 100px;
+				line-height: 100px;
+				display: inline-block;
+				background-color: rgb(253,245,226);
+				border: 1px solid rgb(255,209,61);
+				margin-right: 25px;
+			}
+			.picYY{
+				border-left: 5px solid rgb(255,209,61);
+			}
+			.PicY span{color: rgb(255,209,61);}
+			.PicB{
+				width: 215px;
+				height: 100px;
+				line-height: 100px;
+				display: inline-block;
+				background-color: rgb(224,236,255);
+				border: 1px solid rgb(82,158,255);
+				margin-right: 26px;
+			}
+			.picBB{
+				border-left: 5px solid rgb(82,158,255);
+			}
+			.PicB span{color: rgb(82,158,255);}
+			.PicP{
+				width: 215px;
+				height: 100px;
+				line-height: 100px;
+				display: inline-block;
+				background-color: rgb(234,231,248);
+				border: 1px solid rgb(205,174,255);
+			}
+			.picPP{
+				border-left: 5px solid rgb(205,174,255);
+			}
+			.PicP span{color: rgb(205,174,255);}
+			/* 主要内容板块 */
+			#mainBox{
+				width: 960px;
+				height: 100%;
+				/* border: #000000 1px solid; */
+				margin: 0 auto;
+				background-color: white;
+			}
+			#boxTop{/* 主要内容板块搜索框部分 */
+				margin: 20px;
+				padding-top: 30px;
+			}
+			.typePosition,.quickPosition{
+				float: left;
+				margin-right: 40px;
+			}
+			.checkPosition{
+				float: right;
+				height: 30px;
+				line-height: 30px;
+				color: #1E90FF;
+			}
+			.labelStyle{
+				padding-right: 10px;
+				color: #1E90FF;
+			}
+			#boxTop input[type="search"]{
+				width: 190px;
+				height: 30px;
+				background-color: rgb(234,238,242);
+				border: none;
+				border-radius: 10px;
+				text-align: center;
+			}
+			.sButton{
+				background-color: #1E90FF;
+				color: white;
+				width: 80px;
+				height: 35px;
+				line-height: 35px;
+				border: none;
+				border-radius: 10px;
+				margin-left: 20px;
+			}
+			/* 订单板块 */
+			#boxContent{
+				margin-bottom: 40px;
+			}
+			#contentTable{
+				border-collapse: collapse;
+				margin: 0 auto;
+				color: dimgray;
+				margin-top: 20px;
+				width: 940px;
+			}
+			#contentTable th{
+				width: 110px;
+				height: 50px;
+				line-height: 50px;
+				background-color: rgb(234,238,242);
+			}
+			#contentTable .tableTitle{/* 为什么无效 */
+				border-radius: 10px;
+			}
+	        #contentTable td{
+				width: 60px;
+				height: 100px;
+				text-align: center;
+			}
+			#contentTable .longtd{
+				width: 200px;
+			}
+			#contentTable .className{
+				text-align: left;
+				padding-left: 10px;
+			}
+			.orderTitle{
+				font-weight: bold;
+			}
+			.littleTitle{
+				font-size: 12px;
+			}
+			.price{
+				color: orange;
+			}
+			.tablePic{/* 课程图片 */
+				width: 120px;
+				height: 80px;
+				display: inline-block;
+				/* margin: 10px; */
+				text-align: center;
+				vertical-align: middle;
+			}
+			/* 底部页面跳转 */
+			#boxFooter{
+				margin: 0 auto;
+				width: 470px;
+				height: 60px;
+				line-height: 60px;
+				/* border: #000000 1px solid; */
+				color: dimgray;
+			}
+			#boxFooter span{
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				display: inline-block;
+				text-align: center;
+				margin-right: 10px;
+			}
+			#boxFooter .tiaozhuan{
+				background-color: rgb(234,238,242);
+			}
+			#boxFooter .dian{
+				font-weight: bolder;
+				color: gray;
+				letter-spacing: 3px;
+			}
+			#boxFooter .cPagePosition{
+				float: right;
+			}
+			#boxFooter input[name="changePage"]{
+				background-color: rgb(234,238,242);
+				border: none;
+				height: 20px;
+				width: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="page" class="qingchu">
+			<!-- 左侧边栏 -->
+			<div id="leftBar" class="qingchu">
+				<!-- 头像框 -->
+				<div id="messageBox" class="qingchu">
+					<div id="blueBox">
+						<div class="shihaiTitle"><img src="SHimg/004.png" alt="识海教育标志">识海教育</div>
+						<div class="botBlue"></div>
+					</div>
+					<div class="messagePosition">
+						<div class="circle"><img src="SHimg/touxiang.jpg" alt="头像"></div>
+						<span>管理员 0016工号</span>
+						<p>皓月清凉，你是人间曙光。</p>
+					</div>
+				</div>
+				<!-- 左侧导航栏 -->
+				<nav id="navBar">
+					<ul>
+						<li><svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-4-yunyingkanban"></use>
+</svg><a href="#">数据中心</a></li>
+						<li><svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-6-xiaoshoukanban"></use>
+</svg><a href="#">学员管理</a></li>
+						<li><svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-17-gongzuopai"></use>
+</svg><a href="#">教师管理</a></li>
+						<li><svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-14-zhishiku"></use>
+</svg><a href="#">课程管理</a></li>
+						<li><svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-10-guanliyuangongju"></use>
+</svg><a href="#">订单管理</a></li>
+						<li><svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-5-xiaoshoukanban"></use>
+</svg><a href="#">财务管理</a></li>
+						<li><svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-18-fasongxiaoxi-icon"></use>
+</svg><a href="#">客服管理</a></li>
+						<li><svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-11-zhuye"></use>
+</svg><a href="#">系统设置</a></li>
+					</ul>
+				</nav>
+				<div class="boticon">
+					<a href="#"><svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-20-sousuo"></use>
+</svg></a>
+				</div>
+			</div>
+			<!-- 右边内容 -->
+			<div id="content" class="qingchu">
+				<!-- 右边顶部搜索栏 -->
+				<div id="header" class="qingchu">
+					<div class="headerLeft">
+						<img class="headerPic" src="SHimg/009.png"/>
+						<img class="headerPic" src="SHimg/012.png"/>
+					</div>
+					<input id="headerSearch"type="search" placeholder="搜索"/>
+					<ul id="headerul">
+						<li ><a href="#"><img class="headerPic" src="SHimg/010.png" width="28" height="29"></a></li>
+						<li><a href="#"><img class="headerPic" src="SHimg/011.png"></a></li>
+						<li><a href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrowRight-copy"></use></svg></a></li>
+						<li class="guanji"><a href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-guanji"></use></svg></a></li>
+						<li><a href="#">退出</a></li>
+					</ul>
+				</div>
+				<!-- 主要内容 -->
+				<div id="main">
+					<!-- 信息板块 -->
+					<div id="banner" class="qingchu">
+						<div class="PicO"><div class="bannerIn picOO"><div class="bannerText">总订单<br><span>5209</span></div><img class="bannerPic" src="SHimg/01.png"/></div></div>
+						<div class="bannerOut PicY"><div class="bannerIn picYY"><p class="bannerText">待付款<br><span>28</span></p><img class="bannerPic" src="SHimg/02.png"/></div></div>
+						<div class="bannerOut PicB"><div class="bannerIn picBB"><p class="bannerText">已付款<br><span>4009</span></p><img class="bannerPic" src="SHimg/03.png"/></div></div>
+						<div class="bannerOut PicP"><div class="bannerIn picPP"><p class="bannerText">退款<br><span>17</span></p><img class="bannerPic" src="SHimg/04.png"/></div></div>
+					</div>
+					<!-- 主要内容板块 -->
+					<div id="mainBox">
+						<div id="boxTop" class="qingchu">
+							<p class="typePosition"><label for="types" class="labelStyle">订单分类</label><input type="search" name="types" placeholder="小学/初中/高中/职业"></p>
+							<p class="quickPosition"><label for="quick" class="labelStyle">快速搜索</label><input type="search" name="quick" placeholder="订单编号/关键词/用户名"></p>
+							<p class="checkPosition"><input type="radio" name="paystate" value="paied" checked="checked"/>已支付&nbsp; <input type="radio" name="paystate" value="unpay"/>未支付&nbsp;<input type="radio" name="paystate" value="refund"/>退款&nbsp;<input type="button" name="searchOrder" class="sButton" value="查询"/></p>
+						</div>
+						<!-- 订单板块 -->
+						<div id="boxContent">
+							<table id="contentTable" cellspacing="0" >
+								<tr class="tableTitle">
+									<th class="longtd">课程</th>
+									<th class="longtd">订单名称</th>
+									<th>订单编号</th>
+									<th class="longtd">时间</th>
+									<th>用户名</th>
+									<th>类型</th>
+									<th>支付方式</th>
+									<th>金额</th>
+								</tr>
+								<tr class="trBorder">
+									<td class="longtd"><img class="tablePic" src="../163/img163/pic3.png" alt="课程封面"></td>
+									<td class="longtd className"><span class="orderTitle">教师招聘</span><br><span class="littleTitle">教育教学-教育的目的</span></td>
+									<td>49847984</td>
+									<td class="longtd">2020-7-24 09:25</td>
+									<td>六云</td>
+									<td>职业教育</td>
+									<td>支付宝</td>
+									<td class="price">468</td>
+								</tr>
+								<tr class="trBorder">
+									<td class="longtd"><img class="tablePic" src="../163/img163/pic3.png" alt="课程封面"></td>
+									<td class="longtd className"><span class="orderTitle">教师招聘</span><br><span class="littleTitle">教育教学-学生与老师</span></td>
+									<td>63789787</td>
+									<td class="longtd">2020-7-14 19:30</td>
+									<td>离生一梦</td>
+									<td>职业教育</td>
+									<td>微信</td>
+									<td class="price">985</td>
+								</tr>
+								<tr class="trBorder">
+									<td class="longtd"><img class="tablePic" src="../163/img163/pic3.png" alt="课程封面"></td>
+									<td class="longtd className"><span class="orderTitle">初中物理</span></br><span class="littleTitle">量电装置和配电装置</span></td>
+									<td>84516546</td>
+									<td class="longtd">2020-6-18 10:30</td>
+									<td>王开树</td>
+									<td>初中教育</td>
+									<td>微信</td>
+									<td class="price">561</td>
+								</tr>
+								<tr>
+									<td class="longtd"><img class="tablePic" src="../163/img163/pic3.png" alt="课程封面"></td>
+									<td class="longtd className"><span class="orderTitle">初中物理</span><br><span class="littleTitle">原子结构与元素性质</span></td>
+									<td>57879413</td>
+									<td class="longtd">2020-6-17 09:24</td>
+									<td>云中天</td>
+									<td>初中教育</td>
+									<td>支付宝</td>
+									<td class="price">389</td>
+								</tr>
+							</table>
+						</div>
+						<div id="boxFooter">
+							共1000条&nbsp;<span class="tiaozhuan">&lt;</span><span class="tiaozhuan">1</span><span class="tiaozhuan">2</span><span class="tiaozhuan">3</span><span class="tiaozhuan">4</span><span class="dian">...</span><span class="tiaozhuan">20</span><span class="tiaozhuan">&gt;</span><p class="cPagePosition">跳至&nbsp;<input name="changePage" type="text">&nbsp;页</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!-- 
+	使用svg图标（有颜色）：XML--可扩展标记语言
+	1.引入js 
+	2.<svg class="icon" aria-hidden="true">
+         <use xlink:href="#symbol代码"></use>
+     </svg> 
+	3.样式fill: currentColor; -->
+</html>

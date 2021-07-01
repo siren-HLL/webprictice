@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>绘制矩形</title>
+	</head>
+	<body>
+		<div>
+			<canvas id="pic" width="300" height="300"></canvas><!-- 默认 width为300、height为150 -->
+		</div>
+		<script type="text/javascript">
+			function draw(){
+				var canvas = document.getElementById("pic");
+				if(!canvas.getContext)return;
+				var ctx = canvas.getContext("2d");
+				ctx.fillStyle = "rgb(200,0,0)";
+				ctx.fillRect(10,10,55,50);
+				ctx.fillStyle = "rgba(0,0,200,0.5)";
+				ctx.fillRect(70,60,55,50);
+				ctx.fillStyle = "rgb(10,134,128)";
+				ctx.fillRect(10,170,55,50);
+				ctx.clearRect(15,175,10,10);
+				ctx.strokeRect(120,120,55,50);
+				// canvast 提供了三种方法绘制矩形：1.fillRect(x, y, width, height)绘制一个填充的矩形;2.strokeRect(x, y, width, height)绘制一个矩形的边框;3.clearRect(x, y, widh, height)清除指定的矩形区域，然后这块区域会变的完全透明。
+			}
+			draw();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+		<script type="text/javascript" src="./js/h5.js"></script>
+		<link rel="stylesheet" href="./css/h5.css"/>
+		<title>健康值计算器</title>
+	</head>
+	<body>
+	<div id="whole4">
+		<audio id="bgm" src="./media/bgm.mp3" loop="loop" autoplay="autoplay"></audio>
+		<div id="music" onclick="mplay()"><img id="yinf" class="yinfzh" src="img/yinfu.png" width="40px" height="33px"/></div>
+		<div class="picbar">
+			<img class="yumi" src="img/yumi.png" />
+			<img class="dadou" src="img/dadoubg.png"/>
+			<img class="zuod"  src="img/zuodaozi.png"/>
+			<img class="youd" src="img/youdaozi.png" />
+			<img class="man" src="img/man.png" />
+			<img class="jushuo" src="img/jushuo.png" />
+		</div>
+		<form method="get" action="" name="inform" id="inform">
+			<div class="diyi">
+				<p class="getName"><input onblur="namevf()"  id="xingm" name="xingm" type="text" placeholder="输入姓名" size="12" autofocus="autofocus"></p>
+				<p class="getWork">
+					<select class="work" name="work" id="work">
+					<option value="1">上班族</option> 
+					<option value="2">学生党</option> 
+				</select> </p>
+			</div>
+			<div onclick="suan()" class="suan1"></div>
+		</form>
+	</div>
+	</body>
+</html>

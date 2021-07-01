@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>无缝滚动练习</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#scrollbox{
+				width: 550px;
+				height: 300px;
+				border: #001424 3px solid;
+				overflow: hidden;
+				text-align: center;
+			}
+			#part1{
+				width: 500px;
+				height: 350px;
+				border: #4169E1 3px solid;
+			}
+			#part2{
+				width: 500px;
+				height: 350px;
+				border: #008B8B 3px solid;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="whole">
+			<div id="scrollbox">
+				<div id="part1">
+					<p>1</p>
+					<br/>
+					<p>2</p>
+					<br/>
+					<p>3</p>
+					<br/>
+					<p>4</p>
+					<br/>
+					<p>5</p>
+					<br/>
+					<p>6</p>
+					<br/>
+					<p>7</p>
+					<br/>
+					<p>8</p>
+					<br/>
+					<p>9</p>
+					<br/>
+					<p>10</p>
+				</div>
+				<div id="part2">
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//srcollTop,offSetHeight,setInterval
+			//offSetHeight获取元素包括边框内的高度
+			// srcollTop向上偏移量
+			var scrollbox = document.getElementById("scrollbox");
+			var part1 = document.getElementById("part1");
+			var part2 = document.getElementById("part2");
+			var distance = 0;
+			// if(part1.offsetHeight > scrollbox.offsetHeight){ 
+			// 	part2.innerHTML = part1.innerHTML;
+			// }
+			part2.innerHTML = part1.innerHTML;
+			function goUp(){
+				distance ++ ;
+				scrollbox.scrollTop = distance;
+				if(part1.offsetHeight == scrollbox.scrollTop){
+					distance = 0;
+					scrollbox.scrollTop = 0;//滚动高度清零，循环
+				}
+			}
+			var scrollSet = setInterval("goUp()",50);
+			scrollbox.onmouseover = function(){
+				clearInterval(scrollSet);
+			}
+			scrollbox.onmouseout = function(){
+				scrollSet = setInterval("goUp()",50);
+			}
+			// 这里是javascript中制作滚动代码的常用属性
+			
+			// 页可见区域宽： document.body.clientWidth;
+			// 网页可见区域高： document.body.clientHeight;
+			
+			// window.innerHeight;
+			// 网页可见区域宽： document.body.offsetWidth   (包括边线的宽);
+			// 网页可见区域高： document.body.offsetHeight (包括边线的宽);
+			// 网页正文全文宽： document.body.scrollWidth;
+			// 网页正文全文高： document.body.scrollHeight;
+			// 网页被卷去的高： document.body.scrollTop;
+			// 网页被卷去的左： document.body.scrollLeft;
+			// 网页正文部分上： window.screenTop;
+			// 网页正文部分左： window.screenLeft;
+			// 屏幕分辨率的高： window.screen.height;
+			// 屏幕分辨率的宽： window.screen.width;
+			
+			// 屏幕可用工作区高度： window.screen.availHeight;
+		</script>
+	</body>
+</html>

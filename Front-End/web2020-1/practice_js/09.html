@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.使用“new Array()”创建数组
+			//2.使用“[ ]”字面量来创建数组
+			/*var arr = ['苹果', '橘子', '香蕉', '桃子'];
+			console.log(arr[0]); // 输出结果：苹果
+			console.log(arr[1]); // 输出结果：橘子
+			console.log(arr[2]); // 输出结果：香蕉
+			console.log(arr[3]); // 输出结果：桃子
+			console.log(arr[4]);
+			// 输出结果：undefined（数组元素不存在）
+			for (var i = 0; i < arr.length; i++) {//遍历数组
+				document.write(arr[i])
+			}*/
+			/*数组遍历是将数组中的元素全部访问一遍，可以利用for循环来实现，在for循环中让索引从0开始自增。如果数组元素比较多时，计算数组元素的个数不太方便，这时候可以利用“数组名.length”来快速地获取数组长度。*/
+
+			/*数组的遍历可以获取数组中的最大值。在遍历时，先用一个变量max保存数组中第1个元素的值，然后比较后面的元素是否比max的值大，如果比max大，就将这个较大的值保存给max，否则就进行下一轮的比较。*/
+			/*var arr1 = ['3', '5', '77', '5', '35', '99'];
+			var max = arr1[0]; //var max = 0;也行
+			for (var i = 1; i < arr1.length; i++) {
+				if (arr1[i] > max) {
+					max = arr1[i];
+				}
+			}
+			console.log('数组元素中的最大值是：' + max); // 计算结果：99*/
+
+			/*
+			//转换成字符串
+			var arr = ['red', 'green', 'blue', 'pink'];
+			var str = arr[0];
+			var sep = '|';
+			for (var i = 1; i < arr.length; i++) {
+				str += sep + arr[i];
+			}
+			console.log(str); // 输出结果：red|green|blue|pink*/
+
+			/*
+			//修改数组长度
+			var arr1 = [1, 2];
+			arr1.length = 4; // 大于原有长度
+			document.write(arr1); // 输出结果：(4) [1, 2, empty × 2]
+			var arr2 = [1, 2, 3, 4];
+			arr2.length = 2; // 小于原有长度 
+			console.log(arr2); // 输出结果：(2) [1, 2]
+			console.log(arr2[4]);//空元素为undefined*/
+
+			/*
+			//空元素
+			// 情况1：在使用字面量创建数组时出现空元素
+			var arr = [1, 2, , 4];
+			console.log(arr); // 输出结果：(4) [1, 2, empty, 4]
+			// 情况2：在new Array()中传入数组长度的参数
+			var arr = new Array(4);
+			console.log(arr); // 输出结果：(4) [empty × 4]
+			// 情况3：为数组添加索引不连续的元素
+			var arr = [1];
+			arr[3] = 4; // 向数组中添加一个元素，索引为3
+			console.log(arr); // 输出结果：(4) [1, empty × 2, 4]*/
+			
+			//增加或修改数组
+			//如果给定的索引超过了数组中的最大索引，则表示新增元素，否则表示修改元素。
+			var arr = ['blue','black','pink'];
+			arr[3]='white';
+			document.write(arr);
+			arr[1]='green';
+			document.write("更改后为："+arr)
+		</script>
+	</body>
+</html>

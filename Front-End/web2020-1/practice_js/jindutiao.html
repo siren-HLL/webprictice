@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>进度条练习</title>\
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#kuang{
+				margin: 30px auto;
+				border: #0086B3 2px solid;
+				width: 600px;
+				height: 200px;
+			}
+			body{
+				background-color: #001424;
+			}
+			#jindutiao{
+				width: 600px;
+				height: 200px;
+				line-height: 200px;
+				font-size: 60px;
+				color: white;
+				text-align: center;
+				background-color: #00BFFF;
+				animation: jd 10s linear 0s 1 forwards;
+			}
+			@keyframes jd{
+				from{width: 0px;}
+				to{width: 600px;}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="kuang">
+			<div id="jindutiao"></div>
+		</div>
+		<script type="text/javascript">
+			var jindu = {
+				inint: function(){
+					var jindutiao = document.getElementById("jindutiao");
+					var count = 0;
+					var timer = setInterval(function(e){
+						count++;
+						jindutiao.innerHTML=count+"%";
+						if(count == 100){
+							clearInterval(timer);
+							//setTimeout("jiavascript:location.href='p2.html'",1000);
+						}
+					},100);
+				}
+			}
+			jindu.inint();
+		</script>
+	</body>
+</html>

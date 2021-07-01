@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>省市联动</title>
+	</head>
+	<body onload="init()" >
+		<select id="province" onchange="show_city()">
+			<option>请选择省份</option>
+		</select>
+		<select id="city" onchange="show_pc()">
+			<option>请选择城市</option>
+		</select>
+		<div id="s"></div>
+	</body>
+	<script type="text/javascript">
+		var index;
+		var p = document.getElementById("province");
+		var c = document.getElementById("city");
+		
+		var province = new Array("北京","湖南","重庆");
+		var city = new Array();//实例化对象
+		city[0] = new Array("朝阳区","海淀区","雄安新区");
+		city[1] = new Array("长沙市","岳阳市","湘潭市");
+		city[2] = new Array("沙坪坝区","高新区","渝中区");
+		function init(){//初始化下拉列表选项
+			for(var i = 0;i < province.length ; i++){
+				var opt = document.createElement("option");
+				opt.value = opt.text = province[i];
+				p.options.add(opt);
+			}
+		}
+		function show_city(){//选择省份，显示对应城市组
+			index = p.selectedIndex-1;//减去“选择省份”,具体省份的索引对应城市索引
+			for(var a = c.options.length-1 ; a > 0 ; a--){//减去上次显示的城市选项，-1是减去提示语
+				c.options.remove(a);
+			}
+			for(var i=0;i < city[index].length ; i++){//对应省份的具体城市数组city[index]
+				var opt = document.createElement("option");
+				opt.value = opt.text = city[index][i];
+				c.options.add(opt);
+			}
+		}
+		function show_pc(){//选择城市，显示选择的省份城市
+			//alert(index);
+			var index_city = c.selectedIndex - 1;
+			var pp = province[index];//index = p.selectedIndex-1;
+			var cc = city[index][index_city];//具体省份的索引对应城市索引
+			var content = pp+":"+cc;
+			document.getElementById("s").innerHTML = content;//可写标签
+			// document.getElementById("s").innerText = content;仅文本
+			
+		}
+	</script>
+</html>

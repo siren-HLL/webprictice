@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>密码明文</title>
+		<style type="text/css">
+			.box{
+				position: relative;
+				width: 400px;
+				border-bottom: #000000 1px solid;
+				margin: 100px auto;
+			}
+			.box input{
+				width: 370px;
+				height: 30px;
+				border: 0;
+				outline: none;
+			}
+			.box img{
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				top: 5px;
+				right: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<label for=""><img id="eye" src="imgdb/ceye.jpg"></label>
+			<input type="password" name=" " id="pwd"/>
+			<script type="text/javascript">
+				var img = document.getElementById("eye");
+				var pwd = document.getElementById("pwd");
+				
+				var flag = 0;
+				eye.onclick = function(){
+					if(flag == 0){
+						pwd.type = 'text';
+						flag = 1;
+						img.src = "imgdb/eye.jpeg";
+					}else{
+						pwd.type = 'password';
+						flag = 0;
+						img.src = "imgdb/ceye.jpg";
+					}
+					
+				}
+			</script>
+		</div>
+	</body>
+</html>

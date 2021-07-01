@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>克隆测试</title>
+    <style>
+      #box div{
+          width: 100px;
+          height: 100px;
+          display: inline-block;
+          border-radius: 50%;
+          border: 1px solid black;
+          margin-right: 20px;
+      }
+      .on{
+          background-color: blueviolet;
+      }
+    </style>
+    <script src="jquery-1.9.0.js"></script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="box">
+        <div class="on"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script>
+        $(function(){
+            var $ul1 = $("ul").clone().appendTo($("body"));
+            //$("body").append($("ul").clone);//4个
+            $("#box div").click(function(){//点击切换类名
+                $(this).addClass("on").siblings().removeClass("on");
+            })
+        })
+    </script>
+</body>
+</html>

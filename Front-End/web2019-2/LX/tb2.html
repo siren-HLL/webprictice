@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表格的跨行和跨列</title>
+		<style type="text/css">
+			.whole{
+				width:500px;
+				margin: 0 auto;
+				border: 2px solid black;
+				border-collapse: collapse;
+				text-align: center;
+			}
+			.whole th,.whole td{
+				border: 2px solid black;
+				padding:5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<table class="whole">
+				<tr>
+					<th colspan="3">三年级五班学员的语文成绩和数学成绩</th>
+				</tr>
+				<tr>
+					<td rowspan="2">白杨</td>
+					<td>语文</td>
+					<td>98</td>
+				</tr>
+				<tr>
+					<td>数学</td>
+					<td>96</td>
+				</tr>
+				<tr>
+					<td rowspan="2">杨晨</td>
+					<td>语文</td>
+					<td>92</td>
+				</tr>
+				<tr>
+					<td>数学</td>
+					<td>100</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

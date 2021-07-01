@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑","楷体";
+	}
+.qingchu:after{
+		content: '.';
+		height: 0px;
+		display: block;
+		overflow: hidden;
+		visibility: hidden;
+		clear: both;
+	}
+	.whole .lieb p{
+		font-size: 10px;
+		color: #808080;
+	}
+	.ym{
+		width: 750px;
+	}
+.whole .lieb .pic{
+	float: left;
+	margin-right: 10px;
+	padding: 3px;
+	border: 1px solid gray;
+	vertical-align: middle;
+}
+.whole a{
+		color: royalblue;
+		text-decoration: none;
+		font-size: 12px;
+	}
+.whole .lieb {
+	list-style-type: none;
+}
+.whole .lieb li{
+				float: left;
+				width: 200px;
+				border-left: gray dotted 1px;
+				border-bottom: gray dotted 1px;
+				padding-left: 10px;
+				padding-top: 10px;
+				padding-bottom: 20px;
+			}

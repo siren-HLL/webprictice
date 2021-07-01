@@ -1,0 +1,75 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "楷体","微软雅黑";
+}
+.whole .daoh{
+	width: 1000px;
+	background: url(../imglx/title1.jpg)repeat-x left top;
+	margin: 20px auto;
+}
+.qingchu:after{
+	content: '.';
+	overflow: hidden;
+	visibility: hidden;
+	display: block;
+	height: 0px;
+	clear: both;
+}
+.whole .daoh ul{
+	list-style-type: none;
+}
+.whole .daoh ul li{
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+.whole .daoh a{
+	text-decoration: none;
+	color: #000000;
+	display: block;
+}
+.whole .daoh .nav1>li{
+	float: left;
+}
+.whole .daoh .nav1>li:hover>a{
+	color: #008000;
+}
+.whole .daoh .nav2>li{
+	background: url(../imglx/title1.jpg)no-repeat left top;
+}
+.whole .daoh .nav3>li{
+	background: url(../imglx/title21.jpg)no-repeat left top;
+}
+.whole .daoh .nav1 ul{/*一级以下的ul*/
+	display: none;
+}
+.whole .daoh .nav1>li:hover .nav2{
+	display: block;
+}
+.whole .daoh .nav2>li a{
+	color: #FF0000;
+}
+/*.daoh .nav1>li:hover .nav2>li>a{
+	color: #FF0000;
+}老师*/
+/*.daoh .erji>li:hover{
+	position: relative;
+}老师*/
+.whole .daoh .nav2>li{
+	position: relative;
+}
+.whole .daoh .nav2>li:hover .nav3{
+	display: block;
+	position: absolute;
+	left: 100px;
+	top: 0px;
+}/*.whole .daoh .nav3{
+	position: absolute;
+	left: 100px;
+	top: 0px;
+}自己*/
+.whole .daoh .nav2>li:hover .nav3>li a{
+	color: #FFFFFF;
+}

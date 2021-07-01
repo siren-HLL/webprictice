@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>人人网注册页面</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: "楷体","微软雅黑";
+			}
+			.whole{
+				width: 840px;
+				margin: 20px auto;
+			}
+			.qingchu:after{
+				content: '.';
+				height: 0;
+				display: block;
+				visibility: hidden;
+				overflow: hidden;
+				clear: both;
+			}
+			#header{
+				margin: 5px 5px 15px 0px;
+			}
+			#header .tb{
+				width: 500px;
+				float: left;
+			}
+			#header .tb .rrtp{
+				margin-right: 10px;
+				vertical-align: middle;
+			}
+			#header .dll{
+				float: right;
+				color: gray;
+			}
+			#section{
+				float: left;
+				border: #808080 solid 1px;
+				height: 550px;
+				width: 500px;
+			}
+			#section h3{
+				margin: 20px 20px 20px 10px;
+			}
+			#section div{
+				margin-bottom: 18px;
+			}
+			#section .zcwz,#section .yanzm,#section .tj{
+				margin-left: 135px;
+			}
+			#section .yanzm .yzmtp{
+				vertical-align: middle;
+				margin-right: 10px;
+			}
+			#section .tj button{
+				border: none;
+				background: white;
+			}
+			#section label{
+				display: inline-block;
+				width: 120px;
+				text-align: right;
+				margin-right: 15px;
+			}
+			#navbar{
+				float: left;
+				border: #808080 solid 1px;
+				height: 550px;
+				width: 330px;
+				background: rgb(246,247,248);
+			}
+			#navbar .tbar{
+				color: darkgrey;
+				margin: 40px 20px 40px 30px;
+			}
+			#navbar .tbar h1{
+				margin-bottom: 15px;
+			}
+			#navbar .tbar span{
+				color: forestgreen;
+				font-size: 25px;
+			}
+			#navbar ul{
+				list-style-type: none;
+			}
+			#navbar .tpbar h3{
+				margin-left: 10px;
+			}
+			#navbar .top{
+				margin-bottom: 20px;
+			}
+			#navbar ul li{
+				float: left;
+				margin: 15px;
+			}
+			#navbar ul a{
+				text-decoration: none;
+				color: #000000;
+			}
+			#navbar p.ljmz{
+				text-align: center;
+			}
+			#footer{
+				float: right;
+				margin-top: 20px;
+				margin-right: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="whole qingchu">
+			<div id="header" class="qingchu">
+				<div class="tb"><h3><img class="rrtp" src="img2/logo.gif" alt="人人网"/>10秒找到你所有朋友</h3></div>
+				<div class="dll"><h3 class="yydl">已有人人网账号，<a href="#" target="_blank">登录</a></h3></div>
+			</div>
+			<div id="section" class="qingchu">
+				<h3>免费开通人人网账号</h3>
+				<div class="signup">
+					<form action="" method="post" name="zhuche">
+						<div class="semail">
+							<label for="zcyx">注册邮箱：</label><input type="email" name="zcyx" id="zcyx" size="35"/>
+						</div>
+						<div class="zcwz"><p>你还可以使用<a href="#">账号</a>注册或者<a href="#">手机号</a>注册</p></div>
+						<div class="spassword">
+							<label for="mim">创建密码：</label><input type="password" name="mim" id="mim" size="35"/>
+						</div>
+						<div class="sname">
+							<label for="xm">真实姓名：</label><input type="text" name="xm" id="xm" size="35"/>
+						</div>
+						<div class="gender">
+							<label>性别: &nbsp;</label><input type="radio" name="sex" value="men" checked="checked"/>男&nbsp; &nbsp; <input type="radio" name="sex" value="women"/>女
+						</div>
+						<div class="sbirth">
+							<label >生日: &nbsp;</label>
+							<select name="year" >
+							<option value="90">1990</option>
+							<option value="91" selected="selected">1991</option>
+							<option value="92">1992</option>
+						</select>年
+						<select name="month" >
+							<option value="Oct" selected="selected">10</option>
+							<option value="Nov">11</option>
+							<option value="Dec">12</option>
+						</select>月
+						<select name="day">
+							<option value="29">29</option>
+							<option value="20" >30</option>
+							<option value="31" selected="selected">31</option>
+						</select>日</div>
+						<div class="now">
+							<label>我现在: &nbsp;</label>
+							<select name="situation" >
+								<option value="study" selected="selected">正在上学</option>
+								<option value="work" >已毕业</option>
+							</select></div>
+							<div class="yanzm">
+								<img class="yzmtp" src="img2/verycode.gif" alt="无法显示,请刷新"/>
+								<a href="#">看不清换一张？</a>
+							</div>
+							<div class="yanzm2">
+								<label for="yz">验证码：</label><input type="text" name="yz" id="yz" size="20"/>
+							</div>
+							<div class="tj">
+								<button type="submit"><img src="img2/btn_reg.gif"/></button>
+							</div>
+					</form>
+				</div>
+			</div>
+			<div id="navbar" class="qingchu">
+				<div class="tbar">
+					<h1>你知道吗？</h1>
+					<h3>人人网是中国<span>最大</span>的SNS社区</h3>
+					<h3>平均每人找到<span>105位</span></h3>
+				</div>
+				<div class="tpbar">
+					<div class="top qingchu">
+						<h3>最热门公共主页</h3>
+						<ul class="lieb1">
+							<li>
+								<p class="ljmz"><a href="#" target="_blank"><img src="img2/icon_zhaowei.gif" alt="赵薇"/></a></p>
+								<p class="ljmz"><a href="#" target="_blank">赵薇</a></p>
+							</li>
+							<li>
+								<p><a href="#" target="_blank"><img src="img2/icon_likaifu.gif" alt="李开复"/></a></p>
+								<p class="ljmz"><a href="#" target="_blank">李开复</a></p>
+							</li>
+							<li>
+								<p><a href="#" target="_blank"><img src="img2/icon_shangjie.gif" alt="商界"/></a></p>
+								<p class="ljmz"><a href="#" target="_blank">商界</a></p>
+							</li>
+						</ul>
+					</div>
+					<div class="sub qingchu">
+						<h3>最热门游戏</h3>
+						<ul class="lieb2">
+							<li>
+								<p><a href="#" target="_blank"><img src="img2/icon_xxzz.gif" alt="小小战争"/></a></p>
+								<p class="ljmz"><a href="#" target="_blank">小小战争</a></p>
+							</li>
+							<li>
+								<p><a href="#" target="_blank"><img src="img2/icon_rrnc.gif" alt="人人农场"/></a></p>
+								<p class="ljmz"><a href="#" target="_blank">人人农场</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="footer" class="qingchu">
+				<p>点击免费开通账号表示同意并遵守<a href="#" target="_blank">人人服务条款</a></p> 
+			</div>
+		</div>
+	</body>
+</html>

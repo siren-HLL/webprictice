@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .glyphicon{
+            display: none;
+        }
+        .glyphicon-ok{
+            color:green;
+        }
+        .glyphicon-remove{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+            <form class="form-horizontal" id="signupForm">
+                <!--email-->
+                <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email">
+                    </div>
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </div>
+
+                <!--username-->
+                <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">username</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="username" placeholder="username" name="username">
+                    </div>
+                </div>
+
+                <!--password-->
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                    </div>
+                </div>
+                <!--confirm_password-->
+                <div class="form-group">
+                    <label for="confirm_password" class="col-sm-2 control-label">confirm_password</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="confirm_password" placeholder="confirm_password" name="confirm_password">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Sign in</button>
+                    </div>
+                </div>
+            </form>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+            $("#signupForm").validate({
+                rules: {
+                    username: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 5
+                    },
+                    confirm_password: {
+                        required: true,
+                        minlength: 5,
+                        equalTo: "#password"
+                    }
+                },
+                messages: {
+                    username: "请输入姓名",
+                    email: {
+                        required: "请输入Email地址",
+                        email: "请输入正确的email地址"
+                    },
+                    password: {
+                        required: "请输入密码",
+                        minlength: "密码不能小于5个字 符",
+        },
+                    confirm_password: {
+                        required: "请输入确认密码",
+                        minlength: "确认密码不能小于5个字符",
+                        equalTo: "两次输入密码不一致"
+            }
+                    }
+        });
+
+        $("#inputEmail").on("change",function () {
+            var data = $(this).serialize();
+            console.log(data);
+            $(".glyphicon").hide();
+            if($("#inputEmail").valid()){
+                $.ajax({
+                    "url":"http://172.19.148.100:9999/dvd1.0/InfoValidateServlet",
+                    "type":"POST",
+                    "data":data,
+                    "success":function (rs) {
+                        console.log(rs);
+                        if(rs == "false"){
+                            $(".glyphicon-remove").show();
+                        }else{
+                            $(".glyphicon-ok").show();
+                        }
+                    }
+                })
+            }
+        })
+
+    })
+</script>
+</body>
+</html>

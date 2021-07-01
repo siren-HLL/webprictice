@@ -1,0 +1,329 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+@font-face {
+	font-family:"myfont";
+	src: url("../font/.otf");
+} 
+.whole{
+	margin: 0 auto;
+	width: 320px;
+	height: 520px;
+	position: relative;
+	overflow: hidden;
+}
+.pagebox{
+	transition: 0.5s;
+}
+.page{
+	position: relative;
+	width: 320px;
+	height: 520px;
+	overflow: hidden;
+	color: rgb(124, 0, 0);
+	font-family: "myfont";
+}
+#jiantou{
+	position: absolute;
+	top: 480px;
+	left: 150px;
+	animation: jiantou 1s linear 0s infinite;
+	z-index: 400;
+}
+@keyframes jiantou{
+	/* 0%{top: 490px;opacity: 1;}
+	50%{top: 480px;opacity: 1;}
+	100%{top: 490px;opacity: 1;} */
+	0%{top: 490px;}
+	50%{top: 480px;}
+	100%{top: 490px;}
+}
+#music{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	z-index: 700;
+	animation: yinfu 2s linear 0s infinite;
+}
+@keyframes yinfu{
+	from{transform: rotate(0deg);}
+	to{transform: rotate(360deg);}
+}
+
+/* p1 */
+#whole1{
+	background: url(../img/p1_loading.png)no-repeat;
+}
+#qizhong{
+	position: absolute;
+	top: 150px;
+	left: 160px;
+	animation: qz 3s linear 0s infinite;
+}
+@-webkit-keyframes qz {
+	0% {opacity: 0;height: 60px;}
+	25% {opacity: 0.75;height: 45px;}
+	50% {opacity: 0.5;height: 30px;}
+	75% {opacity: 0.25;height: 15px;}
+	100% {opacity: 1;height: 0px;}
+}
+#qiyou{
+	position: absolute;
+	top: 185px;
+	left: 150px;
+	animation: qy 1.5s linear 1s infinite;
+}
+@keyframes qy{
+	0%{opacity: 0;height: 26px;}
+	25%{opacity: 0.75;height: 20px;}
+	50%{opacity: 0.5;height: 13px;}
+	100%{opacity: 1;height: 0px;}
+}
+#qizuo{
+	position: absolute;
+	top: 175px;
+	left: 180px;
+	animation: qzuo 1.5s linear 1.5s infinite;
+}
+@keyframes qzuo{
+	0%{opacity: 0;height: 39px;}
+	25%{opacity: 0.75;height: 30px;}
+	50%{opacity: 0.5;height: 20px;}
+	100%{opacity: 1;height: 0px;}
+}
+#load{
+	position: absolute;
+	top: 320px;
+	left: 110px;
+	text-align: center;
+	font-size: 24px;
+	animation: dian 2s linear 0s infinite;
+	overflow: hidden;
+}
+@keyframes dian{
+	0%{width: 110px;}
+	/* 50%{width: 110px;} */
+	100%{width: 130px;}
+}
+#jindutiao{
+	position: absolute;
+	top: 350px;
+	left: 150px;
+	text-align: center;
+	font-size: 20px;
+}
+
+/* p2 */
+#whole2{
+	background: url(../img/p2_bg.png)no-repeat;
+}
+#huangjiu{
+	position: absolute;
+	top: 130px;
+	left: 180px;
+	transform-origin: 140px 190px;/* 左上 */
+	animation: gongzhuan 10s linear 0s infinite;
+}
+#bingtang{
+	position: absolute;
+	top: 390px;
+	left: 150px;
+	transform-origin: 170px -70px;
+	animation: gongzhuan 10s linear 0s infinite;
+}
+#bajiao{
+	position: absolute;
+	top: 160px;
+	left: 400px;
+	transform-origin: -80px 160px;
+	animation: gongzhuan 10s linear 0s infinite;
+}
+#meatp2{
+	position: absolute;
+	top: 400px;
+	left: 400px;
+	transform-origin: -80px -80px;
+	animation: gongzhuan 10s linear 0s infinite;
+}
+#dacong{
+	position: absolute;
+	top: 180px;
+	left: 60px;
+	transform-origin: 260px 140px;
+	animation: gongzhuan 10s linear 0s infinite;
+}
+@keyframes gongzhuan{
+	from{transform: rotate(0deg);}
+	to{transform: rotate(360deg);}
+}
+.zizhuan{
+	animation: zizhuan 5s linear 0s infinite;
+	z-index: 100;
+}
+@keyframes zizhuan{
+	from{transform: rotate(0deg);}
+	to{transform: rotate(360deg);}
+}
+.textp2{
+	margin-left: 10px;
+	margin-top: 130px;
+}
+.ljzf{
+	position: absolute;
+	top: 450px;
+	left: 130px;
+}
+
+/*p3*/
+#whole3{
+	background: url(../img/p3_bg.png) no-repeat;
+}
+#yangtu1{
+	display: block;
+}
+.yangtu{
+	position: absolute;
+	top: 150px;
+	right: 0px;
+	z-index: 3;
+	display: none;
+}
+.fgk{/*按钮组*/
+	position: absolute;
+	z-index: 1;
+	display: inline-block;
+	width: 73px;
+	height: 66px;
+}
+#anniu{
+	position: absolute;  /*按钮组的定位*/
+	top: 390px;
+	left: 30px;
+}
+.ann{
+	border: 1px solid green;   /*按钮的边框线*/
+}
+/*按钮1*/
+#anniu1{
+	position: absolute;
+	z-index: 6;
+}
+#faguang1{
+	box-shadow: 0px 0px 20px #d2f767;
+}
+/*按钮2*/
+#anniu2{
+	position: absolute;
+	z-index: 6;
+	left: 90px;
+}
+#faguang2{
+	left: 90px;
+	box-shadow: 0px 0px 20px #d2f767;
+	display: none;
+}
+/*按钮3*/
+#anniu3{
+	position: absolute;
+	z-index: 6;
+	left: 180px;
+}
+#faguang3{
+	left: 180px;
+	box-shadow: 0px 0px 20px #d2f767;
+	display: none;
+}
+/*文字组*/
+.wenzi{
+	position: absolute;
+	z-index: 4;
+	width: 280px;
+	font-size: 20px;
+	/* font-weight: bold; */
+	left: 25px;
+}
+/* .luokuan{
+	font-size: 14px;
+	text-align: right;
+} */
+#text1{
+	display: block;
+	top: 120px;
+}
+#text2{
+	display: none;
+	top: 120px;
+}
+#text3{
+	display: none;
+	top: 120px;
+}
+#text1 .top3-1{
+	font-size: 28px;
+	margin-bottom: 50px;
+}
+#text2 .top3-2{
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+#text3 .top3-3{
+	font-size: 24px;
+	margin-bottom: 40px;
+}
+.luokuan{
+	text-align: right;
+}
+
+/*p4*/
+#whole4{
+	background: url(../img/p4_bg.png)no-repeat;
+}
+#textp4{
+	margin: 50px auto;
+	width: 290px;
+	text-align: left;
+	text-indent: 2em;
+	line-height: 26px;
+}
+#textp4 h3{
+	text-align: center;
+	margin-bottom: 20px;
+}
+#textp4 .zz{
+	text-align: right;
+}
+#qizhong1{
+	position: absolute;
+	top: 250px;
+	left: 160px;
+	animation: qz 2s linear 0s infinite;
+}
+#qizuo1{
+	position: absolute;
+	top: 270px;
+	left: 145px;
+	animation: qzuo 2s linear 1s infinite;
+}
+#qiyou1{
+	position: absolute;
+	top: 285px;
+	left: 183px;
+	animation: qy 3s linear 1.5s infinite;
+}
+#jiantou1{
+	position: absolute;
+	width: 120px;
+	top: 460px;
+	left: 110px;
+	text-align: center;
+}
+#ljzf1{
+	color: darkgreen;
+}
+#jt{
+	margin-left: 10px;
+	width: 14px;
+	height: 14px;
+	vertical-align: middle;
+}

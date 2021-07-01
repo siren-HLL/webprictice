@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单操作02</title>
+		<style type="text/css">
+			.whole{
+				width: 400px;
+				margin: 50px auto;
+				border: 2px solid gray;
+				padding: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="whole">
+			<form>
+				<label for="userName">姓名:</label><input type="text" name="Name" id="Name" placeholder="请输入姓名" size="16" autofocus="autofocus"/><br/>
+				<label>性别:</label>男<input type="radio" name="sex" value="men" checked="checked"/>&nbsp; &nbsp; &nbsp; &nbsp;女<input type="radio" name="sex" value="women"/><br/>
+				<label>爱好:</label>电影<input type="checkbox" name="interest" value="movie" checked="checked"/>&nbsp; &nbsp; &nbsp; &nbsp;音乐<input type="checkbox" name="interest" value="music"/>&nbsp; &nbsp; &nbsp; &nbsp;阅读<input type="checkbox" name="interest" value="reading"/>&nbsp; &nbsp; &nbsp; &nbsp;画画<input type="checkbox" name="interest" value="paint"/><br/>
+				<label>请选择省份:</label>
+				<select name="province" >
+					<option value="hn" selected="selected">湖南</option>
+					<option value="cq" >重庆</option>
+					<option value="tw"disabled="disabled" id="tw">台湾</option>
+					<option value="sc">四川</option>
+					<option value="jz">浙江</option>
+				</select><br/>
+				<label>日期:</label>
+				<select name="date" >
+					<optgroup label="--工作日--">
+						<option value="Monday" selected="selected">星期一</option>
+						<option value="tuesday" >星期二</option>
+						<option value="wednesday">星期三</option>
+						<option value="thursday">星期四</option>
+						<option value="friday">星期五</option>
+					</optgroup>
+					<optgroup label="--休息日--">
+						<option value="Monday" >星期六</option>
+						<option value="tuesday" >星期天</option>
+					</optgroup>
+					<optgroup label="--节假日--" disabled="disabled" id="jjr">
+						<option value="NewYear" >春节</option>
+						<option value="MayDay" >劳动节</option>
+					</optgroup>
+				</select><br/>
+				<label>特别备注:</label><button type="button" value="节假日" onclick="jiejiar();">节假日</button>&nbsp; &nbsp; &nbsp; &nbsp;<button type="button" value="台胞" onclick="shengf();">台胞</button><br/>
+				<button type="submit" value="提交内容">提交</button><br/>
+				<button type="reset" value="重置内容">重置</button><br/>
+				<button type="submit" value="提交内容"><img src="./img06/0006.jpg" width="40px" height="30px"></button><br/>
+				<button type="button" value="普通按钮" onclick="alert('快乐学习')">小tips</button><br/>
+			</form>
+		</div>
+	</body>
+</html>
+<script>
+	function shengf()
+	{
+		var taiw=document.getElementById('tw')
+		taiw.removeAttribute("disabled")
+	}
+	function jiejiar()
+	{
+		var jr=document.getElementById('jjr')
+		jr.removeAttribute("disabled")
+	}
+</script>
+

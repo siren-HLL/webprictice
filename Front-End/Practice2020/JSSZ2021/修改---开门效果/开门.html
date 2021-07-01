@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>demo4-7</title>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+.beij{
+	background: url(images/logo.jpg) no-repeat center;
+	background-size: 50% 50%;
+	width: 388px;
+	height: 453px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	animation: 5s fdbei linear forwards 5s;
+}
+.cls:after{
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	overflow: hidden;
+	clear: both;
+}
+#zuo{
+	float: left;
+	background: url(images/meng1.jpg) no-repeat left bottom;
+	width: 194px;
+	height: 453px;
+	animation: 10s mydong1 linear forwards;
+}
+#you{
+	float: left;
+	background: url(images/meng.jpg) no-repeat left bottom;
+	width: 194px;
+	height: 453px;	
+	animation: 10s mydong linear forwards;
+}
+.hua img{
+	width: 100px;
+	height: 150px;
+	
+}
+.hua{
+	position:absolute;
+	left: 0px;
+	bottom: 0px;
+}
+.hua #zuoh{
+	float: left;
+	padding-left: 40px;
+	animation: 10s hdong1 linear forwards 1s;
+	/*animation-delay: 2s;*/
+}
+.hua #youh{
+	float: left;
+	padding-left: 40px;
+	margin-left: 80px;
+	animation: 10s hdong linear forwards 1s;
+	/*animation-delay: 2s;*/
+}
+@keyframes mydong{
+	from{ transform: translateX(0px);
+    transform-origin: right ;}
+	to{transform: translateX(194px);
+	transform-origin: right ;}
+}
+@keyframes mydong1{
+	from{ transform: translateX(0px);
+    transform-origin: left ;}
+	to{transform: translateX(-194px);
+	transform-origin: left ;}
+}
+@keyframes hdong{
+	from{ transform: translateX(0px);
+    transform-origin: right ;}
+	to{transform: translateX(194px);
+	transform-origin: right ;}
+}
+@keyframes hdong1{
+	from{ transform: translateX(0px);
+    transform-origin: left ;}
+	to{transform: translateX(-194px);
+	transform-origin: left ;}
+}
+@keyframes fdbei{
+	from{background-size: 50% 50%;
+	  opacity: 1;}
+	to{background-size: 200% 200%;
+	  opacity: 0;
+		
+	}
+}
+</style>
+</head>
+
+<body>
+<div class="beij">
+  <div class="men cls">
+	  <div id="zuo">
+	  </div>
+ 	  <div id="you">
+	  </div>
+	</div>
+	<div class="hua cls">
+		<div id="zuoh">
+			<img src="images/hu.png" />
+	    </div>
+ 	    <div id="youh">
+ 	    	<img src="images/hu.png" />
+	    </div>
+	</div>
+</div>
+</body>
+</html>

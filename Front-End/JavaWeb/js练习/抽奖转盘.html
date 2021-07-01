@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>抽奖转盘</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#whole{
+				margin: 0 auto;
+				width: 800px;
+			}
+			#wheelBox{
+				position: relative;
+			}
+			#smallCircle{/* 指针 */
+				position: absolute;
+				top: 270px;
+				left: 280px;
+			}
+			#smallCirclePic{
+				display: block;
+			}
+			#bigCirclePic{
+				display: block;
+				/* animation-play-state: paused; */
+				/* animation: autogiration 5s linear 0s infinite paused; */
+			}
+			.initialRotate{
+				animation: autogiration 4s linear 0s infinite;
+			}
+			@keyframes autogiration{/* 初始转动 */
+				from{transform: rotate(0deg);}
+				to{transform: rotate(360deg);}
+			}
+			@keyframes autogiration1{
+				from{transform: rotate(0deg);}
+				to{transform: rotate(45deg);}
+			}
+			@keyframes autogiration2{
+				from{transform: rotate(0deg);}
+				to{transform: rotate(135deg);}
+			}
+			@keyframes autogiration3{
+				from{transform: rotate(0deg);}
+				to{transform: rotate(225deg);}
+			}
+			@keyframes autogiration4{
+				from{transform: rotate(0deg);}
+				to{transform: rotate(295deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="whole">
+			<div id="wheelBox">
+				<div id="bigCircle">
+					<img id="bigCirclePic" src="./Pictures/底盘.png" alt="底盘">
+					<div id="smallCircle" onclick="lottery()">
+						<img id="smallCirclePic" src="./Pictures/指针.png" alt="指针">
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var bigCirclePic = document.getElementById("bigCirclePic");
+			var bigCircle = document.getElementById("bigCircle");
+			var smallCircle = document.getElementById("smallCirle");
+			var lotteryStart;
+			
+			function lottery(){
+				bigCirclePic.className = "initialRotate";
+				lotteryStart = setTimeout(autogirationStop,8000);
+			}
+			
+			function autogirationStop(){
+				bigCirclePic.className = "";
+				var index = Math.floor(Math.random()*5+1);
+				switch(index){
+					case 1:
+						bigCirclePic.style.animation = "autogiration1 2s linear 0s 1 forwards";
+						setTimeout("javascript:alert('恭喜你获得一等奖')",2000);
+						break;
+					case 2:
+						bigCirclePic.style.animation = "autogiration2 2s linear 0s 1 forwards";
+						setTimeout("javascript:alert('谢谢惠顾，请不要灰心哟~')",2000);
+						break;
+					case 3:
+						bigCirclePic.style.animation = "autogiration3 2s linear 0s 1 forwards";
+						setTimeout("javascript:alert('恭喜你获得三等奖')",2000);
+						break;
+					case 4:
+						bigCirclePic.style.animation = "autogiration4 2s linear 0s 1 forwards";
+						setTimeout("javascript:alert('恭喜你获得二等奖')",2000);
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>

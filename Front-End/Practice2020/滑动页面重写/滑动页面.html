@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>滑动</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.whole{
+				width: 320px;
+				height: 520px;
+				overflow: hidden; 
+			}
+			.pages-box{
+				transition: 0.5s;
+			}
+			.page{
+				width: 320px;
+				height: 520px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="whole">
+			<div class="pages-box">
+				<div class="page page1" style="background: skyblue;display: block;">第一页
+						
+				</div>
+	            <div class="page page2" style="background: pink;">第二页</div>
+	            <div class="page page3" style="background: burlywood;">第三页</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/滑动.js" ></script>
+	</body>
+</html>

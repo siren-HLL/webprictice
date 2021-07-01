@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>搜索测试</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#testbox{
+				margin-left: 40px;
+				margin-top: 20px;
+			}
+			#content{
+				height: 35px;
+				line-height: 35px;
+				width: 250px;
+			}
+			#searching{
+				height: 35px;
+				line-height: 35px;
+				width: 60px;
+				vertical-align: middle;
+			}
+			ul{
+				margin-left: 30px;
+				margin-top: 15px;
+				width: 250px;
+				cursor: pointer;
+			}
+			ul li{
+				height: 30px;
+				line-height: 30px;
+			}
+			.current{
+				color: white;
+				background-color: #204D74;
+				opacity: 0.7;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="testbox">
+			<!-- autocomplete防止input自动补全 -->
+			<input type="text"  name="title" id="content" autocomplete="off"/>
+			<button id="searching">搜索</button>
+			<ul></ul>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(function(){
+				var $content = $("#content");
+				var $ul = $("ul");
+				$content.on("keyup",function(event){
+					var data = $content.serialize();
+					console.log(data);
+					if(event.keyCode == 40){
+						//光标向下
+						//var index = $(".current"）.index();
+						if($("li").length != 0){
+						var $current = $(".current").next();
+						if($current.length !=0){
+							$current.addClass("current").siblings().removeClass("current");
+							$content.val($current.text());
+						}
+						$ul.css("display","block");
+						}
+						
+					}else if(event.keyCode == 38){
+						// 光标向上
+						if($("li").length != 0){
+						var $current = $(".current").prev();
+						if($current.length != 0){
+							$current.addClass("current").siblings().removeClass("current");
+							$content.val($current.text());
+						}
+						$ul.css("display","block");
+						}
+					}else{
+						$.ajax({
+							"url":"http://localhost:8087/dvd1.0/SearchingServlet",
+							"type":"POST",
+							"data":data,
+							"success":function(result){
+									$ul.empty();
+									if(result != ""){
+										result = eval("("+result+")")
+										console.log(result);
+										$ul.css("display","block");
+										for(var i=0;i<result.length;i++){
+											$("<li>").text(result[i].title)
+												.appendTo($ul);
+									}
+									$("li:first").addClass("current");
+									if(event.keyCode != 8){//防止删除不掉
+										$content.val($(".current").text());
+									}
+								}
+							}
+						})
+					}
+				})
+				$ul.on("dblclick",function(){
+					$ul.css("display","none");
+				})
+			})
+		</script>
+	</body>
+</html>

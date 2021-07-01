@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BootstrapTable</title>
+    <link rel="stylesheet" href="BootStrap3/css/bootstrap.min.css" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.0.0/jquery.js"></script>
+    <script src="./BootStrap3/js/bootstrap.min.js"></script> 
+    <style type="text/css">
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        .dropdown-icon{
+            border: 1px solid black;
+            display: inline-block;
+            margin-left: 15px;
+            padding: 3px 5px 3px 5px;
+            position: relative;
+        }
+        .dropdown{
+            position: absolute;
+            list-style: none;
+            width: 120px;
+            background-color: lightgray;
+            text-align: center;
+            padding: 5px;
+            display: none;
+        }
+        .dropdown li{
+            height: 30px;
+            line-height: 30px;
+        }
+        .template{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-responsive"> 
+        <table class="table table-bordered">
+        <thead>
+            <tr class="test">
+                <!-- <th>hello
+                    <div class="dropdown-icon">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                        <ul class="dropdown">
+                            <li>升序排序</li>
+                            <li>降序排序</li>
+                            <li><input type="text" class="form-control"></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>hello</th>
+                <th>hello</th>
+                <th>hello</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    </div>
+    
+    <div class="template">
+        <div class="template dropdown-icon">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+                <ul class="dropdown">
+                <li>升序排序</li>
+                <li>降序排序</li>
+                <li><input type="text" class="form-control"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var temp = [{"name":"siren","age":"20","gender":"female"},
+                    {"name":"dawn","age":"19","gender":"female"},
+                    {"name":"ocean","age":"20","gender":"male"}
+            ]
+        $(function(){
+            $.each(temp[0],function(key, value) { 
+                $("<th>").text(key).appendTo(".test").addClass("testth")
+            })
+            $(".template .dropdown-icon")
+                .clone()
+                .removeClass("template")
+                .appendTo($(".testth"));
+            $(".dropdown-icon").on("click",function(e){
+                e.stopPropagation();
+                $(this).find(".dropdown").show()
+            })
+            $(document).on("click",function(){
+               $(".dropdown").hide();
+            })
+
+            for(var i=0 ;i<temp.length;i++){
+                $("<tr></tr>")
+                    .append($("<td></td>").text(temp[i].name))
+                    .append($("<td></td>").text(temp[i].age))
+                    .append($("<td></td>").text(temp[i].gender))
+                    .appendTo($("tbody"))
+                    .css("height","40px")
+            }
+        })
+    </script>
+</body>
+</html>  

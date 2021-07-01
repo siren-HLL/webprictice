@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+		<script type="text/javascript" src="./js/h5.js"></script>
+		<link rel="stylesheet" href="./css/h5.css"/>
+		<style type="text/css">
+			.bg{
+				background: url(img/jisuanqibg.png)no-repeat;
+			}
+		</style>
+		<title>健康值计算器</title>
+		<!--上班族页面-->
+	</head>
+	<body>
+		<div class="bg">
+			<audio id="clickm" src="./media/click.mp3" ></audio>
+			<audio id="bgm" src="./media/bgm.mp3" loop="loop" autoplay="autoplay"></audio>
+			<div id="music" onclick="mplay()"><img id="yinf" class="yinfzh" src="img/yinfu.png" width="40px" height="33px"/></div>
+			<div id="fhtb"><img id="fhtp"  src="img/fh.png" style="width: 40px; height: 40px;" onclick="return_jisuan()"/></div>
+			<!--计算器-->
+			<div class="start" id="start"></div>
+			<div class="first">
+				<img onclick="jiayuansu(1)" id="img1" class="yibai" src="img/dadou.png" />
+				<img onclick="jiayuansu(2)"  id="img2" class="yibai" src="img/lvdou.png" />
+				<img  onclick="jiayuansu(3)"  id="img3" class="yibai" src="img/hongdou.png" />
+				<img onclick="javascript:location.reload() " src="img/ac.png" />
+			</div>
+			<div class="first1">
+				<img class="yibai" src="img/dadou2.png" />
+				<img class="yibai" src="img/lvdou2.png" />
+				<img class="yibai" src="img/hongdou2.png" />
+				<img src="img/ac2.png" />
+			</div>
+			<div class="second">
+				<img onclick="jiayuansu(4)" id="img4" class="yibai" src="img/daozi.png" />
+				<img onclick="jiayuansu(5)" id="img5" class="yibai" src="img/yumijian.png" />
+				<img onclick="jiayuansu(6)"  id="img6" class="yibai" src="img/heidou.png" />
+				<img onclick="jiafafu()" src="img/jia.png" />
+			</div>
+			<div class="second1">
+				<img class="yibai" src="img/daozi2.png" />
+				<img class="yibai" src="img/yumi2.png" />
+				<img class="yibai" src="img/heidou2.png" />
+				<img src="img/jia2.png" />
+			</div>
+			<div class="third">
+				<img id="img7" onclick="jiayuansu(7)" class="wushi" src="img/sushi.png" />
+				<img onclick="jiayuansu(8)" id="img8" class="wushi" src="img/mifen.png" />
+				<img onclick="jiayuansu(9)" id="img9" class="wushi" src="img/jianbing.png" />
+				<img id="denghao" onclick="denghaoyubaogao()" src="img/dengyu.png" id="jiah1" class="jiah1"/>
+			</div>
+			<div class="third1">
+				<img class="wushi" src="img/sushi2.png" />
+				<img class="wushi" src="img/mifen2.png" />
+				<img class="wushi" src="img/jianbing2.png" />
+				<img src="img/dengyu2.png" />
+			</div>
+			<div id="heibg" onclick="javascript:location.reload() ;"></div>
+			<div id="bgname" >张三</div>
+			<div id="bgscore" >100</div>
+			<div id="bggrade" >良</div>
+			<div id="bgdisc" ></div>
+		</div>
+	</body>
+</html>

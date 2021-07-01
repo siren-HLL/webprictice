@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>综合网页练习</title>
+		<link rel="stylesheet" href="./css/hw.css" />
+	</head>
+	<body>
+		<div id="wraper">
+			<div id="whole">
+				<!-- 图片轮播 -->
+				<div id="lbbox">
+					<ul id="lbul">
+						<li onmouseover="show_current_pic(1)" onmouseout="lbgoon()"><img class="lbpic" src="./img/11.jpg"/></li>
+						<li onmouseover="show_current_pic(2)" onmouseout="lbgoon()"><img class="lbpic" src="./img/12.jpg"/></li>
+						<li onmouseover="show_current_pic(3)" onmouseout="lbgoon()"><img class="lbpic" src="./img/13.jpg"/></li>
+						<li onmouseover="show_current_pic(4)" onmouseout="lbgoon()"><img class="lbpic" src="./img/14.jpg"/></li>
+						<li onmouseover="show_current_pic(5)" onmouseout="lbgoon()"><img class="lbpic" src="./img/15.jpg"/></li>
+					</ul>
+					<div id="lbbot">
+						<span class="on" onmouseover="show_current_pic(1)" onmouseout="lbgoon()">1</span>
+						<span onmouseover="show_current_pic(2)" onmouseout="lbgoon()">2</span>
+						<span onmouseover="show_current_pic(3)" onmouseout="lbgoon()">3</span>
+						<span onmouseover="show_current_pic(4)" onmouseout="lbgoon()">4</span>
+						<span onmouseover="show_current_pic(5)" onmouseout="lbgoon()">5</span>
+					</div>
+				</div>
+				
+				<!-- 无缝循环 -->
+				<div id="scroll">
+					<div id="scrollbox">
+						<div id="part1" class="qingchu">
+							<a href="#" class="scnr">1.招生简讯</a>
+							<a href="#" class="scnr">2.10月处分公示</a>
+							<a href="#" class="scnr">3.2020年奖学金评定公示</a>
+							<a href="#" class="scnr">4.2020年国家助学金公示</a>
+							<a href="#" class="scnr">5.特大喜讯：我校19级同学获得...</a>
+							<a href="#" class="scnr">6.教务处人事变动公示</a>
+						</div>
+						<div id="part2" class="qingchu"></div>
+					</div>
+				</div>
+				
+				<!-- 导航条 -->
+				<nav>
+					<ul id="first">
+						<li onclick="fhsy()"><a href="#">首页</a></li>
+						<li id="nav2" onmouseover="onOver(this)" onmouseout="onMove(this)"><a href="#">学校简介</a>
+							<ul class="second">
+								<li ><a href="#">学校文化</a></li>
+								<li ><a href="#">学校师资</a></li>
+								<li ><a href="#">学生发展</a></li>
+							</ul>
+						</li>
+						<li onmouseover="onOver(this)" onmouseout="onMove(this)"><a href="#">教务管理</a>
+							<ul class="second">
+								<li ><a href="#">继续教育</a></li>
+								<li ><a href="#">高职教育</a></li>
+								
+							</ul>
+						</li>
+						<li onmouseover="onOver(this)" onmouseout="onMove(this)"><a href="#">学生管理</a>
+							<ul class="second">
+								<li ><a href="#">文化生活</a></li>
+								<li ><a href="#">图情管理</a></li>
+								<li ><a href="#">讲座信息</a></li>
+							</ul>
+						</li>
+						<li onmouseover="onOver(this)" onmouseout="onMove(this)" ><a href="#">小工具</a>
+							<ul id="second2">
+								<li id="jsq" onclick="timerxs()">计时器</li>
+								<li id="jisuanq" onclick="jisuanqixs()">计算器</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				
+				<!-- 选项卡 -->
+				<div id="xxbar">
+					<div id="topbar" class="qingchu">
+						<ul id="xsfirst">
+							<li style="background-color: #001424;" onclick="showli(this)" nrli="cq">学校简介</li>
+							<li onclick="showli(this)" nrli="sc">院系设置</li>
+							<li onclick="showli(this)" nrli="yn">办学成果</li>
+							<li onclick="showli(this)" nrli="gz">青春学工</li>
+						</ul>
+					</div>
+					<div id="botbar">
+						<div class="con" id="cq"><p>重庆城市管理职业学院是由重庆市人民政府主办、国家民政部与重庆市人民政府共建、重庆市教委直属的全日制公办普通高等学校，是重庆市首批示范性高等职业院校立项建设单位。</p><p>学院位于重庆大学城，图书馆藏书50万余册，报刊800余种。学院教学实验、实训条件一流，拥有校内实践教学基地(中心)17个，下设124个实验实训室，校外实习实训基地236个。建有重庆一流的数字化校园。校园环境整洁优雅，文化氛围浓厚，课余活动丰富多彩，为学生学习与成长提供了优越条件。</p><p>学院秉承"敏学致用、厚德笃行"校训、"和谐共进、求实创新"的校风，立足现代城市服务和民政社会工作，服务和谐社会构建，积极培养德智体全面发展，满足现代城市建设、管理、服务第一线需要的高素质技能型专门人才，努力建设西部领先、国内一流的国家示范性高等职业院校。</p></div>
+						<div class="yinc" id="sc"><p>学校现有社会工作学院、工商管理学院、信息工程学院、电子工程学院、文化产业管理学院、工程管理学院、财经学院、旅游学院、健康与老年服务学院、人文教育学院、马克思主义学院和继续教育学院等12个二级学院，招生专业46个，面向全国31个省（自治区、直辖市）招生，在校生12681人。有重庆市教改示范、试点专业4个，中澳职教项目成果推广专业1个，国家技能型紧缺人才培养专业4个。建成国家级精品课程1门，市级精品课程6门。获国家级教学成果二等奖1项，重庆市教学成果一等奖2项。</p></div>
+						<div class="yinc" id="yn"><p>学校积极开展人才培养模式改革和教学质量工程，深化政校企合作，成立学校合作发展理事会，与315家政府机构、行业协会、企事业单位建立深度合作关系，建有企业学院5个。学校大力推进工学结合、订单培养，积极开展项目导向、任务驱动教学改革，形成以能力本位、素质教育、可持续发展为理念，以工学结合为途径，以促进学生全面发展和可持续发展的第一课堂学习与第二课堂实践结合、学校文化与企业文化结合、学业成长与职业成长结合的“三个结合”人才培养模式。大力推进素质教育和创新创业教育，着力培养学生良好的职业道德、熟练的职业技能和科学的创新精神，人才培养质量显著提高，毕业生深受用人单位的好评。</p>
+
+<p>学校被民政部确定为国家社会工作专业人才培训基地、全国社会组织教育培训基地、民政部西部民政社会工作培训中心、全国民政政策理论研究基地，被教育部等六部委确定为国家计算机应用与软件技术紧缺型人才培养基地，近三年学校培训规模达2万余人次，社会服务能力明显提升。学校建立的国家职业技能鉴定所、国家民政行业特有工种职业技能鉴定站、全国计算机信息高新技术考试站、国家职业核心能力培训认证培训测评点等考核鉴定机构，可对100余个职业（工种）进行技术等级鉴定。</p>
+
+<p>学校大力推进国际化办学战略，与美国、德国、英国、澳大利亚等近10个国家的高校开展长期合作与交流，建有英国威尔士、澳大利亚海外教师工作站、柬埔寨职业教育中心、埃塞俄比亚鲁班工坊。接收来自非洲、韩国、东南亚国家的学历留学生、长短期研修生300余人次，对外交流师生人数达500多人次。</p></div>
+						<div class="yinc" id="gz"><p>亲爱的同学们：</p>
+
+<p class="jieyue">“俭，德之共也；侈，恶之大也。”勤俭节约是中华民族的传统美德，是践行社会主义核心价值观的生动体现。近日，习近平总书记对制止餐饮浪费作出重要指示，强调要坚决制止餐饮浪费行为，切实培养节约习惯，在全社会营造起“浪费可耻、节约为荣”的氛围。为深入贯彻落实习近平总书记重要指示精神，弘扬勤俭节约传统美德，引领节约用餐良好风尚，杜绝“舌尖上的浪费”，倡导文明健康生活方式，特向同学们发出如下倡议：</br>
+一、珍惜粮食，弘扬传统美德。勤劳奋斗、俭朴节约、珍惜粮食是中华民族的传统美德。小小餐桌，不仅展现了个人素质品德，更是对中华传统美德的继承和弘扬，我们要树立“节约光荣、浪费可耻”的理念，做到“文明就餐、杜绝浪费”。</br>
+二、厉行节约，投身“光盘行动”。要爱惜粮食、杜绝浪费，按需点单，自觉摒弃“爱面子”“讲排场”的陋习，让“光盘”成为时尚。注重“吃得文明”，在校期间，尽量到食堂用餐，不点外卖食品；在食堂用餐时，适量购买，不够再购，避免浪费。</br>
+三、科学饮食，树立正确观念。要注意膳食平衡，合理荤素搭配，吃得合法、吃得合理、吃得卫生、吃得礼貌、吃得干净，自觉摒弃和抵制“大胃王”、“吃野味”等错误观念，让“克勤克俭”、“戒奢以俭”的价值观念真正深入人心、蔚然成风。</br>
+“一粥一饭，当思来之不易；半丝半缕，恒念物力维艰。”让我们积极行动起来，从我做起，从现在做起，身体力行，以身示范，坚决制止餐饮浪费行为，切实培养节约习惯，做厉行节约的践行者、文明餐桌的维护者、美好生活的创造者！</p></div>
+					</div>
+				</div>
+				
+				<!-- 计时器 -->
+				<div id="jishiqi">
+					<div id="timebox"></div>
+					<div id="anniu">
+						<input type="button" name="" value="开始" id="start" onclick="start()"/>
+						<input type="button" name="" value="暂停" id="stop" onclick="stop()"/>
+						<input type="reset" name="" value="重置" id="reset" onclick="reset_time()"/>
+					</div>
+				</div>
+				
+				<!-- 计算器 -->
+				<div id="jisuanqi">
+					<input type="text" id="text" name="text" value=""/><br/>
+					<div id="anjian">
+					<input type="button" name="" value="7" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="8" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="9" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="AC" onclick="calcu(this.value)"/ class="gj"><br/>
+					<input type="button" name="" value="4" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="5" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="6" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="+" onclick="calcu(this.value)" class="gj"/><br/>
+					<input type="button" name="" value="1" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="2" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="3" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="-" onclick="calcu(this.value)" class="gj"/><br/>
+					<input type="button" name="" value="0" onclick="calcu(this.value)"/>
+					<input type="button" name="" value="." onclick="calcu(this.value)"/>
+					<input type="button" name="" value="/" onclick="calcu(this.value)" class="gj"/>
+					<input type="button" name="" value="*" onclick="calcu(this.value)" class="gj"/><br/>
+					</div>
+					<input type="button" name="" value="=" id="equ"  onclick="calcu(this.value)" class="gj"/>
+				</div>
+				
+				<!-- 内容 -->
+				<div id="content" class="qingchu">
+					<h2>综合新闻</h2>
+					<div id="cleft" class="qingchu">
+						<p class="cp"><a href="#">文化与旅游学院开展“推行垃圾分类 践行绿色环保”志愿服务活动</a></p>
+						<p class="cp"><a href="#">我校召开2017年度校级应用技术推广中心项目结题评审会</a></p>
+						<p class="cp"><a href="#">民政与社会治理学院开展2018级顶岗实习学生走访工作</a></p>
+						<p class="cp"><a href="#">我校获评重庆市高校文明公寓和文明寝室</a></p>
+					</div>
+					<div id="cright" class="qingchu">
+						<p class="cp"><a href="#">我校举办创新创业培训和创客专项辅导活动</a></p>
+						<p class="cp"><a href="#">我校承办重庆市2020年志愿服务政策法规与业务能力提升培训班</a></p>
+						<p class="cp"><a href="#">智能工程学院、大数据与信息产业学院开展劳动实践日专业服务</a></p>
+						<p class="cp"><a href="#">文化与旅游学院开展专业技能服务校园劳动实践日主题活动</a></p>
+					</div>
+				</div>
+				
+				<!-- 版权 -->
+				<div id="footer" >
+					<p>Copyright(c) 余晓枫0410190109，All Right Reserved<img class="jh" src="img/validate.gif"/>渝公安网备号0000000 新出发京批字第直0673号</p>
+				</div>
+				
+			</div>
+		</div>
+		<script type="text/javascript">
+			/*图片轮播*/
+			var no = 0;
+			function show_pic(){//图片轮播
+				var lbul = document.getElementById("lbul");
+				var lblis = lbul.getElementsByTagName("li");
+				var lbbot = document.getElementById("lbbot");
+				var lbspans = lbbot.getElementsByTagName("span");
+				for(var i=0; i< lblis.length; i++){//遍历隐藏图片
+					lblis[i].style.display = "none";
+					lbspans[i].className = "";
+				}
+				no ++;//显示图片
+				if(no ==5){
+					no = 0;
+				}
+				lblis[no].style = "block";
+				lbspans[no].className = "on";
+			}
+			var lbintervar = setInterval("show_pic()",2000);
+			
+			function show_current_pic(index){//鼠标移至下标，切换
+				clearInterval(lbintervar);
+				var pic_show = document.getElementById("lbul");
+				var lis = pic_show.getElementsByTagName("li");
+				var pic_no = document.getElementById("lbbot");
+				var spans = pic_no.getElementsByTagName("span");
+				for(var i=0; i< lis.length; i++){//遍历隐藏图片
+					lis[i].style.display = "none";
+					spans[i].className = "";
+				}
+				lis[index-1].style.display ="block";//lis索引从0开始，需要减一,鼠标移至的图片显示
+				spans[index-1].className = "on";//下标样式显示
+				no = index-1;//对应的图片显示要重新计数
+			}
+			function lbgoon(){//鼠标移开，定时器运行
+				lbintervar = setInterval("show_pic()",2000);
+			}
+			
+			/*无缝滚动*/
+			var scrollbox = document.getElementById("scrollbox");
+			var part1 = document.getElementById("part1");
+			var part2 = document.getElementById("part2");
+			var distance = 0;
+			part2.innerHTML = part1.innerHTML;
+			function changeinfo(){
+				distance++;
+				scrollbox.scrollLeft = distance;
+				if(part1.offsetWidth == scrollbox.scrollLeft){
+					distance = 0;
+					scrollbox.scrollLeft = 0;
+				}
+			 }
+			var scrollSet = setInterval("changeinfo()",50);
+			scrollbox.onmouseover = function(){
+				clearInterval(scrollSet);
+			}
+			scrollbox.onmouseout = function(){
+				scrollSet = setInterval("changeinfo()",50);
+			}
+			
+			/*导航*/
+			function onOver(obj){
+				var ul=obj.getElementsByTagName("ul");//li下面的ul数组
+				ul[0].style.display="block";//第一个ul
+			}
+			//this指向当前标签
+			function onMove(obj){
+				var ul=obj.getElementsByTagName("ul");
+				ul[0].style.display="none";
+			}
+			
+			/*计时器*/
+			function timerxs(){//计时器显示
+				// hidexxk();
+				var jishiqi = document.getElementById("jishiqi");
+				var jisuanqi = document.getElementById("jisuanqi");
+				if(jisuanqi.style.display="block"){
+					jisuanqi.style.display="none";
+				}
+				jishiqi.style.display="block";
+			}
+			var timebox = document.getElementById("timebox");
+			var hour = 0;
+			var minute = 0;
+			var seconds = 0;
+			var ms = 0;
+			var timer = 0;
+	
+			function time(){
+				ms = ms+50;
+				if(ms >= 1000){
+					ms=0;
+					seconds = seconds+1;
+				}
+				if(seconds >= 60){
+					seconds = 0;
+					minute += 1;
+				}
+				if(minute >= 60){
+					minute = 0;
+					hour += 1;
+				}
+				var showtime = hour +"时"+minute+"分"+seconds+"秒"+ms+"毫秒";//函数循环执行变化，所以变量需要放在这个位置
+				timebox.innerHTML = showtime;
+			}
+			function start(){
+				clearInterval(timer);//保证不小心点击两次的时候不出错
+				timer = setInterval(time,50);
+			}
+			function stop(){
+				clearInterval(timer);
+			}
+			function reset_time(){
+				clearInterval(timer);
+				ms=seconds=minute=hour=0;
+				timebox.innerHTML='00时00分00秒000毫秒';
+			}
+			
+			/*计算器*/
+			function jisuanqixs(){
+				// hidexxk();
+				var jisuanqi = document.getElementById("jisuanqi");
+				var miaobiao = document.getElementById("jishiqi");
+				if(miaobiao.style.display="block"){
+					miaobiao.style.display="none";
+				}
+				jisuanqi.style.display="block";
+			}
+			function calcu(val){//calcu(this.value)
+				var result = document.getElementById("text");
+				switch(val){
+					case "AC":
+						result.value = "";
+						break;
+					case "=":
+						result.value = eval(result.value);//计算字符串
+						break;
+					default:
+						result.value = result.value + val;
+						break;
+				}
+			}
+			
+			/*选项卡*/
+			function showli(obj){
+				var xsfirst = document.getElementById("xsfirst");
+				var lis = xsfirst.getElementsByTagName("li");//li数组
+				for(var i=0; i<lis.length; i++){//遍历，背景皆为默认
+					lis[i].style.backgroundColor = "#008B8B";
+				}
+				obj.style.backgroundColor = "#001424";//点击事件改变样式
+				var divs = document.getElementById("botbar").getElementsByTagName("div");//选项卡内容数组
+				for(var i=0; i<divs.length; i++){//遍历，默认隐藏
+					//divs[i].style.display = "none";
+					divs[i].className = "yinc";
+				}
+				var menuid = obj.getAttribute("nrli");//点击事件ntli属性名的属性值=>内容的id
+				var divnr = document.getElementById(menuid);//所选项对应内容的id
+				//divnr.style.display = "none";
+				divnr.className = "con";//算选项对应内容类名更换=》显示
+			}
+			
+			/*返回首页*/
+			function fhsy(){
+				hidegj();
+				//hidexxk()
+			}
+			function hidegj(){
+				var jishiqi = document.getElementById("jishiqi");
+				var jisuanqi = document.getElementById("jisuanqi");
+				jishiqi.style.display="none";
+				jisuanqi.style.display="none";
+			}
+			// function hidexxk(){
+			// 	var divs = document.getElementById("botbar").getElementsByTagName("div");
+			// 	for(var i=0; i<divs.length; i++){
+			// 		divs[i].style.display = "none";
+			// 	}
+			// }
+		</script>
+	</body>
+</html>

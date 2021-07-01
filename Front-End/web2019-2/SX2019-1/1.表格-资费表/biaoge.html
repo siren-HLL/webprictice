@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表格操作</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.whole{
+				width: 1018px;
+				margin: auto;
+				background: rgb(247,229,0);
+				font-size: 14px;
+				font-family: "楷体","微软雅黑";
+			}
+			.whole .shang .zf,.whole .xia .taoc{
+				border: 2px solid black;
+				border-collapse: collapse;
+			}
+			.whole .shang .zf td{
+				vertical-align: top;
+			}
+			.whole .xia .taoc .dd{
+				vertical-align: top;
+			}
+			.whole th,.whole td{
+				border: 2px solid black;
+			}
+			.whole h1{
+				padding: 10px;
+				text-align: center;
+			}
+			.whole h4{
+				color: orangered;
+			}
+			.whole .shang,.whole .xia{
+				margin-left: 100px;
+			}
+			.whole .biaot>th{
+				background-color: rgb(255,96,0);
+				color: aliceblue;
+				height: 40px;
+			}
+			.whole .shang .zf td{
+				width: 80px;
+			}
+			.whole .shang .zf .nrr1 td{
+				height: 120px;
+			}
+			.whole .shang .zf .nrr2 td{
+				height: 40px;
+				text-align: center;
+			}
+			.whole .xia{
+				margin-top: 20px;
+				margin-bottom: 15px;
+			}
+			.whole .xia table.taoc{
+				width: 826px;
+			}
+			.whole .xia .taoc td{
+				text-align: center;
+			}
+			.whole .xia .taoc .biaot th.bt1{
+				width: 35px;
+			}
+			.whole .xia .taoc .biaot th.bt2{
+				width: 300px;
+			}
+			.whole .xia .taoc .nr1 td{
+				height: 80px;
+			}
+			.whole .xia .taoc .nr2 td{
+				height: 120px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="whole">
+			<h1>4G本地王资费表</h1>
+			<div class="shang">
+				<table class="zf">
+					<tr class="biaot">
+						<th rowspan="2" class="b1">套餐月费</th>
+						<th colspan="3" class="b2">套餐包含内容</th>
+						<th colspan="5" class="b3">套餐支出及其他收费标准</th>
+						<th rowspan="2" class="b4">按听</br>免费</br>范围</th>
+					</tr>
+					<tr class="nrr1">
+						<td >本地拨打长市合一/可视电话分钟数</td>
+						<td >省内流量（MB）</td>
+						<td >来电显示</td>
+						<td >国内流量(元/MB)</td>
+						<td >本地拨打长市合一/可视电话（元/分钟）</td>
+						<td >国内漫游拨打/接听（含可视）（元/分钟）</td>
+						<td >国内点对点短信（元/条）</td>
+						<td >国内点对点彩信（元/条）</td>
+					</tr>
+					<tr class="nrr2">
+						<td>50元</td>
+						<td>200</td>
+						<td>750</td>
+						<td>赠送</td>
+						<td>0.3</td>
+						<td>0.15</td>
+						<td>0.2</td>
+						<td>0.1</td>
+						<td>0.3</td>
+						<td>本地</td>
+					</tr>
+				</table>
+				<div class="wenz">
+					<h4>(一)资费说明</h4>
+					<p>
+						1.国内指中国内地，不含台、港、澳地区。</br>
+						2.本地拨打长市合一/可视电话的用户在归属地拨打国内普通电话、可视电话。</br>
+						3.语音、可视电话业务按分钟计费，每次通话不足一分钟的部分按一分钟计；手机上网按流量计算，以MB为计费单位，当月累计上网流量不足1MB</br>的部分按1Mb计。
+					</p>
+				</div>
+			</div>
+			<div class="xia">
+				<h4>(二)两大优惠大放送</h4>
+				<table class="taoc">
+					<tr class="biaot">
+						<th class="bt1">适用套餐</th>
+						<th class="bt2">6月30日前办理可赠</br>送语音包、流量包</th>
+						<th class="bt2">赠送方式</th>
+						<th class="bt3">办理用户范围</th>
+					</tr>
+					<tr class="nr1">
+						<td rowspan="2" class="bt1">50元</td>
+						<td class="bt2">300分钟</td>
+						<td class="bt2 dd">自办理次月起连续10个月。每月赠送300分钟主叫</br>本地话言时长(含本地市话和国内长途）。</td>
+						<td rowspan="2" class="bt3">2015年3月1日至6月</br>30日期间，办理</br>4G50元本地票餐存费</br>送费及合约惠机政策</br>的新、老用户。</td>
+					</tr>
+					<tr class="nr2">
+						<td class="bt2">1G闲时流量</td>
+						<td class="bt2 dd" >自办理次月超连续6个月增送，每月赠送1GB闲时</br>流量。</br>闲时省内流量在4G套餐内流量、国内流量半年</br>包省内流量半年包之前优先抵扣</br>(闲时时段为:每日23:00-次日7:00).</td>
+					</tr>
+				</table>
+			</div>
+			<div class="tup">
+				<img src="./img1/屏幕快照%202020-06-29%2018.12.36.png"/>
+				</div>
+		</div>
+	</body>
+</html>

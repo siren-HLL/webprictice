@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>tongzhi</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			span{
+				color: cornflowerblue;
+				font-size: 35px;
+			}
+			a{
+				text-decoration: none;
+				color: #0a5ba0;
+			}
+			#zt{
+				position: relative;
+			}
+			#whole{
+				border: 1px solid black;
+				width: 379px;
+				height: 270px;
+				position: relative;
+				overflow: hidden;
+			}
+			#whole1{
+				position: absolute;
+				top: -0px;
+				transition:0.5s;
+			}
+			.page{
+				width: 379px;
+				height: 810px;
+			}
+			#data{
+				border: 1px solid black;
+				width: 75px;
+				height: 75px;
+				text-align: center;
+				background: rgba(234,233,233,0.5);
+				margin-top: 10px;
+			}
+			#wz{
+				position: absolute;
+				top: 20px;
+				left: 102px;
+				border: 1px solid black;
+			}
+			.wenzi{
+				margin-bottom: 55px;
+			}
+			#gdanniuz{
+				position: relative;
+				top: 15px;
+				left: 170px;
+				width: 65px;
+				height: 10px;
+				/*border: 1px solid black;*/
+			}
+			.gdanniu{
+				width: 10px;
+				height: 10px;
+				margin-right: 5px;
+				display: inline-block;
+				border: 1px solid black;
+				cursor:pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="zt">
+			<img src="img/通知公告.png"/>
+			<div id="whole">
+				<div class="page-box">
+					<div id="whole1" class="page">
+						<div id="dataz">	
+							<!--第一页-->
+							<div id="data">
+								<p id="nianyue">2020-07<br><span id="ri">08</span></p>
+							</div>
+							<div id="data">
+								<p id="nianyue">2020-09<br><span id="ri">28</span></p>
+							</div>
+							<div id="data">
+								<p id="nianyue">2020-09<br><span id="ri">07</span></p>
+							</div>
+							<!--第二页-->
+							<div id="data">
+								<p id="nianyue">2020-07<br><span id="ri">08</span></p>
+							</div>
+							<div id="data">
+								<p id="nianyue">2020-09<br><span id="ri">28</span></p>
+							</div>
+							<div id="data">
+								<p id="nianyue">2020-09<br><span id="ri">07</span></p>
+							</div>
+							<!--第三页-->
+							<div id="data">
+								<p id="nianyue">2020-07<br><span id="ri">08</span></p>
+							</div>
+							<div id="data">
+								<p id="nianyue">2020-09<br><span id="ri">28</span></p>
+							</div>
+							<div id="data">
+								<p id="nianyue">2020-09<br><span id="ri">07</span></p>
+							</div>
+						</div>
+						<div id="wz">
+							<p class="wenzi"><a id="wen1" href="#">重庆城市管理职业学院2020-2021学年校历</a></p>
+							<p class="wenzi"><a id="wen2" href="#">2020年国庆、中秋假期值班安排表</a></p>
+							<p class="wenzi"><a id="wen3" href="#">重庆城市管理职业学院2020-2021学年第1学期值班表</a></p>
+							<p class="wenzi" style="margin-bottom: 80px;"><a id="wen1" href="#">新型冠状病毒感染的肺炎防控知识手册</a></p>
+							<p class="wenzi"><a id="wen2" href="#">关于举行消防安全知识培训的通知</a></p>
+							<p class="wenzi" style="margin-bottom: 40px;"><a id="wen3" href="#">关于召开党建与意识形态工作例会的通知</a></p>
+							<p class="wenzi"><a id="wen1" href="#">关于举办《高校档案工作实务》专题讲座的通知</a></p>
+							<p class="wenzi"><a id="wen2" href="#">关于举办第三届“建功新时代 铸就师德魂”主题演讲决赛的通知</a></p>
+							<p class="wenzi" style="margin-bottom: 0px;"><a id="wen3" href="#">关于组织收看学习贯彻党的十九届五中全会精神中央宣讲团报告会视频的通知</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="gdanniuz">
+				<div class="gdanniu" onmousemove="pageMove('1')"></div>
+				<div class="gdanniu" onmousemove="pageMove('2')"></div>
+				<div class="gdanniu" onmousemove="pageMove('3')"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//获取页面
+			 var pagebox = document.getElementsByClassName("page-box")[0];
+			var whole1 = document.getElementById("whole1");
+			var index = 1;
+			var position = 0;
+			var moveD = 270;
+			
+			function pageMove(fx){
+				if (fx=="1") {
+					whole1.style.top="-0px"
+					
+				}
+				if (fx=="2") {
+					whole1.style.top="-262px"
+				}
+				if (fx=="3") {
+					whole1.style.top="-524px"
+				}
+			}
+		</script>
+	</body>
+</html>

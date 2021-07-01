@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>倒计时课堂练习</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#time_box{
+				width: 800px;
+				height: 300px;
+				margin: 100px auto;
+				line-height: 300px;
+				font-size: 40px;
+				border: #0077AA solid 1px;
+				background: #008B8B;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="time_box"></div>
+		<script type="text/javascript">
+			function show_time(){
+				var time_box = document.getElementById("time_box");
+				var target_time = new Date(2020,9,21,0,0,0);//月份0~11
+				var target_second = target_time.getTime();//返回 1970 年 1 月 1 日至今的毫秒数
+				
+				var now = new Date();
+				var now_second = now.getTime();
+				var distance = Math.abs((target_second-now_second)/1000);//目标时间-现时间转换为秒
+				distance = Math.floor(distance);//向下取整
+				var xs_miao = distance % 60;//取模60，分以外为秒
+				var xs_tian = Math.floor(distance/(24*60*60));
+				var xs_xs = Math.floor((distance % (24*60*60))/3600);//天以外的秒/3600得到分钟
+				var xs_fz = Math.floor((distance % (24*60*60)-(xs_xs*60*60))/60);//（天以外的秒-小时所占的秒）/60
+				if(xs_miao >=0 && xs_miao <= 9){
+					xs_miao = "0"+xs_miao;
+				}else if(xs_fz >=0 && xs_fz<= 9){
+					xs_fz = "0"+xs_fz;
+				}else if(xs_xs >=0 && xs_xs <= 9){
+					xs_xs = "0"+ xs_xs;
+				}
+				var str = "距离贺钦回来还有"+xs_tian+"天"+xs_xs+"小时"+xs_fz+"分钟"+xs_miao+"秒";
+				time_box.innerHTML = str;
+				var myset = setTimeout(show_time,1000);
+			}
+			show_time();
+			
+		</script>
+	</body>
+</html>

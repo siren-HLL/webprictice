@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册页面</title>
+        <style>
+            .box1,.box2,.box3{
+                border: 1px solid #333;
+                margin:10px;
+                padding:20px;
+                float:left;
+                width:300px;
+            }
+        </style>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/vue.js" ></script>
+    </head>
+    <body>
+        <div class="box1">
+            <h1>JavaScript示例</h1>
+            <p id="disp1">显示内容</p>
+            <input type="text" id="mess1" name="mess1" oninput="doinput()" />
+        </div>
+       <div class="box2">
+           <h1>JQuery示例</h1>
+           <p>显示内容</p>
+           <input type="text" id="mess2" name="mess2" />
+       </div>
+       <div id="app" class="box3">
+        <h1>Vue示例</h1>
+        <p>显示内容：{{msg}}</p>
+        <p v-html="msg"></p>
+        <input type="text" v-model="msg" />
+    </div>
+    </body>
+    <script>
+
+         function doinput(){
+
+            let m=document.getElementById("mess1").value;
+
+            document.getElementById("disp1").innerHTML='显示内容:'+m;
+         }
+
+
+        $().ready(function(){
+
+            $("#mess2").on('input propertychange',function(){
+
+               let m=$("#mess2").val();
+
+               $(".box2 p").html('显示内容:'+m);
+            })
+        }); 
+
+        new Vue({
+            el:"#app",
+            data:{
+                msg:''
+            }
+        });
+    </script>
+</html>

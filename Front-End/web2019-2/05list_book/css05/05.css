@@ -1,0 +1,58 @@
+@charset "utf-8";
+*{
+	margin: 0px;
+	padding: 0px;
+}
+a{
+	font-size: 12px;
+	color: #666;
+	text-decoration: none;
+}
+a:hover { /*选择器，当鼠标停留在其上时的样式*/
+	color: #f60;
+	text-decoration: underline;
+}
+.whole_list{
+	width: 800px;
+	margin: 10px auto;
+	border: 2px solid gray;
+}
+.whole_list:after{
+	content: '.';/*内容生成？*/
+	height: 0px;
+	display: block;/*规定元素生成的框的类型*/
+	overflow: hidden;/*规定当内容溢出溢出元素框后*/
+	visibility: hidden;/*规定元素是否可见*/
+	clear: both;/*规定元素的哪一侧不允许有其它浮动元素*/
+}
+.whole_list ul{
+	list-style: none;
+	padding: 20px 5px 0px 30px;
+}
+.whole_list li{
+	float: left;
+	width: 130px;
+	height: 216px;
+	margin-right: 15px;
+}
+.pic{
+	margin-bottom: 2px;
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+}
+.price_m{
+	color:#9c9c9c;
+	text-decoration: line-through;
+}
+.price_m span{
+	font-family: Arial;
+	font-size: 12px;
+}
+.price_d{
+	color:#c30;
+}
+.price_d span{
+	font: bold 12px Arial;
+}

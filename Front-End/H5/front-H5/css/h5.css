@@ -1,0 +1,407 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#whole1,#whole2,#whole3,#whole4,.bg{
+	width: 320px;
+	height: 520px;
+	margin: 10px auto;
+	position: relative;
+	font-family: "宋体","微软雅黑";
+}
+
+/*p1-加载页*/
+#whole1{
+	background: url(../img/p1-Loading.png);
+}
+#load{
+	position: absolute;
+	font-size: 20px;
+	width: 120px;
+	top: 340px;
+	left:100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: auto;
+	overflow: hidden;
+	-webkit-animation: xh 1s linear 0s infinite;/*chrome加前缀,名字-周期-速度-开始-次数-方向*/
+}
+@-webkit-keyframes xh{
+	0%{width: 100px;}
+	25%{width: 105px;}
+	100%{width: 120px;}
+}
+#jiazai{
+	width: 140px;
+	height: 30px;
+	font-size: 20px;
+	position: absolute;
+	text-align: center;
+	top: 370px;
+	left: 90px;
+}
+
+/*p2*/
+#whole2{
+	background: url(../img/p2bg.png);
+}
+#whole2 .lwheel{/*轮子转动*/
+	width: 75px;
+	height: 75px;
+	position: absolute;
+	top: 135px;
+	left: 95px;
+	-webkit-animation: xuanz 3s linear 0s infinite;
+}
+#whole2 .rwheel{
+	width: 55px;
+	height: 55px;
+	position: absolute;
+	top: 153px;
+	left: 195px;
+	-webkit-animation: xuanz 3s linear 0s infinite;
+}
+@-webkit-keyframes xuanz{
+	0%{transform:rotate(0deg);}
+	50%{transform:rotate(180deg);}
+	100%{transform:rotate(360deg);}
+}
+#whole2 .textp2{/*文字浮现*/
+	position: absolute;
+	font-size: 14px;
+	text-align: center;
+	top: 240px;
+	left: 80px;
+}
+.p1{
+	opacity: 0;
+	-webkit-animation: wenz 2s linear 0s 1 forwards;
+}
+.p2{
+	opacity: 0;
+	-webkit-animation: wenz 2s linear 1s 1 forwards;
+}
+.p3{
+	opacity: 0;
+	-webkit-animation: wenz 2s linear 2s 1 forwards;
+}
+.p4{
+	opacity: 0;
+	-webkit-animation: wenz 2s linear 3s 1 forwards;
+}
+.p5{
+	opacity: 0;
+	-webkit-animation: wenz 2s linear 4s 1 forwards;
+}
+.p6{
+	opacity: 0;
+	-webkit-animation: wenz 2s linear 5s 1 forwards;
+}
+@-webkit-keyframes wenz{
+	from{opacity: 0;}/*透明-实体*/
+	to{opacity: 1;}
+}
+#music{/*音符摇晃*/
+	width:50px;
+	height: 35px;
+	position: absolute;
+	left: 270px;
+	top:15px;
+	-webkit-animation: yaobai 1s linear infinite alternate;
+}
+@-webkit-keyframes yaobai{
+	0%{transform:rotate(40deg);}
+	50%{transform:rotate(0deg);}
+	100%{transform:rotate(-40deg);}
+}
+#jiantou .jt{/*箭头浮动*/
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: 470px;
+	left:135px;
+	opacity: 0;
+	-webkit-animation: shangxia 2s linear 5s infinite;
+}
+@-webkit-keyframes shangxia{
+	0%{top: 470px;opacity: 1;}
+	50%{top: 480px;opacity: 1;}
+	100%{top: 470px;opacity: 1;}
+}
+
+/*p3*/
+#whole3{
+	background: url(../img/p3bg.png);
+}
+#whole3 .top{
+	background: url(../img/ceshi.png);
+	position: absolute;
+	width: 320px;
+	height: 520px;
+	left: 325px;
+	-webkit-animation: topp 1s linear 0s 1 forwards;
+}
+@-webkit-keyframes topp{
+	from{left: 325px;}
+	to{left: 0px;}
+}
+#whole3 .bottom{
+	background: url(../img/p3bottombg.png);
+	position: absolute;
+	width: 320px;
+	height: 520px;
+	right: 325px;
+	-webkit-animation: bott 1s linear 3s 1 forwards;
+}
+@-webkit-keyframes bott{
+	from{right: 325px;}
+	to{right: 0px;}
+}
+#whole3 .top .toptext{
+	position: absolute;
+	width: 320px;
+	height: 520px;
+	opacity: 0;
+	-webkit-animation:chuxian 1s linear 1.5s 1 forwards;
+}
+#whole3 .bottom .bottext{
+	position: absolute;
+	width: 320px;
+	height: 520px;
+	opacity: 0;
+	-webkit-animation:chuxian 1s linear 4.5s 1 forwards;
+}
+@-webkit-keyframes chuxian{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+
+/*p4*/
+#whole4{
+	background: url(../img/p4-1bg.png);
+}
+#whole4 .yumi{/*出现动画*/
+	position: absolute;
+	top: 225px;
+	left: -120px;
+	-webkit-animation: cx1 1s linear 0s 1 forwards;
+}
+@-webkit-keyframes cx1{
+	from{left:-120px;}
+	to{left:10px;}
+}
+#whole4 .dadou{
+	position: absolute;
+	top: 220px;
+	left: 320px;
+	-webkit-animation: cx2 1s linear 1s 1 forwards;
+}
+@-webkit-keyframes cx2{
+	from{left: 320px;}
+	to{left: 70px;}
+}
+#whole4 .zuod{
+	position: absolute;
+	top:-280px;
+	-webkit-animation: cx3 1s linear 2s 1 forwards;
+}
+@-webkit-keyframes cx3{
+	from{top: -120px;}
+	to{top: 15px;}
+}
+#whole4 .youd{
+	position: absolute;
+	top: -15px;
+	left: 120px;
+	-webkit-animation: cx4 1s linear 2s 1 forwards;
+}
+@-webkit-keyframes cx4{
+	from{left: 120px;}
+	to{top: -20px;left: 20px;}
+}
+#whole4 .man{
+	position: absolute;
+	top: -190px;
+	left: 70px;
+	-webkit-animation: cx5 1s linear 3s 1 forwards;
+}
+@-webkit-keyframes cx5{
+	from{top: -190px;left: 70px;}
+	to{top: 65px;left: 70px;}
+}
+#whole4 .jushuo{
+	width:227px;
+	height: 106px;
+	position: absolute;
+	left:55px;
+	top:305px;
+	opacity: 0;
+	-webkit-animation: cx6 1s linear 4s 1 forwards;
+}
+@-webkit-keyframes cx6{
+		0%{opacity: 0;}
+		100%{opacity: 1;}
+}
+#inform{/*表单*/
+	width: 320px;
+	height: 520px;
+	position: absolute;
+	top:410px;
+	left: 20px;
+	opacity: 0;
+	-webkit-animation: biaodan 1s linear 5s 1 forwards;
+}
+@-webkit-keyframes biaodan{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+#inform .diyi{
+	background: url(../img/kuangbeijing.png)no-repeat;
+	width:280px;
+	height: 33px;
+	position: absolute;
+}
+#inform .diyi input{
+	background: transparent;
+	position: absolute;
+	left: 25px;
+	top: 8px;
+	height: 15px;
+	line-height: 15px;
+	border-style: none;
+	text-align: left;
+}
+#inform .diyi .getWork{
+	background: transparent;
+	position: absolute;
+	width: 120px;
+	left: 155px;
+	top: 6px;
+	height: 15px;
+	line-height: 15px;
+	border-style: none;
+}
+#inform .suan1{
+	background: url(../img/suanyisuan.png);
+	position: absolute;
+	top: 45px;
+	border-style: none;
+	width: 272px;
+	height: 43px;
+}
+
+/*p5-1,p5-2*/
+#fhtp{
+	opacity: 0;
+	-webkit-animation: shanshuo 2s linear 0s infinite;
+}
+@-webkit-keyframes shanshuo{
+	0%{opacity: 0;}
+	50%{opacity: 0.5;}
+	100%{opacity: 1;}
+}
+#start{
+	background: url(../img/kais.png);
+	width:214px;
+	height: 87px;
+	position: absolute;
+	left: 90px;
+	top:110px;
+	color:white;
+	text-align: right;
+	font-family: "宋体","微软雅黑";
+	font-size: 20px;
+	font-weight: bolder;		
+}
+.first,.second,.third{z-index: 600;}
+.first1,.second1,.third1{z-index: 500;}
+.first,.first1{/*按键位置排列*/
+	position: absolute;
+	top:200px;
+	width:320px;
+	height: 84px;
+	text-align: center;
+}
+.second,.second1{
+	position: absolute;
+	top:285px;
+	width:320px;
+	height: 84px;
+	text-align: center;
+}
+.third,.third1{
+	position: absolute;
+	top:370px;
+	width:320px;
+	height: 84px;
+	text-align: center;
+}
+.first img,.first1 img,.second img,.second1 img,.third img,.third1 img{/*按键图片属性*/
+	width: 73px;
+	height: 74px;
+	cursor:pointer;
+}
+
+/*p5-3*/
+#heibg{/*报告样式*/
+	position: absolute;
+    left:0px;
+	top:0px;
+	width:320px;
+	height: 520px;
+    background: url(../img/heibeijz.png);
+	z-index: 600;
+	display:none;
+    cursor:pointer;
+}
+#bgname{		
+	position: absolute;
+	left:150px;
+	top:175px;
+	width:320px;
+	height: 520px;
+	text-align:left;
+	font-family: "宋体","微软雅黑";
+	font-size: 16px;
+	font-weight: bolder;	
+	z-index: 610;
+    display:none;
+}
+#bgscore{			
+	position: absolute;
+    left:150px;
+	top:195px;
+	width:320px;
+	height: 520px;
+	text-align:left;
+	font-family: "宋体","微软雅黑";
+	font-size: 16px;
+	font-weight: bolder;	
+	z-index: 610;
+    display:none;
+}
+#bggrade{			
+	position: absolute;
+    left:150px;
+	top:215px;
+	width:320px;
+	height: 520px;
+	text-align:left;
+	font-family: "宋体","微软雅黑";
+	font-size: 16px;
+	font-weight: bolder;	
+	z-index: 610;
+	display:none;
+}
+#bgdisc{			
+	position: absolute;
+    left:80px;
+	top:255px;
+	width:163px;
+	height: 108px;
+	background: url(../img/cha.png);
+	z-index: 610;
+	display:none;
+}
+
+		

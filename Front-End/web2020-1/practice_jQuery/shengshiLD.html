@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>省市联动</title>
+		<script src="../jquery-1.9.0.js"></script>
+		<script>
+			$(document).ready(function(){
+				var pro = new Array("北京","天津","上海");
+				var city = new Array(
+										new Array("北京1","北京2","北京3"),
+										new Array("天津1","天津2","天津3"),
+										new Array("上海1","上海2","上海3")
+				);
+				$.each(pro,function(k,v){
+					$("#s1").append("<option value='"+k+"'>"+ v +"</option>");
+				})
+				$("#s1").change(function(){
+					var index = $(this).val();
+					$("#s2").empty();
+					$("#s2").append("<option value='0'>请选择城市</option>");
+					$.each(city[index],function(k,v){
+						$("#s2").append("<option value='"+k+"'>"+ v +"</option>");
+					})
+				})
+			})
+			/*以每一个匹配的元素作为上下文来执行一个函数。
+意味着，每次执行传递进来的函数时，函数中的this关键字都指向一个不同的DOM元素（每次都是一个不同的匹配元素）。而且，在每次执行函数时，都会给函数传递一个表示作为执行环境的元素在匹配的元素集合中所处位置的数字值作为参数（从零开始的整型）。 返回 'false' 将停止循环 (就像在普通的循环中使用 'break')。返回 'true' 跳至下一个循环(就像在普通的循环中使用'continue')。*/
+		</script>
+	</head>
+	<body>
+		<select id="s1">
+			<option value="0">请选择省份</option>
+		</select>
+		<select id="s2">
+			<option value="0">请选择城市</option>
+		</select>
+	</body>
+</html>

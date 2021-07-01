@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单操作</title><!--例子-->
+	</head>
+	<body>
+		<div>
+			<form ><!--表单域文本框-->
+				<input type="text" /><br/><br/>
+				<input type="text" name="username" id="username" value="请输入用户名"/><br/>
+				<input type="text" value="请输入用户名" size="25" maxlength="10"/><br/>
+				<input type="text" value="请输入用户名" disabled="disabled"/><br/>
+				<input type="text" value="请输入用户名" readonly="readonly"/><br/>
+				<input type="submit"/><br/>
+				
+			</form>
+		</div><!--密码框-->
+		<div>
+			<form>
+				<label for="userName">用户名:</label><input type="text" name="userName" id="userName" value="请输入用户名" size="16"/><br/><br/>
+				<label for="userPwd">	密码:</label><input type="password" name="userPwd" id="userPwd" placeholder="请输入长度为6位数字的密码" maxlength="6"/><br/><br/>
+				<label for="userRePwd">确认密码:</label><input type="password" name="userRePwd" id="userRePwd" size="25" disabled="disabled" value="请输入确认密码"/><br/><br/>
+				<label>性别:</label>男<input type="radio" name="sex" value="men" checked="checked"/>&nbsp; &nbsp; &nbsp; &nbsp;女<input type="radio" name="sex" value="women"/><br/><!--单选按钮-->
+				<label>爱好:</label>电影<input type="checkbox" name="interest" value="movie" checked="checked"/>&nbsp; &nbsp; &nbsp; &nbsp;音乐<input type="checkbox" name="interest" value="music"/>&nbsp; &nbsp; &nbsp; &nbsp;阅读<input type="checkbox" name="interest" value="reading"/>&nbsp; &nbsp; &nbsp; &nbsp;画画<input type="checkbox" name="interest" value="paint"/><br/><!--复选框-->
+				<label>请选择国家:</label>
+				<select name="country" >
+					<option value="china" selected="selected">中国</option>
+					<option value="russa" >俄罗斯</option>
+					<option value="usa">美国</option>
+				</select><br/>
+				<label>请选择省份:</label>
+				<select name="province" >
+					<option value="hn" selected="selected">湖南</option>
+					<option value="cq" >重庆</option>
+					<option value="tw"disabled="disabled" id="tw">台湾</option>
+					<option value="sc">四川</option>
+					<option value="jz">浙江</option>
+				</select><br/>
+				<input type="submit"/><br/>
+				<input type="reset"/><br/>
+				<input type="button" value="台胞" onclick="shengf();"/><br/>
+				<input type="button" value="确认" onclick="alert('欢迎进入')"/><br/>
+			</form>
+		</div>
+	</body>
+</html>
+<script>
+	function shengf()
+	{
+		var taiw=document.getElementById('tw')
+		taiw.removeAttribute("disabled")
+	}
+</script>

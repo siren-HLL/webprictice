@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<link rel="stylesheet" href="../../resource/css/bootstrap.min.css" /> 
+		<link rel="stylesheet" href="../../resource/css/bootstrap-theme.min.css">
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body,html{
+				height: 100%;
+			} 
+			.whole{
+				height:100%;
+			}
+			.qingchu::after{
+				display: block;
+				clear: both;
+				visibility: hidden;
+				overflow: hidden;
+				content: ".";
+				height: 0;
+			}
+			.wrapper{
+				margin-left:161px;
+				height:100%; 
+				background: -webkit-linear-gradient(rgb(134,143,228), rgb(57,48,81)); 
+			    background: -o-linear-gradient(rgb(134,143,228), rgb(57,48,81)); 
+			    background: -moz-linear-gradient(rgb(134,143,228), rgb(57,48,81)); 
+			    background: linear-gradient(rgb(134,143,228), rgb(57,48,81)); 
+			
+				}
+			#header{
+				margin-bottom: 0px;
+				margin-top: 0px;
+				color: rgb(255,255,255);
+			}
+			#header h1.text-center{
+				margin-top: 0px;
+				padding-top: 20px;
+			}
+			.page-header{
+				background-color: rgb(140,98,215);
+			}
+			.appleIcon{
+				margin-right: 20px;
+			} 
+			.logOutIcon{
+				font-size: 24px;
+				float: right;
+				display: block;
+				margin-top: 10px;
+				margin-right: 20px;
+				cursor: pointer;
+			}
+			#sideNavigation{
+				width: 160px;
+				height: 100%;
+				background-color: rgb(45,49,68);
+				color: rgb(150,153,174);
+				/*#7f00ff,#b200ff*/
+				font-size: 20px;
+				margin-top: 0px;
+				float: left;
+			}
+			#sideNavigation nav{
+				float: left;
+			}
+			#sideNavigation li{
+				border-bottom: #666 1px solid;
+			}
+			#sideNavigation a{
+				color: #fcfcfc;
+			}
+			#sideNavigation a:hover{
+				color: #c748fa;
+			}
+			#footer {
+			    border-top: 1px solid #e5e5e5;
+			    color: #fcfcfc;
+			    padding: 19px 0;
+			    background-color: #190023;
+			}
+			.footer-bottom{
+				color: white;
+			}
+			
+			
+			/* 首页 */
+			#homepage{
+				margin: 20px; 
+				overflow: scroll;
+				height: calc(100vh - 40px);
+			}
+			#welcomMsg{
+				background-color: rgba(0, 0, 0, 0.3);
+				border-radius: 10px;
+				color: white;
+			}
+			
+			/* 商品管理 */
+			#ProductInfo{
+				margin: 20px;
+				overflow: scroll;
+				height: calc(100vh - 40px);
+			}
+			#productAddBox{/* 新增商品表单 */
+				margin: 20px 0px 80px 0px; 
+				/* display: none; */
+			}
+			#prodctAddForm{
+				background-color: #fff;
+				padding: 30px 0px;
+				
+			}
+		</style>
+		<script src="../../resource/js/jquery-1.11.3.min.js"></script>
+		<script src="../../resource/js/vue.js"></script>
+		<script src="../../resource/js/jquery.validate.js"></script>
+	</head>
+	<body>
+		<div class="whole qingchu">
+			<div id="headerBox">
+				<div class="page-header" id="header">
+					<h1 class="text-center"><span class="glyhpicon glyphicon-apple appleIcon"></span>传智书城后台管理系统<span class="glyphicon glyphicon-off logOutIcon"></span></h1>
+				</div>
+				
+			</div>
+			
+			
+			    <div id="sideNavigation" class="clearfix">
+					<!-- 侧边栏标签页 -->
+					<ul class="nav nav-pills nav-stacked">
+						<!-- 侧边栏选项 -->
+						<li role="presentation"><a href="#">商品管理</a></li>
+						<li role="${pageContext.request.contextPath}/admin/jiFen"><a href="#">销售榜单</a></li>
+						<li role="presentation"><a href="#">订单管理</a></li>
+						<li role="presentation"><a href="#">公告管理</a></li>
+					</ul>
+				</div>
+			<div class="wrapper">
+				<!-- 商城首页 -->
+				<!-- <div class="container">
+					<div class="row" id="homepage">
+						<div class="row">
+							<div class="col-lg-12">
+									<div class="jumbotron center-block" id="welcomMsg">
+									  <h1>Hello, world!</h1>
+									  <p>欢迎登录传智书城后台管理系统</p>
+									  <p><a class="btn btn-primary btn-lg" href="#" @click="showCreaterInfo" role="button">contact whit creater</a></p>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div> -->
+			
+				<!-- 商品信息管理 -->
+				<div class="container">
+					<div class="row" id="ProductInfo">
+						<div class="row" id="pEditBtn">
+							<div class="col-lg-7">
+								<p><a id="EditBtn" class="btn btn-primary btn-lg" href="#" role="button">新增商品</a></p>
+							</div>
+						</div>
+						<div class="row" id="productAddBox">
+							<div class="col-lg-10 col-md-8 col-sm-8">
+								<form class="form-horizontal" id="prodctAddForm">
+							  <div class="form-group">
+								<label for="produnctname" class="col-sm-2 control-label">商品名称</label>
+								<div class="col-sm-4">
+								  <input type="text" name="name" class="form-control" id="produnctname" placeholder="produnctname">
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label for="productprice" class="col-sm-2 control-label">商品价格</label>
+								<div class="col-sm-4">
+								  <input type="number" name="price" class="form-control" id="productprice" placeholder="productprice">
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label for="produnctnumble" class="col-sm-2 control-label">商品库存</label>
+								<div class="col-sm-4">
+								  <input type="number" name="pnum" class="form-control" id="produnctnumble" placeholder="produnctnumble">
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label for="productcategory" class="col-sm-2 control-label">商品类别</label>
+								<div class="col-sm-4">
+								  <input type="text" name="category" class="form-control" id="productcategory" placeholder="productcategory">
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label for="produnctimg" class="col-sm-2 control-label">商品图片</label>
+								<div class="col-sm-4">
+								  <input type="text" name="imgurl" class="form-control" id="produnctimg" placeholder="produnctimg">
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label for="productdescription" class="col-sm-2 control-label">商品描述</label>
+								<div class="col-sm-4">
+								  <textarea class="form-control" name="description" rows="3" id="productdescription"></textarea>
+								</div>
+							  </div>
+							  <div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+								  <button type="submit" class="btn btn-default">Save</button>
+								</div>
+							  </div>
+							</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> 
+			
+			
+			
+			<!-- 页脚 -->
+			<div class="footer" id="footer">
+			    <div class="container">
+			        <div class="row footer-top">
+			            <div class="col-sm-6 col-lg-6">
+			                <p>欢迎你加入，这里有你想要的.</p>
+			            </div>
+			            <div class="col-sm-6  col-lg-5 col-lg-offset-1">
+			                <div class="row about">
+			                    <div class="col-xs-3">
+			                        <h4>关于</h4>
+			                        <ul class="list-unstyled">
+			                            <li>
+			                                <a href="">关于我们</a>
+			                            </li>
+			                        </ul>
+			                    </div>
+			                    <div class="col-xs-3">
+			                        <h4>联系方式</h4>
+			                        <ul class="list-unstyled">
+			                            <li>
+			                                <a target="_blank" title="云梦网官方微博" href="">新浪微博</a>
+			                            </li>
+			                            <li>
+			                                <a href="">电子邮件</a>
+			                            </li>
+			                        </ul>
+			                    </div>
+			                </div>
+			
+			            </div>
+			        </div>
+			        <hr>
+			        <div class="row footer-bottom">
+			            <ul class="list-inline text-center">
+			                <li>Copyright &copy;0410190109 余晓枫 Siren_hll All Rights Reserved.</li>
+			            </ul>
+			        </div>
+			    </div>
+			</div>
+		</div>
+		<script>
+			/*
+			//商城首页
+			 var welcomMsg = new Vue({
+			 	el : '.whole',
+			 	methods:{
+			 		showCreaterInfo : function(){
+			 			alert("联系网页创建者：余晓枫0410190109")
+					}
+			 	}
+			 });*/
+			 //商品管理页面
+			 $(function(){
+				 $("#EditBtn").on("click",function(){
+					 $("#productAddBox").toggle();
+				 });
+				 $("#prodctAddForm").validate({
+					onsubmit:true, //在提交时验证
+				    rules: {
+				    name: "required",
+				    price: {
+						required:true,
+						number:true
+					},
+					pnum: {
+						required:true,
+						number:true
+					}
+				   },
+				    messages: {
+				    name: "请输入商品名称",
+				    price: {
+						required:"请输入商品价格",
+						number:"请输入商品价格"
+					},
+					pnum:"请输入商品库存"
+				   },
+				   submitHandler: function(form) { //验证成功时调用
+				         alert(form);
+				   },
+				   invalidHandler: function(form, validator) {  //不通过回调
+	                          alert('验证不通过');
+	                          return false;
+	                     }
+				     });
+			 })
+		</script>
+	</body>
+</html>

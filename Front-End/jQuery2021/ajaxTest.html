@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>异步</title>
+		<style type="text/css">
+			table,tr,td{
+				border-spacing: 0px;
+				border: #000000 1px solid;
+				padding: 5px;
+				border-collapse: collapse;
+			}
+		</style>
+		<script src="jquery-1.9.0.js"></script>
+	</head>
+	<body>
+		<script>
+			$(function(){
+				//异步请求(数据还没出来动态生成表格已经开始执行，会报错)>需转换为同步
+				var results;
+				$.ajaxSetup({//（异步刷新会无意义）
+					async : false
+				})
+				$.getJSON("https://gank.io/api/data/Android/10/1",function(data){//开源api
+					results = data.results;
+					console.log(results)
+				})
+				//动态生成表格
+				var $table = $("<table>");
+				for(var i=0 ;i < results.length; i++){
+						$("<tr></tr>")
+							.append($("<td></td>").text(results[i]._id))
+							.append($("<td></td>").text(results[i].createdAt))
+							.append($("<td></td>").text(results[i].desc))
+							.appendTo($table)
+				}
+				$table.appendTo($("body"));
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>当当网图书榜页面</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.qingchu:after{
+				content: ".";
+				height: 0;
+				visibility: hidden;
+				overflow: hidden;
+				display: block;
+				clear: both;
+			}
+			.whole{
+				width: 1030px;
+				margin: 20px auto;
+				font-family: "楷体","微软雅黑";
+				position: relative;
+			}
+			#header{
+				margin-left: 30px;
+				margin-top: 10px;
+				float: left;
+			}
+			#navbar1 ul{
+				list-style-type: none;
+				float: right;
+				position: absolute;
+				top: 32px;
+				right: 40px;
+				border-top: rgb(208,245,236) solid 1px;
+				border-left: rgb(208,245,236) solid 1px;
+				border-right: rgb(208,245,236) solid 1px;
+			}
+			#navbar1 ul li{
+				float: left;
+				width: 60px;
+				background-color: rgb(227,255,250);
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				font-size: 13px;
+			}
+			#navbar1 ul li a{
+				text-decoration: none;
+				color: darkgray;
+				display: block;
+			}
+			#navbar1 ul li a:hover{
+				color: #FF0000;
+			}
+			#navbar1 .zhek{
+				position: absolute;
+				right: 225px;
+				top: 20px;
+			}
+			#navbar2 ul{
+				list-style-type: none;
+				width: 960px;
+				background: url(img7/menuBg.jpg) repeat-x;
+				position: absolute;
+				left: 30px;
+			}
+			#navbar2 ul li{
+				float: left;
+				height: 40px;
+				line-height: 40px;
+				padding-left: 15px;
+				padding-right: 10px;
+			}
+			#navbar2 ul li a{
+				text-decoration: none;
+				color: white;
+				display: block;
+			}
+			#navbar2 ul li a:hover{
+				color: #8B0000;
+			}
+			#banner{
+				background: url(img7/banner.png);
+				height: 120px;
+				width: 960px;
+				margin-top: 45px;/*nav2+5？*/
+				margin-left: 30px;
+				position: relative;
+			}
+			#content{
+				border: rgb(192,235,149) solid 1px;
+				width: 960px;
+				margin-left: 30px;
+				margin-top: 10px;
+				position: relative;
+			}
+			#content .cx{
+				position: absolute;
+				left: -13px;
+				top: 20px;
+			}
+			#content .cwhole{
+				margin-top: 80px;
+				margin-bottom: 30px;
+			}
+			#content .cleft{
+				float: left;
+				width: 580px;
+			}
+			#content .cright{
+				float: left;
+				width: 360px
+			}
+			#content .cleft .tyz,.cright .kj,.cright .gb{
+				float: left;
+			}
+			#content .cleft .pic2{
+				position: absolute;
+				left:20px;/*相对于#content*/
+				top: 75px;
+			}
+			#content .cright .pic3{
+				position: absolute;
+				top: 70px;
+				left: 580px;
+			}
+			#content .cright .pic4{
+				position: absolute;
+				top: 185px;
+				left: 580px;
+			}
+			#content p{
+				font-size: 13px;
+				padding-right: 15px;
+				line-height: 25px;
+			}
+			#content a{
+				text-decoration: none;
+				color: deepskyblue;
+				font-size: 14px;
+			}
+			#content a:hover{
+				color: crimson;
+			}
+			#content span.jg{
+				color: darkred;
+			}
+			#content span.zhe{
+				color: darkcyan;
+			}
+			#footer p{
+				height: 48px;
+				line-height: 48px;
+				text-align: center;
+				color: gray;
+			}
+			#footer .jh{
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="whole qingchu">
+			<div id="header">
+				<img class="logo" src="img7/logo.jpg" alt="当当网"/>
+			</div>
+			<div id="navbar1" class="qingchu">
+				<div class="list">
+					<ul>
+						<li><a href="#" target=" _blank">尾品汇</a></li>
+						<li><a href="#" target=" _blank">当当优品</a></li>
+						<li><a href="#" target=" _blank">数字馆</a></li>
+						<li><a href="#" target=" _blank">都看阅器</a></li>
+					</ul>
+				</div>
+				<div class="zhek">
+					<img src="img7/icon_count.png" alt="3折"/>
+				</div>
+			</div>
+			<div id="navbar2" class="qingchu">
+				<ul>
+				<li><a href="#" target=" _blank">首页</a></li>
+				<li><a href="#" target=" _blank">图书</a></li>
+				<li><a href="#" target=" _blank">音像</a></li>
+				<li><a href="#" target=" _blank">童装</a></li>
+				<li><a href="#" target=" _blank">服装</a></li>
+				<li><a href="#" target=" _blank">鞋靴</a></li>
+				<li><a href="#" target=" _blank">运动</a></li>
+				<li><a href="#" target=" _blank">箱包</a></li>
+				<li><a href="#" target=" _blank">美妆</a></li>
+				<li><a href="#" target=" _blank">珠宝</a></li>
+				<li><a href="#" target=" _blank">家居</a></li>
+				<li><a href="#" target=" _blank">食品</a></li>
+				<li><a href="#" target=" _blank">酒</a></li>
+				<li><a href="#" target=" _blank">手机</a></li>
+				<li><a href="#" target=" _blank">数码</a></li>
+				<li><a href="#" target=" _blank">电脑</a></li>
+				<li><a href="#" target=" _blank">家电</a></li>
+				</ul>
+			</div>
+			<div id="banner"></div>
+			<div id="content" class="qingchu">
+				<div class="cx"><img class="pic1"src="img7/bg_bang.gif" alt="图书畅销榜"/></div>
+				<div class="cwhole qingchu">
+					<div class="cleft qingchu">
+						<img class="pic2" src="img7/bookNo1.gif" alt="第一"/>
+						<div><img class="tyz" src="img7/book-01.jpg" alt="偷影子的人"/></div>
+						<a href="#" target="_blank">偷影子的人</a>
+						<p>作 者：[法] 马克·李维（Marc Levy）著,段韵灵 译</p>
+						<p>出版社：湖南文艺出版社</p>
+						<p>当当价：<span class="jg">¥ 17.90</span></p>
+						<p>不知道姓氏的克蕾儿。这就是你在我生命里的角色，我童年时的小女孩，今日蜕变成了女人，一段青梅竹马的回忆，一个时间之神没有应允的愿望。 一个老是受班上同学欺负的瘦弱小男孩，因为拥有一种特殊能力而强大：他能“偷别人的影子”，因而能看见他</p>
+					</div>
+					<div class="cright qingchu">
+						<div class="top">
+							
+							<div><img class="kj" src="img7/book-02.jpg" alt="看见"/></div>
+							<img class="pic3" src="img7/bookNo2.gif" alt="第二"/>
+							<a href="#" target="_blank">看见(央视知名记者、主持人柴静：十年个人成长的告白，中国社会变迁的备忘</a>
+							<p>作 者：柴静 著</p>
+							<p>出版社：广西师范大学出版社</p>
+							<p><span class="jg">¥ 29.40</span> &nbsp; <span class="zhe">7.4折</span></p>
+						</div>
+						<div class="sub">
+							<img class="pic4" src="img7/bookNo3.gif" alt="第三"/>
+							<div><img class="gb" src="img7/book-03.jpg" alt="改变孩子先改变自己"/></div>
+							<a href="#" target="_blank">改变孩子先改变自己 </a>
+							<p>作 者：贾容韬 贾毅 著</p>
+							<p>出版社：作家出版社</p>
+							<p><span class="jg">¥ 22.20 </span> &nbsp; <span class="zhe">7.4折</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="footer" >
+				<p>Copyright(c) 当当网 2014-2013，All Right Reserved<img class="jh" src="img7/validate.gif"/>京ICP证041189号出版物经营许可证 新出发京批字第直0673号</p>
+			</div>
+		</div>
+	</body>
+</html>

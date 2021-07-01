@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据类型</title>
+		<style type="text/css">
+			#ps{
+				border: #008B8B dashed 1px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="ps">
+			//类型转换</br>
+			//字符串：1.+  2.toString()    3.String()</br>
+			//数字型:1.parseInt()  2.parseFloat()   3.Number()   4.算术运算符</br>
+			//布尔型：Boolean()</br>
+		</p>
+		<script type="text/javascript">
+			//类型转换
+			//字符串：1.+  2.toString()    3.String()
+			//数字型:1.parseInt()  2.parseFloat()   3.Number()   4.算术运算符
+			//布尔型：Boolean()
+			
+			/*var year = prompt("请输入您的出生年份");//案例一
+			var age = 2020-parseInt(year);
+			alert("您今年已经"+age+"岁了");*/
+			
+			var year = parseInt(prompt("请输入您的出生年份"));//案例一
+			var age = 2020-year;
+			alert("您今年已经"+age+"岁了");
+			
+			/*var num1 = prompt("请输入第一个数:");//简单加法器
+			var num2 = prompt("请输入第二个数:");
+			var result = parseFloat(num1) + parseFloat(num2);
+			alert("计算结果是："+result);*/
+			
+			/*console.log(Boolean(""));//转换为布尔型用Boolean(),代表否定的值会转换为false
+			console.log(Boolean(0));
+			console.log(Boolean(NaN));
+			console.log(Boolean(null));
+			console.log(Boolean(undefined));
+			console.log(Boolean("小白"));
+			console.log(Boolean(12));*/	
+		</script>
+	</body>
+</html>

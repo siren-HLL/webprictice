@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图片随机切换</title>
+		<!--自动切换-->
+		<style type="text/css">
+			body{
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+		</style>
+	</head>
+	<body onload="picchange()">
+		<script type="text/javascript">
+			function picchange(){
+				var i = Math.floor(Math.random()*5);//取整，随机多少个数就乘几
+				var src = "";
+				switch(i){
+					case 0 :
+						src = "img-jssz/1.jpg";
+						break;
+					case 1 :
+						src = "img-jssz/2.jpg";
+						break;
+					case 2 :
+						src = "img-jssz/3.jpg";
+						break;
+					case 3 :
+						src = "img-jssz/4.jpg";
+						break;
+					case 4 :
+						src = "img-jssz/5.jpg";
+						break;
+				}
+			document.body.background = src;
+			setTimeout("picchange()",3000);
+			}
+		</script>
+	</body>
+</html>

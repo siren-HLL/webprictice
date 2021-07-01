@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>发布</title>
+		<style type="text/css">
+			li{
+				position: relative;
+				height: 30px;
+				line-height: 30px;
+				margin-bottom: 10px;
+			}
+			li a{
+				position: absolute;
+				right: 5px;
+				display: inline-block;
+			}
+		</style>
+		<script src="jquery-1.9.0.js"></script>
+	</head>
+	<body>
+		<div id="whole">
+			<textarea name="publishInfo" id="publishBox" cols="50" rows="20"></textarea>
+			<button id="publishBtn">发布</button>
+			<ul>
+				
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$("#publishBtn").click(function(){
+					var temp = $("#publishBox").val();
+					var $li = $("<li></li>").text(temp).append($("<a href='#javascript'>删除</a>")).css({'backgroundColor':'lightblue','width':'200px'});//jquery对象变量加$
+					$("ul").append($li);
+					$("a").click(function(){
+						$(this).parent().remove();
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

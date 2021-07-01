@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="./css/main.css" />
+		<script type="text/javascript" src="./js/mian.js"></script>
+		<title>一碗东坡肉</title>
+	</head>
+	<body>
+		<div class="whole">
+			<audio id="bgm" src="./media/bgm.mp3" loop="loop" autoplay="autoplay"></audio>
+			<div id="music" onclick="mplay()"><img id="yinfu" src="img/yinfu.png"/></div>
+			<div class="pagebox">
+				<!--p2-->
+				<div id="whole2" class="page">
+					<div id="food">
+						<div id="huangjiu"><img class="zizhuan" src="img/p2_huangjiu.png"> </div>
+						<div id="bingtang"><img class="zizhuan" src="img/p2_bingtang.png"> </div>
+						<div id="bajiao"><img class="zizhuan" src="img/p2_bajiao.png"> </div>
+						<div id="meatp2"><img class="zizhuan" src="img/p2_zhurou.png"> </div>
+						<div id="dacong"><img class="zizhuan" src="img/p2_dacong.png"> </div>
+					</div>
+					<p class="textp2">|聊美食</br>我是专业的</p>
+					<p class="ljzf">了解做法</p>
+					<div id="jiantou" onclick="tiaozhuanp3()"><img id='jt2' src="img/jiantou.png"/></div>
+				</div>
+				<!--p3-->
+				<div id="whole3" class="page">
+					<!--样图组-->
+					<img src="img/p3-1_topmeat.png" id="yangtu1" class="yangtu"></img>
+					<img src="img/p3-2_topdacong.png" id="yangtu2" class="yangtu"></img>
+					<img src="img/p3-3_topbingtang.png" id="yangtu3" class="yangtu"></img>
+					<!--文字组-->
+					<div id="text1" class="wenzi">
+						<p class="top3-1">猪肉焯水，</br>切成大小适宜的方块。</p>
+						<p class="mid3-1">肥瘦适当、层层肥瘦相间，比例接近。</p>
+						<p class="luokuan">——五花肉挑选经验</p>
+					</div>
+					<div id="text2" class="wenzi">
+						<p class="top3-2">用铁锅或者砂锅放入葱、姜、八角、肉皮朝下放入五花肉，倒入黄酒没过食材。</p>
+						<p class="mid3-2">颗粒饱满、整齐完整、呈棕红色、夹边裂缝隙较大.</p>
+						<p class="luokuan">——八角挑选经验</p>
+					</div>
+					<div id="text3" class="wenzi">
+						<p class="top3-3">放入冰糖、老抽、盐大火煮开后，小火慢炖1.5小时大火收汁出锅！</p>
+						<p class="mid3-2">晶体光泽、晶粒均匀不含杂质，呈白色或淡黄色半透明</p>
+						<p class="luokuan">———冰糖挑选经验</p>
+					</div>
+					<!--按钮组-->
+					<div id="anniu">
+						<div id="faguang1" class="fgk"></div>
+						<img id="anniu1" class="ann" onclick="an1()" src="img/p3_meat.png"/>
+						<div id="faguang2" class="fgk"></div>
+						<img id="anniu2" class="ann" onclick="an2()" src="img/p3_dacong.png"/>
+						<div id="faguang3" class="fgk"></div>
+						<img id="anniu3" class="ann" onclick="an3()" src="img/p3_bingtang.png"/>
+					</div>	
+					<div id="jiantou" onclick="tiaozhuanp4()"><img id="jt3" src="img/jiantou.png"/></div>
+				</div>
+				<!--p4-->
+				<div id="whole4" class="page">
+					<div id="textp4">
+						<h3>《猪肉颂》</h3>
+						<p class="sd">净洗铛，少著水，柴头罨烟焰不起。待他自熟莫催他，火候足时他自美。黄州好猪肉，价贱如泥土。</p>
+						<p class="xd">贵者不肯吃，贫者不解煮，早晨起来打两碗，饱得自家君莫管。</br></br></p>
+						<p class="zz">——苏轼</p>
+					</div>
+					<div id="qi1">
+						<p><img id="qizuo1" src="img/p1_qizuo.png"/></p>
+						<p><img id="qizhong1" src="img/p1_qizhong.png"/></p>
+						<p><img id="qiyou1" src="img/p1_qiyou.png"/></p>
+					</div>
+					<div id="jiantou1" onclick="tiaozhuan3()"><p id="ljzf1">了解做法<img id="jt4" src="img/p4_jiantou.png"/></p></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./js/slide.js"></script>
+	</body>
+</html>

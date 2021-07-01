@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#whole{
+				position: relative;
+				margin: auto;
+				left: 300px;
+			}
+			/*图片轮播*/
+			#lb{
+				position: absolute;
+				width: 800px;
+				height: 355px;
+			}
+			#lunbo{
+				width: 800px;
+				height: 355px;
+				border: 3px #001424 solid;
+				overflow: hidden;
+				text-align: center;
+				font-size: 30px;
+				list-style-type: none;
+			}
+			#lunbo>li{
+				width: 800px;
+				height: 350px;
+			}
+			#xiabiao{
+				position: absolute;
+				right: 20px;
+				bottom: 20px;
+			}
+			#xiabiao>span{
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				border: 1px #001424 solid;
+				margin-right: 5px;
+				display: inline-block;
+				text-align: center;
+			}
+			.on{
+				background-color: #8B0000;
+				color: white;
+			}
+			
+			/*导航*/
+			nav{
+				width: 810px;
+				margin: 0 auto;
+				position: absolute;
+				top: 380px;
+			}
+			ul{
+				list-style-type: none;
+			}
+			#yiji>li{
+				position: relative;
+			}
+			#erji{
+				position: absolute;
+			}
+			#yiji li ul{
+				display: none;
+			}
+			nav li{
+				float: left;
+				border: #000000 1px solid;
+				width: 160px;
+				text-align: center;
+				height: 40px;
+				line-height: 40px;
+				background-color: white;
+				z-index: 900;
+			}
+			li:hover>a{
+				color: red;
+			}
+			a{
+				text-decoration: none;
+				color: #001424;
+			}
+			
+			/*选项卡*/
+			#xuanxiangka{
+				position: absolute;
+				top: 500px;
+			}
+			#shangbiao ul{
+				list-style-type: none;
+			}
+			#shangbiao{
+				height: 40px;
+				width: 500px;
+			}
+			#xuanxiangul li{
+				float: left;
+				width: 120px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				background-color: #9370DB;
+				border: #000000 1px solid;
+			}
+			#xuanxiangul li a{
+				text-decoration: none;
+				color: white;
+			}
+			#xxknr{
+				width: 484px;
+				height: 350px;
+				border: #000000 2px solid;
+			}
+			#xxknr div{
+				width: 484px;
+				height: 350px;
+			}
+			.con{
+				display: block;
+			}
+			.yingcang{
+				display: none;
+			}
+			
+			/*无缝循环*/
+			#wufeng{
+				position:absolute;
+				top: 500px;
+				left: 550px;
+			}
+			#wufeng h2{
+				margin-bottom: 20px;
+				margin-left: 70px;
+			}
+			#slide{
+				position: absolute;
+				height:300px;
+				width:260px;
+				color:#FA8E93;
+				overflow: hidden;
+				border: 2px solid #000000;
+				font-size: 18px;
+			} 
+			#slide h2{
+				border: #8B0000 solid 1px;
+			}
+			#slide p{
+				height:34px;
+				line-height:34px;
+				overflow:hidden
+			}  
+			#slide1,#slide2{
+				height: 310px;
+			}
+			
+			/*计算器*/
+			#jisuanqi{
+				display: none;
+				position: absolute;
+				top: 440px;
+				left: 220px;
+				width: 400px;
+				height: 470px;
+				border: black solid 2px;
+				background-color: #9370DB;
+				z-index: 800;
+			}
+			#text{
+				width: 350px;
+				height: 80px;
+				line-height: 80px;
+				margin: 25px 25px 15px 25px;
+				background-color: #222222;
+				color: white;
+				border: #000000 1px solid;
+				font-size: 28px;
+			}
+			#anjian{
+				margin-left: 25px;
+			}
+			#anjian input[type=button]{
+				width: 80px;
+				height: 50px;
+				line-height: 50px;
+				margin-right: 5px;
+				margin-bottom: 10px;
+				border: none;
+				font-size: 20px;
+				border-radius: 50%;
+			}
+			#equ{
+				width: 350px;
+				height: 50px;
+				margin-left: 25px;
+			}
+			.gj{
+				border: darkgray 1px solid;
+				font-size: 20px;
+				color: black;
+			}
+			
+			/*计时器*/
+			#jishiqi{
+				display: none;
+				position: absolute;
+				top: 440px;
+				left: 240px;
+				width: 500px;
+				height: 300px;
+				border: #000000 solid 2px;
+				background-color: #9370DB ;
+				z-index: 800;
+			}
+			#timebox{
+				margin: 50px auto;
+				border: #001424 solid 1px;
+				width: 400px;
+				height: 150px;
+				line-height: 150px;
+				font-size: 28px;
+				background-color: #222222;
+				color: white;
+				text-align: center;
+			}
+			#anniu{
+				position: absolute;
+				top: 220px;
+				left: 100px;
+			}
+			#anniu input{
+				width: 60px;
+				height: 30px;
+				line-height: 40px;
+				text-align: center;
+				margin-right: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="whole">
+			<!-- 图片轮播 -->
+			<div id="lb">
+				<ul id="lunbo">
+					<li onmouseover="shows_pic(1)" onmouseout="lbgoon()">1</li>
+					<li onmouseover="shows_pic(2)" onmouseout="lbgoon()">2</li>
+					<li onmouseover="shows_pic(3)" onmouseout="lbgoon()">3</li>
+					<li onmouseover="shows_pic(4)" onmouseout="lbgoon()">4</li>
+					<li onmouseover="shows_pic(5)" onmouseout="lbgoon()">5</li>
+				</ul>
+				<div id="xiabiao">
+					<span class="on" onmouseover="shows_pic(1)" onmouseout="lbgoon()">1</span>
+					<span onmouseover="shows_pic(2)" onmouseout="lbgoon()">2</span>
+					<span onmouseover="shows_pic(3)" onmouseout="lbgoon()">3</span>
+					<span onmouseover="shows_pic(4)" onmouseout="lbgoon()">4</span>
+					<span onmouseover="shows_pic(5)" onmouseout="lbgoon()">5</span>
+				</div>
+			</div>
+			
+			<!-- 导航 -->
+			<nav>
+				<ul id="yiji">
+					<li onclick="fanhui()"><a href="#">首页</a></li>
+					<li id="nav2" onmouseover="onOver(this)" onmouseout="onMove(this)"><a href="#">学校简介</a>
+						<ul id="erji">
+							<li><a href="#">学校文化</a></li>
+							<li><a href="#">学校师资</a></li>
+							<li><a href="#">学生发展</a></li>
+						</ul>
+					</li>
+					<li><a href="#">教务管理</a></li>
+					<li><a href="#">学生管理</a></li>
+					<li onmouseover="onOver(this)" onmouseout="onMove(this)"><a href="#">小工具</a>
+						<ul id="second2">
+							<li id="jsq" onclick="timerxs()">计时器</li>
+							<li id="jisuanq" onclick="jisuanqixs()">计算器</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			
+			<!-- 选项卡 -->
+			<div id="xuanxiangka">
+				<div id="shangbiao" class="qingchu">
+					<ul id="xuanxiangul">
+						<li style="background-color: purple;" onclick="showli(this)" nrli="aa"><a href="#">重庆</a></li>
+						<li onclick="showli(this)" nrli="bb"><a href="#" >四川</a></li>
+						<li onclick="showli(this)" nrli="cc"><a href="#" >云南</a></li>
+						<li onclick="showli(this)" nrli="dd"><a href="#" >贵州</a></li>
+					</ul>
+				</div>
+				<div id="xxknr">
+					<div class="con" id="aa">重庆的内容</div>
+					<div class="yingcang" id="bb">四川的内容</div>
+					<div class="yingcang" id="cc">云南的内容</div>
+					<div class="yingcang" id="dd">贵州的内容</div>
+				</div>
+			</div>
+			
+			<!-- 无缝循环 -->
+			<div id="wufeng">
+				<div id="wfbt">
+					<h2> 学校信息栏</h2>
+				</div>
+				<div id="slide">
+					<div id="slide1">  
+						<p>1.信管A1901班花名册</p> 
+						<p>2.信管A1902班花名册</p> 
+						<p>3.巴渝工匠杯在我校举行</p> 
+						<p>4.2020年贫困认定学生公示名单</p> 
+						<p>5.2020年国家奖学金获奖名单公示</p> 
+						<p>6.2020年优秀辅导员公示</p> 
+						<p>7.2020年国家助学金公示名单</p> 
+						<p>8.2020年国家励志奖学金公示名单</p> 
+						<p>9.2020年优秀党员</p> 
+					</div> 
+					<div id="slide2"></div> 
+				</div> 
+			</div>
+			
+			<!-- 计算器 -->
+			<div id="jisuanqi">
+				<input type="text" id="text" name="text" value=""/><br/>
+				<div id="anjian">
+				<input type="button" name="" value="7" onclick="calcu(this.value)"/>
+				<input type="button" name="" value="8" onclick="calcu(this.value)"/>
+				<input type="button" name="" value="9" onclick="calcu(this.value)"/>
+				<input type="button" name="" value="AC" onclick="calcu(this.value)"/ class="gj"><br/>
+				<input type="button" name="" value="4" onclick="calcu(this.value)"/>
+				<input type="button" name="" value="5" onclick="calcu(this.value)"/>
+				<input type="button" name="" value="6" onclick="calcu(this.value)"/>
+				<input type="button" name="" value="+" onclick="calcu(this.value)" class="gj"/><br/>
+				<input type="button" name="" value="1" onclick="calcu(this.value)"/>
+				<input type="button" name="" value="2" onclick="calcu(this.value)"/>
+				<input type="button" name="" value="3" onclick="calcu(this.value)"/>
+				<input type="button" name="" value="-" onclick="calcu(this.value)" class="gj"/><br/>
+				<input type="button" name="" value="0" onclick="calcu(this.value)"/>
+				<input type="button" name="" value="." onclick="calcu(this.value)"/>
+				<input type="button" name="" value="/" onclick="calcu(this.value)" class="gj"/>
+				<input type="button" name="" value="*" onclick="calcu(this.value)" class="gj"/><br/>
+				</div>
+				<input type="button" name="" value="=" id="equ"  onclick="calcu(this.value)" class="gj"/>
+			</div>
+			
+			<!-- 计时器 -->
+			<div id="jishiqi">
+				<div id="timebox"></div>
+				<div id="anniu">
+					<input type="button" name="" value="开始" id="start" onclick="start()"/>
+					<input type="button" name="" value="暂停" id="stop" onclick="stop()"/>
+					<input type="reset" name="" value="重置" id="reset" onclick="reset_time()"/>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var no = 0;
+			function pic(){
+				var lunbo = document.getElementById("lunbo");
+				var lblis = lunbo.getElementsByTagName("li");
+				var xiabiao = document.getElementById("xiabiao");
+				var lbspans = xiabiao.getElementsByTagName("span");
+				for(var i=0; i< lblis.length; i++){
+					lblis[i].style.display = "none";
+					lbspans[i].className = "";
+				}
+				no ++;
+				if(no ==5){
+					no = 0;
+				}
+				lblis[no].style = "block";
+				lbspans[no].className = "on";
+			}
+			var lbintervar = setInterval("pic()",1000);
+			function shows_pic(index){
+				clearInterval(lbintervar);
+				var pic_show = document.getElementById("lunbo");
+				var lis = pic_show.getElementsByTagName("li");
+				var pic_no = document.getElementById("xiabiao");
+				var spans = pic_no.getElementsByTagName("span");
+				for(var i=0; i< lis.length; i++){
+					lis[i].style.display = "none";
+					spans[i].className = "";
+				}
+				lis[index-1].style.display ="block";
+				spans[index-1].className = "on";
+				no = index-1;
+			}
+			function lbgoon(){
+				lbintervar = setInterval("pic()",1000);
+			}
+			
+			/*导航*/
+			function onOver(obj){
+				var ul=obj.getElementsByTagName("ul");//li下面的ul数组
+				ul[0].style.display="block";//第一个ul
+			}
+			//this指向当前标签
+			function onMove(obj){
+				var ul=obj.getElementsByTagName("ul");
+				ul[0].style.display="none";
+			}
+			
+			/*选项卡*/
+			function showli(obj){
+				var xuanxiangul = document.getElementById("xuanxiangul");
+				var lis = xuanxiangul.getElementsByTagName("li");
+				for(var i=0; i<lis.length; i++){
+					lis[i].style.backgroundColor = "#9370DB";
+				}
+				obj.style.backgroundColor = "purple";
+				var divs = document.getElementById("xxknr").getElementsByTagName("div");
+				for(var i=0; i<divs.length; i++){
+					
+					divs[i].className = "yingcang";
+				}
+				var menuid = obj.getAttribute("nrli");
+				var divnr = document.getElementById(menuid);
+				divnr.className = "con";
+			}
+			
+			/*无缝循环*/
+			var speed=40
+			 var slide=document.getElementById("slide"); 
+			 var slide2=document.getElementById("slide2"); 
+			 var slide1=document.getElementById("slide1"); 
+			 slide2.innerHTML=slide1.innerHTML 
+			 function Marquee(){ 
+			     if(slide2.offsetTop-slide.scrollTop<=0) 
+			         slide.scrollTop-=slide1.offsetHeight //循环
+			     else{ 
+			         slide.scrollTop++ 
+			     } 
+			} 
+			 var MyMar=setInterval(Marquee,speed);
+			 slide.οnmοuseοver=function(){clearInterval(MyMar)} 
+			slide.οnmοuseοut=function(){MyMar=setInterval(Marquee,speed);};
+			
+			/*计算器*/
+			function jisuanqixs(){
+				var jisuanqi = document.getElementById("jisuanqi");
+				var jishiqi = document.getElementById("jishiqi");
+				if(jishiqi.style.display="block"){
+					jishiqi.style.display="none";
+				}
+				jisuanqi.style.display="block";
+			}
+			function calcu(val){
+				var result = document.getElementById("text");
+				switch(val){
+					case "AC":
+						result.value = "";
+						break;
+					case "=":
+						result.value = eval(result.value);
+						break;
+					default:
+						result.value = result.value + val;
+						break;
+				}
+			}
+			
+			/*计时器*/
+			function timerxs(){
+				var jishiqi = document.getElementById("jishiqi");
+				var jisuanqi = document.getElementById("jisuanqi");
+				if(jisuanqi.style.display="block"){
+					jisuanqi.style.display="none";
+				}
+				jishiqi.style.display="block";
+			}
+			var timebox = document.getElementById("timebox");
+			var hour = 0;
+			var minute = 0;
+			var seconds = 0;
+			var ms = 0;
+			var timer = 0;
+				
+			function time(){
+				ms = ms+50;
+				if(ms >= 1000){
+					ms=0;
+					seconds = seconds+1;
+				}
+				if(seconds >= 60){
+					seconds = 0;
+					minute += 1;
+				}
+				if(minute >= 60){
+					minute = 0;
+					hour += 1;
+				}
+				var showtime = hour +"时"+minute+"分"+seconds+"秒"+ms+"毫秒";
+				timebox.innerHTML = showtime;
+			}
+			function start(){
+				clearInterval(timer);
+				timer = setInterval(time,50);
+			}
+			function stop(){
+				clearInterval(timer);
+			}
+			function reset_time(){
+				clearInterval(timer);
+				ms=seconds=minute=hour=0;
+				timebox.innerHTML='00时00分00秒000毫秒';
+			}
+			
+			/*返回*/
+			function fanhui(){
+				yincanggj();
+			}
+			function yincanggj(){
+				var jishiqi = document.getElementById("jishiqi");
+				var jisuanqi = document.getElementById("jisuanqi");
+				jishiqi.style.display="none";
+				jisuanqi.style.display="none";
+			}
+		</script>
+	</body>
+</html>

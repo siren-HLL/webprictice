@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			div{
+				margin: 10px auto;
+				border: #000000 1px solid;
+				width: 300px;
+				height: 200px;
+				line-height: 200px;
+				text-align: center;
+				font-size: 40px;
+			}
+			input{
+				margin: 10px 300px;
+			}
+		</style>
+		<title>时间</title>
+	</head>
+	<body>
+		<div id="show_time"></div>
+		<input type="button" value="停止" onclick="clear_time()" />
+		<script type="text/javascript">
+			/*
+			//时间函数，获取当前时间
+			var time = new Date();
+			var year = time.getFullYear();
+			var month = time.getMonth()
+			var day = time.getDate();
+			var weekday = time.getDay();
+			var hour = time.getHours();
+			var minute = time.getMinutes();
+			var second = time.getSeconds();
+			console.log(year);*/
+			
+			/*使用var（关键字）+变量名(标识符)的方式在function外部声明，即为全局变量，否则在function声明的是局部变量。*/
+			var myset;
+			function time(){
+				var time = new Date();
+				var hour = time.getHours();
+				var minute = time.getMinutes();
+				var second = time.getSeconds();//个位数只显示一位
+				// var str = hour +":"+minute+":"+second;
+				if(second >=0 && second <= 9){
+					second = "0"+second;
+				}else if(minute >=0 && minute <= 9){
+					minute = "0"+minute;
+				}else if(hour >=0 && hour <= 9){
+					hour = "0"+ hour;
+				}
+				var str = hour +":"+minute+":"+second;
+				
+				var show_time = document.getElementById("show_time");
+				show_time.innerHTML = str;
+				myset = setTimeout("time()",1000);//执行代码，时间间隔
+			}
+			time();
+			function clear_time(){
+				clearTimeout(myset);
+			}
+		</script>
+	</body>
+</html>

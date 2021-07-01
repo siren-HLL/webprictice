@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>右键单击事件</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.on{/* 选中后的单击区域样式 */
+				background-color:  #0086B3;
+				color: white;
+			}
+			.out{/* 单击区域默认样式 */
+				background-color:  lightblue;
+				color: black;
+			}
+			#clickbar{
+				width: 202px;
+				height: 50px;
+				line-height: 50px;
+				font-size: 20px;
+				text-align: center;
+			}
+			ul{
+				list-style-type: none;
+			}
+			li{
+				width: 200px;
+				height: 30px;
+				line-height: 30px;
+				border: #001424 1px solid;
+				text-align: center;
+				color: #000000;
+				background-color: lightblue;
+			}
+			li:hover{
+				background-color:  #0086B3;
+				color: white;
+			}
+			#firstNav{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="contextmenuBox">
+			<div id="clickbar" oncontextmenu="showNav()" class="out">右键单击区域</div>
+			<ul id="firstNav">
+				<li onmouseover="onOver()">菜单1</li>
+				<li onmouseover="onOver()">菜单2</li>
+				<li onmouseover="onOver()">菜单3</li>
+				<li onmouseover="onOver()">菜单4</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var firstNav = document.getElementById("firstNav");
+			var clickbar = document.getElementById("clickbar");
+			//右键单击事件
+			function showNav(){
+				firstNav.style.display = "block";
+				clickbar.className = "on";
+				document.onclick = function(){
+					closeMenu();//点击其他地方关闭右键打开的菜单
+				}
+			}
+			function closeMenu(){
+				firstNav.style.display = "none";
+				clickbar.className = "out";
+				}
+			
+			//选择菜单随机弹出的对话框	
+			function onOver(){
+				var index = Math.floor(Math.random()*5);
+				var randomShowArr = ['Hellow World','goodbye','My Jinji','Drunk Talk','Neon God'];
+				var randomShow = randomShowArr[index];
+				alert(randomShow);
+			}
+		</script>
+	</body>
+</html>

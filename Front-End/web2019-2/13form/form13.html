@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS登录框的制作</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑","楷体";
+			}
+			.whole{
+				width: 350px;
+				background: rgb(233,245,252);
+				margin: 20px auto;
+				border: rgb(174,222,245) dashed 3px;
+			}
+			.whole h3{
+				text-align: center;
+				border-bottom: rgb(174,222,245) solid 2px;
+				margin: 25px 20px 15px 20px;
+				padding-bottom: 10px;
+			}
+			.whole div{
+				margin: 10px 30px ;
+			}
+			.whole label{/*对齐，行内块*/
+				display: inline-block;
+				width: 80px;
+				text-align: right;
+			}
+			.whole input[type="text"]{/*属性选择器：标签名【属性=“值”】*/
+				background: url(./img13/012.jpg) no-repeat left center white;/*背景颜色与图片一致*/
+				border: rgb(174,222,245) solid 1px;
+				padding-left: 20px;/*光标不遮住图标*/
+				height: 18px;
+			}
+			.whole input[type="password"]{
+				background: url(./img13/013.jpg) no-repeat left center white;
+				border: rgb(174,222,245) solid 1px;
+				padding-left: 20px;
+				height: 18px;
+			}
+			.whole .dz{
+				text-align: center;
+				margin-bottom: 20px;
+			}
+			.whole .dz button{
+				color: #FFFFFF;
+				background: rgb(0,123,200) ;
+				width:80px;
+				height: 25px;
+				border: none;
+				border-radius: 5px;
+				font-size: 15px;
+			}
+			.whole .dz span{/*调节三角形大小*/
+				font-size: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="whole">
+			<form action="" method="post" name="denglk">
+				<h3>用户登录</h3>
+				<div class="yonghu">
+					<label for="yhm">用户名：</label><input type="text" name="yhm" id="yhm" size="20"/>
+				</div>
+				<div class="mima">
+					<label for="mim">密&nbsp;&nbsp; &nbsp;码：</label><input type="password" name="mim" id="mim" size="20"/>
+				</div>
+				<div class="dz">
+					<button type="submit" >登录&nbsp;&nbsp;&nbsp;<span>&#9658;</span> </button>
+					<button type="button" >注册&nbsp;&nbsp;&nbsp;<span>&#9658;</span> </button><!--input没有办法用span-->
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

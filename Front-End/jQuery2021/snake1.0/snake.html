@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>贪吃蛇测试</title>
+	</head>
+	<body>
+		<script src="../jquery-1.9.0.js"></script>
+		<script>
+			//构造函数
+			function getRandom(n,m){
+				var num = Math.floor(Math.random()*(m-n+1)+n)
+				return num
+			}
+			function Head(size,color,direction,position){
+				this.size = size;
+				this.color = color;
+				this.position = position;
+				this.direction = direction;
+				this.isEat = function(food){
+					if(this.position.left >= food.position.left - food.size.width 
+					&& this.position.left <= food.position.left + food.size.width
+					&& this.position.top >= food.position.top - food.size.width
+					&& this.position.top <= food.position.top + food.size.width){//碰撞检测
+						return true;
+					}else{
+						return false;
+					}
+				}
+				this.crash = function(){
+					if(this.position.left >= $(window).width() || this.position.left <= 0
+					|| this.position.top >= $(window).height() || this.position.top <=0){
+						clearInterval(id);
+						alert("gameOver");
+					}
+				}
+			}
+			function Section(size,color,direction,position){
+				this.size = size;
+				this.color = color;
+				this.position = position;
+				this.direction = direction;
+			}
+			function Snake(head,sections){
+				this.head = head;
+				this.sections = sections;
+			}
+			function Food(size,color,position){
+				this.size = size;
+				this.color = color;
+				this.position = position;
+			}
+
+			//*************初始化食物
+			var foodSize = {
+				"width" : 20,
+				"height" : 20,
+			}
+			var foodColor = "yellow";
+			var foodPosition = {
+				"left" : getRandom(300,700),
+				"top" : getRandom(300,600)
+			}
+			var food = new Food(foodSize,foodColor,foodPosition);//创建食物对象
+
+			//*************初始化蛇
+			//*************初始化蛇头
+			var headSize = {
+				"width" : 20,
+				"height" : 20,
+			}
+			var headColor = "red";
+			var headDirection = "right";
+			var headPosition = {
+				"left" : 100,
+				"top" : 100
+			}
+			var head = new Head(headSize,headColor,headDirection,headPosition);
+			//*************初始化蛇身
+			var sectionPosition = {
+				"left" : 80,
+				"top" : 100
+			}
+			var sections = [];//蛇身
+			var section = new Section(headSize,"green",headDirection,sectionPosition);//一节蛇身
+			sections.push(section);
+			//初始化蛇
+			var snake = new Snake(head,sections);
+
+
+			//*************可视化
+			//可视化食物
+			$("<div>").css({
+				"position":"absolute",
+				"width":food.size.width,
+				"height":food.size.height,
+				"left":food.position.left,
+				"top":food.position.top,
+				"backgroundColor":food.color
+			}).appendTo($("body"))
+				.addClass("food")
+
+			//可视化蛇
+			$("<div>").css({//蛇头
+				"position":"absolute",
+				"width":snake.head.size.width,
+				"height":snake.head.size.height,
+				"left":snake.head.position.left,
+				"top":snake.head.position.top,
+				"backgroundColor":snake.head.color
+			}).appendTo($("body"))
+				.addClass("head")
+			//蛇身
+			for(var i=0 ; i<sections.length; i++){
+				$("<div>").css({//蛇头
+				"position":"absolute",
+				"width":snake.sections[i].size.width,
+				"height":snake.sections[i].size.height,
+				"left":snake.sections[i].position.left,
+				"top":snake.sections[i].position.top,
+				"backgroundColor":snake.sections[i].color
+			}).appendTo($("body"))
+				.addClass("section")
+			}
+			console.log(snake.head.direction)
+
+
+			function snakeMove(){
+				switch(snake.head.direction){
+					case "right":
+						snake.head.position.left = snake.head.position.left + snake.head.size.width;
+						break;
+					case "left":
+						snake.head.position.left = snake.head.position.left - snake.head.size.width;
+						break;
+					case "up":
+						snake.head.position.top = snake.head.position.top - snake.head.size.height;
+						break;
+					case "down":
+						snake.head.position.top = snake.head.position.top + snake.head.size.height;
+						break;
+				}
+				var preDirection = snake.sections[snake.sections.length-1].direction;//改变方向前最后一节蛇身的方向
+				for (var i = snake.sections.length-1 ; i >= 0; i--){//倒序来
+					switch(snake.sections[i].direction){
+					case "right":
+						snake.sections[i].position.left = snake.sections[i].position.left + snake.head.size.width;
+						break;
+					case "left":
+						snake.sections[i].position.left = snake.sections[i].position.left - snake.head.size.width;
+						break;
+					case "up":
+						snake.sections[i].position.top = snake.sections[i].position.top - snake.head.size.height;
+						break;
+					case "down":
+						snake.sections[i].position.top = snake.sections[i].position.top + snake.head.size.height;
+						break;
+					}
+					if(i != 0){//改方向
+						snake.sections[i].direction = snake.sections[i-1].direction;
+					}
+				}
+				snake.sections[0].direction = snake.head.direction;//第一个蛇身动完后改变方向
+
+				snake.head.crash();
+
+				if(snake.head.isEat(food)){
+					//食物消失，随机出现在其他地方
+					food.position = {
+						"left" : getRandom(300,700),
+						"top" : getRandom(300,600)
+					}
+					//增加一节蛇身
+					var tempPosition = {};
+					switch(preDirection){
+						case "left":
+							tempPosition.left = snake.sections[snake.sections.length-1].position.left + snake.head.size.width;
+							tempPosition.top = snake.sections[snake.sections.length-1].position.top;
+							break;
+						case "right":
+							tempPosition.left = snake.sections[snake.sections.length-1].position.left - snake.head.size.width;
+							tempPosition.top = snake.sections[snake.sections.length-1].position.top;
+							break;
+						case "up":
+							tempPosition.top = snake.sections[snake.sections.length-1].position.top + snake.head.size.height;
+							tempPosition.left = snake.sections[snake.sections.length-1].position.left;
+							break;
+						case "down":
+							tempPosition.top = snake.sections[snake.sections.length-1].position.top - snake.head.size.height;
+							tempPosition.left = snake.sections[snake.sections.length-1].position.left;
+							break;
+					}
+					var section = new Section(head.size,"green",preDirection,tempPosition);
+					snake.sections.push(section);
+					$("<div>").css({//
+						"position":"absolute",
+						"width":section.size.width,
+						"height":section.size.height,
+						"left":section.position.left,
+						"top":section.position.top,
+						"backgroundColor":section.color
+					}).appendTo($("body"))
+						.addClass("section")
+				}
+				
+
+				//改变文档的样式
+				$(".head").css({
+					"left":snake.head.position.left +"px",
+					"top":snake.head.position.top + "px"
+				})
+				$(".section").each(function(index,e){
+					$(e).css({
+						"left":snake.sections[index].position.left +"px",
+						"top":snake.sections[index].position.top + "px"
+					})
+				})
+				$(".food").css({
+					"left":food.position.left +"px",
+					"top":food.position.top + "px"
+				})
+			}
+			
+			var id;
+			
+			$(function(){
+				id = setInterval(snakeMove,200);
+			
+				$(window).on("keydown",function(e){
+					switch(e.keyCode){
+						case 38:
+							if(snake.head.direction != "down"){
+								snake.head.direction = "up";
+								break;
+							}
+							break;
+						case 40:
+							if(snake.head.direction != "up"){
+								snake.head.direction = "down";
+								break;
+							}
+							break;
+						case 37:
+							if(snake.head.direction != "right"){
+								snake.head.direction = "left";
+								break;
+							}
+							break;
+						case 39:
+							if(snake.head.direction != "left"){
+								snake.head.direction = "right";
+								break;
+							}
+							break;
+
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

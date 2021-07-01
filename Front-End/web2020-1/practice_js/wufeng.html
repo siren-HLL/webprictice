@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>向左滑动</title>
+		<style type="text/css">
+			* {
+				margin:0;
+				padding:0;
+				list-style:none;
+				float:left
+			}
+			#content {
+				width:1000px;
+				height:300px;
+				position:relative;
+				overflow:hidden
+			}
+			#content ul {
+				width:1000px;
+				height:300px;
+				position:absolute
+			}
+			#content ul li {
+				width:200px;
+				height:300px;
+			}
+			/* :nth-of-type(n) 选择器匹配属于父元素的特定类型的第 N 个子元素的每个元素. */
+			/* :nth-child() 选择器，该选择器选取父元素的第 N 个子元素，与类型无关。 */
+			#content ul li:nth-of-type(1) {
+				background:yellow
+			}
+			#content ul li:nth-of-type(2) {
+				background:turquoise
+			}
+			#content ul li:nth-of-type(3) {
+				background:navajowhite
+			}
+			#content ul li:nth-of-type(4) {
+				background:darkblue
+			}
+			#content ul li:nth-of-type(5) {
+				background:black
+			}
+			#content ul li:nth-of-type(6) {
+				background:yellow
+			}
+			#content ul li:nth-of-type(7) {
+				background:turquoise
+			}
+			#content ul li:nth-of-type(8) {
+				background:navajowhite
+			}
+			#content ul li:nth-of-type(9) {
+				background:darkblue
+			}
+			#content ul li:nth-of-type(10) {
+				background:black
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="content">
+		    <ul>
+		        <li>1</li>
+		        <li>2</li>
+		        <li>3</li>
+		        <li>4</li>
+		        <li>5</li>
+		    </ul>
+		</div>
+		<script type="text/javascript">
+			 window.onload = function() {
+			     var content = document.getElementById("content")
+			     var ul = content.getElementsByTagName("ul")[0]
+			     var li = ul.getElementsByTagName("li")
+			     var speed = 1;
+			
+			     ul.innerHTML += ul.innerHTML
+			     ul.style.width = li.length * li[0].offsetWidth + "px"
+			
+			     function run() {
+			         if (ul.offsetLeft < -ul.offsetWidth / 2) {
+			             ul.style.left = 0
+			         } else if (ul.offsetLeft > 0) {
+			             ul.style.left = -ul.offsetWidth / 2 + "px"
+			         }
+			
+			         ul.style.left = ul.offsetLeft + speed + "px"
+			     }
+			     timer = setInterval(run, 30)
+			
+			     content.onmouseover = function() {
+			         clearInterval(timer)
+			     }
+			
+			     content.onmouseout = function() {
+			         timer = setInterval(run, 30)
+			     }
+			
+			
+			 }
+		</script>
+	</body>
+</html>

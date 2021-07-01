@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图片轮播</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#lbbox{
+				position: relative;
+				width: 1006px;
+				height: 355px;
+			}
+			#lbul{
+				width: 1006px;
+				height: 355px;
+				border: 3px #001424 solid;
+				overflow: hidden;
+				text-align: center;
+				font-size: 30px;
+				list-style-type: none;
+			}
+			#lbul>li{
+				width: 1000px;
+				height: 350px;
+				border: 2px #008B8B solid;
+			}
+			#lbbot{
+				position: absolute;
+				right: 20px;
+				bottom: 20px;
+			}
+			#lbbot>span{
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				border: 1px #00008B solid;
+				margin-right: 5px;
+				display: inline-block;
+				text-align: center;
+			}
+			.on{
+				background-color: #008B8B;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="lbbox">
+			<ul id="lbul">
+				<li onmouseover="show_current_pic(1)" onmouseout="lbgoon()">1</li>
+				<li onmouseover="show_current_pic(2)" onmouseout="lbgoon()">2</li>
+				<li onmouseover="show_current_pic(3)" onmouseout="lbgoon()">3</li>
+				<li onmouseover="show_current_pic(4)" onmouseout="lbgoon()">4</li>
+				<li onmouseover="show_current_pic(5)" onmouseout="lbgoon()">5</li>
+			</ul>
+			<div id="lbbot">
+				<span class="on" onmouseover="show_current_pic(1)" onmouseout="lbgoon()">1</span>
+				<span onmouseover="show_current_pic(2)" onmouseout="lbgoon()">2</span>
+				<span onmouseover="show_current_pic(3)" onmouseout="lbgoon()">3</span>
+				<span onmouseover="show_current_pic(4)" onmouseout="lbgoon()">4</span>
+				<span onmouseover="show_current_pic(5)" onmouseout="lbgoon()">5</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var no = 0;
+			function show_pic(){//图片轮播
+				var lbul = document.getElementById("lbul");
+				var lblis = lbul.getElementsByTagName("li");
+				var lbbot = document.getElementById("lbbot");
+				var lbspans = lbbot.getElementsByTagName("span");
+				for(var i=0; i< lblis.length; i++){//遍历隐藏图片
+					lblis[i].style.display = "none";
+					lbspans[i].className = "";
+				}
+				no ++;//显示图片
+				if(no ==5){
+					no = 0;
+				}
+				lblis[no].style = "block";
+				lbspans[no].className = "on";
+			}
+			var lbintervar = setInterval("show_pic()",1000);
+			
+			function show_current_pic(index){//鼠标移至下标，切换
+				clearInterval(lbintervar);
+				var pic_show = document.getElementById("lbul");
+				var lis = pic_show.getElementsByTagName("li");
+				var pic_no = document.getElementById("lbbot");
+				var spans = pic_no.getElementsByTagName("span");
+				for(var i=0; i< lis.length; i++){//遍历隐藏图片
+					lis[i].style.display = "none";
+					spans[i].className = "";
+				}
+				lis[index-1].style.display ="block";//lis索引从0开始，需要减一,鼠标移至的图片显示
+				spans[index-1].className = "on";//下标样式显示
+				no = index-1;//对应的图片显示要重新计数
+			}
+			function lbgoon(){//鼠标移开，定时器运行
+				lbintervar = setInterval("show_pic()",1000);
+			}
+		</script>
+	</body>
+</html>

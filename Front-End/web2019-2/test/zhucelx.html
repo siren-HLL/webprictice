@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>会员注册页面</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			 p{
+				margin: 10px;
+			}
+			.dz button{
+				/*background-color: #777777;*/
+				margin-left: 30px;
+				border: none;
+				border-radius: 3px;
+				font-size: 14px;
+				padding: 3px 5px;
+				/* background: linear-gradient(from left to right, red , blue); /* 标准的语法 */
+				/*background: -webkit-linear-gradient(red, blue);/*-webkit-用于safari线性渐变，上到下*/
+				/*background: -webkit-linear-gradient(left, red , blue);/*左到右*/
+				/*background: -webkit-linear-gradient(left top, red , blue);/*对角*/
+				/*background: -webkit-linear-gradient(135deg, red, blue);/*角度渐变*/
+				/*background: -webkit-linear-gradient(red 10%, green 85%, blue 90%);/*不均匀颜色节点*/
+				/*background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,242,0,1));/*rgba()函数最后一位参数设定透明度，0为透明1为不透明*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="whole">
+			<form action="" method="post" name="zhuche">
+				<h1>会员注册</h1>
+				<p class="yonghu">
+					<label for="zh">账号：</label><input type="text" name="zh" id="zh" size="20"/>
+				</p>
+				<p class="mima">
+					<label for="mim">密码：</label><input type="password" name="mim" id="mim" size="20"/>
+				</p>
+				<p class="xingbie">
+					<label>性别:</label><input type="radio" name="sex" value="men" checked="checked"/>男&nbsp; &nbsp; <input type="radio" name="sex" value="women"/>女
+				</p>
+				<p class="aihao"><label>爱好:</label><input type="checkbox" name="interest" value="movie" />音乐&nbsp; &nbsp; <input type="checkbox" name="interest" value="music" checked="checked"/>上网&nbsp; &nbsp; <input type="checkbox" name="interest" value="sports"/>足球&nbsp; &nbsp; <input type="checkbox" name="interest" value="chess"/>下棋</div>
+				</p>
+				<p class="zhiye">
+					<label>职业:</label>
+					<select name="work" >
+						<option value="js" selected="selected">教师</option>
+						<option value="gr" >工人</option>
+						<option value="gcs">工程师</option>
+					</select>
+				</p>
+				<p class="shouru">
+					<label>收入:</label>
+					<select name="sr" >
+						<option value="sub" >3000元以下</option>
+						<option value="mid" selected="selected" >3000-4000元</option>
+						<option value="top">40000元以上</option>
+						</select>
+				</p>
+				<p class="youxiang">
+					<label for="email">电子邮箱:</label>
+					<input type="email" name="email" id="email" placeholder="您的电子邮箱" size="20">
+				</p>
+				<p class="shengri">
+					<label for="sr">生日:</label><input type="date" name="sr" id="sr" value="1990-11-11"=size="20" /></p>
+				<p class="boke">
+					<label for="blog">博客地址:</label><input type="url" name="blog" id="blog" placeholder="您的博客地址" size="20" autofocus="autofocus"/>
+				</p>
+				<p class="年龄">
+					<label for="sr">年龄:</label><input type="number" name="nl" id="nl" value="25" size="20" /></p>
+					<p class="gongzuonianxian">
+						<label for="gznx">工作年限:&nbsp;</label><input type="range" name="gznx" id="gznx" min="0" max="60" step="1" size="20" value="20"/></p>
+					<p><label>个人简介</label><textarea name="ps" rows="3" cols="40" wrap="virtual"></textarea></p>
+				<div class="dz">
+						<button type="submit" >提交 </button>
+						<button type="reset" >重写 </button>
+				</div>
+			</div>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>按钮</title>
+		<style type="text/css">
+			button{
+				width: 60px;
+				height: 30px;
+			}
+			span{
+				font-weight: bold;
+			}
+		</style>
+		<script type="text/javascript" src="./jquery-1.9.0.js"></script>
+	</head>
+	<body>
+		<p>what is your answer?</p> 
+		<input type="radio" name="answer" id="" value="yes" />yes
+		<input type="radio" name="answer" id="" value="no" />no
+		<input type="radio" name="answer" id="" value="maybe" />maybe
+		<input type="radio" name="answer" id="" value="IDK" />IDK
+		<br>
+		<button id="anniu">click me</button>
+		<p>The radio element with value <span id="sp">yes</span> is chacked.</p>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#anniu").click(function(){
+					$("#sp").text($("input:radio:checked").val());
+				})
+			})
+		</script>
+	<!-- 	<script type="text/javascript">
+			var inputs = document.getElementsByTagName("input");
+			var btn = document.getElementById("anniu");
+			var spn = document.getElementById("sp");
+			btn.onclick = function(){
+				for(var i=0 ; i<inputs.length;i++){
+					if(inputs[i].checked){
+						spn.innerHTML = inputs[i].value;
+					}
+				}
+			}
+		</script> -->
+	</body>
+</html>

@@ -1,0 +1,41 @@
+#container {
+	width: 780px; /*宽度是屏幕宽的90%*/
+	margin: 0 auto; /*居中对齐*/
+	background-color: #fff;
+	border: 1px solid gray;
+	color: #333;
+	line-height: 130%;
+	
+}
+#top{
+	padding: .5em;/*间距是半个字高*/
+	background-color: #ddd;
+	border-bottom: 1px solid gray;/*底线*/
+}
+#top h1{ /*清除缺省边距和间距值*/
+	padding: 0;
+	margin: 0;
+}
+
+#leftnav{
+	width: 160px;
+	margin: 0;
+	padding: 1em;
+	float: left;
+}
+
+#content{
+	margin-left: 200px;
+	border-left: 1px solid gray;
+	padding: 1em;
+	max-width: 40em; /*最大宽度是40个字高*/
+}#content h2 { margin: 0 0 .5em 0;}
+#footer{
+	clear: both;
+	margin: 0;
+	padding: .5em;
+	color: #333;
+	background-color: #ddd;
+	border-top: 1px solid gray;
+}
+#footer p {margin: 0;padding: 0;}

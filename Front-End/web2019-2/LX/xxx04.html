@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*.header{
+			      width:960px;
+			     margin-left: auto;
+			     margin-right: auto;
+			    margin-top:30px;
+			     margin-bottom:30px;
+			  }*/
+			.whole{
+			     position: relative;
+			     font-size: 14px;
+				  background-color:#333333;
+			 }
+			 .nav1 > li{
+			     display: inline-block;
+			     position: relative;
+			 }
+			 .nav1 > li > a{
+			    padding-top:0.5em;
+			     padding-bottom:0.5em;
+			     padding-left: 2em;
+			     padding-right: 2em;
+				 text-decoration: none;
+				 
+			 }
+			 .nav1 > li:hover > a{
+			     background-color:rgb(255, 255,0);
+			     color:rgb(0, 0, 0);
+			 }
+			 .nav1 a{
+			     color:#f5f5f5;
+			     display: block;
+			     text-decoration: none;
+			 }
+			 .nav1  ul{
+			     display: none;
+			     position:absolute;
+			     background-color:transparent;
+		 }
+			 .nav1  ul li{
+			     position:relative;
+			 }
+			 .nav1  ul li + li{
+			     border-top: 1px solid rgb(70, 70, 70);
+			}
+			 
+			 .nav1 > li:hover > ul{
+			     display: block;
+			     padding-top: 0.4em;
+			 }
+			 .nav1 > li > ul > li > a{
+			     padding-top:0.4em;
+			     padding-bottom:0.4em;
+			     width: 10em;
+			     padding-left: 1em;
+			     padding-right: 1em;
+			     background-color: rgb(50, 50, 50);
+			 }
+			 .nav1 > li > ul > li:hover > a{
+			     background-color:rgb(255, 255,0);
+			     color:rgb(0, 0, 0);
+			 }
+			 .nav1 > li > ul > li > ul{
+     left:100%;
+     top:0;
+ }
+ .nav1 > li:last-child > ul > li > ul{
+				left:-100%;
+				top:0;
+ }
+ .nav1 > li > ul > li:hover >ul {
+     display: block;
+}
+			 .nav1 > li > ul > li > ul > li > a{
+			     padding-top:0.4em;
+			     padding-bottom:0.4em;
+			     width: 10em;
+			    padding-left: 1em;
+			     padding-right: 1em;
+			     background-color: rgb(50, 50, 50);
+			 }
+			 .nav1 > li > ul > li > ul > li:hover > a{
+			     background-color:rgb(255, 255,0);
+			     color:rgb(0, 0, 0);
+			 }
+
+		</style>
+	</head>
+	<body>
+		<nav class="whole qingchu">
+			<ul class="nav1">
+				<li class="li1"><a href="#">咖啡</a></li>
+				<li class="li1"><a href="#">茶</a>
+					<ul class="nav2">
+						<li class="li2"><a href="#">红茶</a></li>
+						<li class="li2"><a href="#">绿茶</a>
+							<ul class="nav3">
+								<li class="li3"><a href="#">中国茶</a></li>
+								<li class="li3"><a href="#">非洲茶</a></li>
+							</ul>
+							</li>
+					</ul>
+					</li>
+				<li class="li1"><a href="#">牛奶</a></li>
+				<li class="li1"><a href="#">碳酸饮料</a>
+					<ul class="nav2">
+						<li class="li2"><a href="#">可口可乐</a>
+							<ul class="nav3">
+								<li class="li3"><a href="#">百事</a></li>
+								<li class="li3"><a href="#">天府</a></li>
+							</ul>
+							</li>
+							</li>
+						<li class="li2"><a href="#">雪碧</a></li>
+					</ul>
+			</ul>
+		</nav>
+	</body>
+</html>

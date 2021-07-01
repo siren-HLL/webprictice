@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#topbar ul{
+				list-style-type: none;
+			}
+			#topbar{
+				height: 40px;
+				width: 500px;
+			}
+			#xsfirst li{
+				float: left;
+				width: 120px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				background-color: #0086B3;
+				border: #008B8B 1px solid;
+			}
+			#xsfirst li a{
+				text-decoration: none;
+				color: white;
+			}
+			#botbar{
+				width: 484px;
+				height: 350px;
+				border: #5F9EA0 solid 2px;
+			}
+			#botbar div{
+				width: 484px;
+				height: 350px;
+				border: #9370DB solid 1px;
+			}
+			.con{
+				display: block;
+			}
+			.yinc{
+				display: none;
+			}
+		</style>
+		<title>选项卡</title>
+	</head>
+	<body>
+		<div id="xxbar">
+			<div id="topbar" class="qingchu">
+				<ul id="xsfirst">
+					<li style="background-color: #001424;" onclick="showli(this)" nrli="cq"><a href="#">重庆</a></li>
+					<li onclick="showli(this)" nrli="sc"><a href="#" >四川</a></li>
+					<li onclick="showli(this)" nrli="yn"><a href="#" >云南</a></li>
+					<li onclick="showli(this)" nrli="gz"><a href="#" >贵州</a></li>
+				</ul>
+			</div>
+			<div id="botbar">
+				<div class="con" id="cq">重庆的内容</div>
+				<div class="yinc" id="sc">四川的内容</div>
+				<div class="yinc" id="yn">云南的内容</div>
+				<div class="yinc" id="gz">贵州的内容</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function showli(obj){
+				var xsfirst = document.getElementById("xsfirst");
+				var lis = xsfirst.getElementsByTagName("li");//li数组
+				for(var i=0; i<lis.length; i++){//遍历，背景皆为默认
+					lis[i].style.backgroundColor = "#0086B3";
+				}
+				obj.style.backgroundColor = "#001424";//点击事件改变样式
+				var divs = document.getElementById("botbar").getElementsByTagName("div");//选项卡内容数组
+				for(var i=0; i<divs.length; i++){//遍历，默认隐藏
+					//divs[i].style.display = "none";
+					divs[i].className = "yinc";
+				}
+				var menuid = obj.getAttribute("nrli");//点击事件ntli属性名的属性值=>内容的id
+				var divnr = document.getElementById(menuid);//所选项对应内容的id
+				//divnr.style.display = "none";
+				divnr.className = "con";//算选项对应内容类名更换=》显示
+			}
+		</script>
+	</body>
+</html>

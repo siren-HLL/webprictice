@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>全选取消全选</title>
+		<style type="text/css">
+			table{
+				border-collapse: collapse;
+			}
+			td{
+				width: 100px;
+				height: 30px;
+				border: #000000 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<td><input type="checkbox" id="j_cbAll"></td>
+					<td>1head</td>
+					<td>1</td>
+				</tr>
+			</thead>
+			<tbody id="j_tb">
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>2</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>3</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>4</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>5</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>6</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<script type="text/javascript">
+			var j_cbAll = document.getElementById("j_cbAll");
+			var j_tbs = document.getElementById("j_tb").getElementsByTagName('input');
+			j_cbAll.onclick = function(){
+			for(var i=0 ; i < j_tbs.length; i++){
+		 		j_tbs[i].checked=this.checked;
+			}
+		}
+		//下面复选框全选，上面选择
+		for(var i=0 ; i < j_tbs.length; i++){
+			j_tbs[i].onclick = function(){
+				var flag = true;//控制全选按钮是否选择
+				//每点击下面复选框都要检查是否已经全选
+				for(var i=0 ; i < j_tbs.length; i++){
+				if(! j_tbs[i].checked){//某个按钮没有选中
+					flag = false;
+				}	
+				}
+				j_cbAll.checked = flag;
+			}
+		}
+		</script>
+	</body>
+</html>

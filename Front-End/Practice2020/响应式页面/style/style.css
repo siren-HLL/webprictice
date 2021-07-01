@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, em, font, img, ins, ol, ul, li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;/*设置元素的垂直对齐方式*/
+	background: transparent;/*设置背景为透明*/
+}
+body {
+	line-height: 1;
+}/*设置行高为1*/
+ol, ul {
+	list-style: none;
+}/*清除列表的默认样式外观*/
+body {
+	background: #E4E4E4 url(../images/bg.png);
+	color: rgba(0, 0, 0, 0.82);/*设置字体颜色和透明度*/
+	font: normal 100% "微软雅黑";
+	-moz-text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	-webkit-text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	/*设置页面所有文字均有阴影效果*/
+	-webkit-text-size-adjust: none;
+}
+a {
+	color: #890101;
+	text-decoration: none;
+	-moz-transition: 0.2s color linear;
+	-webkit-transition: 0.2s color linear;
+	transition: 0.2s color linear;
+}/*设置超链接颜色和过渡效果*/
+a:hover {
+	color: #DF3030;
+}
+p {
+	text-indent: 2em;
+}
+/*设置段落缩进2个汉字的距离*/
+#page {
+	background: url(../images/rag.png) repeat-x;
+	padding: 2em 0;
+}
+.inner {
+	margin: 0 auto;
+	width: 93.75%;
+}/*设置页面核心区域居中，宽度为93.75%*/
+
+img {
+	max-width: 100%;
+}
+/*设置图像元素最大宽度为原始尺寸的100%*/
+.mast {
+	float: left;
+	width: 32%;
+}
+
+
+
+
+
+
+#logo {
+	background: url(../images/logo-bg.png) no-repeat 50% 0;
+}
+#logo a {
+	padding-top: 100px;
+	height: 162px;
+	display: block;
+	text-align: center;
+}
+ul.nav {
+	margin: 2em auto 0;
+	width: 65%;/*宽度为父一级宽度的65%*/
+}
+ul.nav a {
+	font: bold 16px/1.2 "微软雅黑";
+	display: block;
+	text-align: center;
+	padding: 1em 0.5em 1em;
+	border-bottom: 1px #333333 dashed;
+}
+ul.nav a:hover {
+	color: #F00;
+}
+.section:after, ul.nav:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}/*使用伪类的方式清除某个对象的浮动属性*/
+.intro, .main, .footer {
+	float: right;
+	width: 66%;
+}
+.intro {
+	margin-top: 117px;
+}
+.intro div {
+	line-height: 1.4;
+}/*设置行高为1.4倍行高*/
+.intro h2 {
+	font: normal 2em "微软雅黑";
+	text-align: center;
+	margin-bottom: 0.25em;
+}
+
+
+
+.main h2 {
+	font-size: 1.4em;
+	text-transform: lowercase;
+	text-align: center;
+	margin: 0.75em 0 1em;
+}
+.figure {
+	float: left;
+	font-size: 14px;
+	line-height: 1.1;
+	margin: 0 3.1% 1.5em 0;		
+	text-align: center;
+	width: 30%;	/*这里的宽度不是固定值，而是相对值，可以实现图像随窗口大小变化而自动变化*/
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+.figure img {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	display: block;
+	margin: 0 auto 1em;
+}
+.footer {
+	background: url(../images/ornament.png) 50% 0 repeat-x;
+	font-size: 12px;
+	text-align: center;
+	padding: 40px 0 20px;
+}
+.footer p {
+	margin-bottom: 0.5em;
+}
+/**1024和768是ipad平板纵向和横向的分辨率，等于分别平板横向和纵向分别编写版式布局**/
+@media screen and (min-width:1025px) {
+.mast {
+	float: none;
+	width: auto;
+}
+#logo {
+	float: left;
+	width: 32%;
+}
+.nav {
+	float: right;
+	margin: 40px 0 1em;
+	text-align: center;
+	width: 66%;
+}
+.nav li {
+	float: left;
+	margin-right: 3.3%;
+	width: 16%;
+}
+.intro {
+	margin-top: 1em;
+}
+.figure {
+	margin-right: 2.5%;
+	width: 14%;
+}
+}
+
+ @media screen and (max-width:768px) {
+.mast, .intro, .main, .footer {
+	float: none;
+	width: auto;
+}/*清除所有重要板块的浮动属性，使其垂直排列*/
+#logo {
+	background: none;
+}/*由于智能手机显示区域有限，这里不再显示装饰性图像*/
+#logo a {
+	padding-top: 20px;
+	height: 80px;
+	display: block;
+}
+ul.nav {
+	margin: 0 auto;
+	width: 100%;
+}
+ul.nav li {
+	float: left;
+	margin-right: 3%;
+	width: 17%;
+}
+ul.nav a {
+	font: 14px "微软雅黑";
+	font-weight: bold;
+}
+.intro {
+	margin-top: 10px;
+}
+.intro h2 {
+	font-size: 1.4em;
+}
+}
+
+
+ @media screen and (max-width:414px) {
+.figure {
+	width:100%;
+	}/*当显示宽度小于等于414像素时，图文信息列表宽度增加，有三列显示变为1列显示，图像信息显示区域增大，有利于访问者浏览*/
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件委托</title>
+		<script src="jquery-1.9.0.js"></script>
+		<style type="text/css">
+			img{
+				/* display: block; */
+				position: absolute;
+				top: 6.25rem;
+			}
+			/* div{
+				width: 500px;
+				height: 500px;
+				border: #000000 1px solid;
+			} */
+		</style>
+	</head>
+	<body>
+		<textarea name="" id=""></textarea>
+		<button>发布</button>
+		<ul>
+			
+		</ul>
+		<img src="taobao/images/女包.jpg" />
+		<div ></div>
+		<script>
+			$(function(){
+				$("button").on("click",function(){
+					$("<li>").text($("textarea").val()).append($("<a href='#javascript'>删除</a>")).appendTo($("ul"));
+				})
+				$("ul").on("click","a",function(){//事件委托
+					$(this).closest("li").remove();
+				})
+				
+				//鼠标移动
+				// $("body").on("click",function(){
+				// 	$("div").css("backgroundColor","red");
+				// })
+				var imgMove = $(document).on("mousemove",function(event){
+					$("img").css("left",(event.pageX-100)+"px").css("top",(event.pageY-100)+"px")
+				})
+				$("img").on("click",function(){
+					//$(this).css("dispaly","none");
+					imgMove.off();
+				})
+			})
+		</script>
+	</body>
+</html>

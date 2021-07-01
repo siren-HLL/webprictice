@@ -1,0 +1,44 @@
+{
+  "id": "2429961",
+  "name": "蓝色企业",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16618994",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "16619244",
+      "name": "向右选择",
+      "font_class": "xiangyouxuanze",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "3050508",
+      "name": "定位",
+      "font_class": "location",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "18368451",
+      "name": "电 话01",
+      "font_class": "dianhua01",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "19463397",
+      "name": "链接 网址 网站",
+      "font_class": "lianjiewangzhiwangzhan",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    }
+  ]
+}

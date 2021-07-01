@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>千库网_蓝色企业_我们的故事</title>
+		<link rel="stylesheet" href="./css/blueC_main.css">
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<style type="text/css">
+			#page{
+				position: relative;
+			}
+			#contenter1{/*内容板块*/
+				position: absolute;
+				top: 350px;
+				left: 100px;
+				width: 800px;
+				/* border:yellow 2px solid; */
+			}
+			#c1SelectBar{/*选择导航栏*/
+				list-style-type: none;
+				width: 510px;
+				margin: 0 auto;
+				margin-bottom: 40px;
+			}
+			#c1SelectBar li{
+				float: left;
+				width: 100px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 18px;
+				margin-right: 25px;
+				color: white;
+				border: #FFFDEF 1px solid;
+				letter-spacing: 3px;
+			}
+			#c1showBox>div{/*选项卡显示板块*/
+				width: 800px;
+				height: 700px;
+				border: #FFFDEF solid 1px;
+				background-color: white;
+				box-shadow: 0px 0px 2px lightgray;
+			}
+			#ceo{
+				width: 800px;
+				height: 150px;
+				margin-top: 30px;
+				text-align: center;
+			}
+			#ceo h2{
+				padding-top: 30px;
+				margin-bottom: 10px;
+			}
+			#ceoBorder{
+				color: rgb(0,79,169);
+				font-size: 20px;
+				vertical-align: bottom;
+			}
+			#ceoBorder span{
+				text-decoration: underline;
+				display: inline-block;
+				margin-left: 5px;
+				margin-right: 3px;
+			}
+			#c1showBoxTop{
+				width: 800px;
+				margin-bottom: 40px;
+				/* height: 600px; */
+			}
+			#c1showBoxLeft{
+				display: block;
+				float: left;
+				width: 450px;
+				height: 300px;
+				margin: 10px 10px 10px 10px;
+			}
+			#c1showBoxRight{
+				float: left;
+				width: 310px;
+			}
+			#c1showBoxRight p{
+				margin-bottom: 5px;
+			}
+			#bossName{
+				width: 300px;
+				float: right;
+				margin-right: 20px;
+				text-align: right;
+				color: #666666;
+				margin-bottom: 20px;
+				/* border: #000000 1px solid; */
+			}
+			#bossName h3{
+				float: right;
+				width: 200px;
+				border-bottom: rgb(0,79,169) 2px solid;
+				color: rgb(0,79,169);
+				margin-bottom: 15px;
+				padding-bottom: 5px;
+			}
+			#bossName>div{/*乔布斯座右铭*/
+				float: right;
+			}
+			.c1hide{/*未选择卡片的样式*/
+				display: none;
+				text-align: center;
+				font-size: 30px;
+			}
+			.c1on{/*已选择选项卡导航栏li样式*/
+				background-color: rgb(0,79,169) ;
+				opacity: 0.8;
+			}
+			#contenter1fix{/*调整脱离文档流的部分*/
+				width: 1000px;
+				height: 600px;
+				background-color: white;
+				/* border: #004E91 2px solid; */
+			}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<!-- 顶部板块 -->
+			<div id="header" class="qingchu">
+				<!-- 顶部板块最上层 -->
+				<div id="headerTopBar" class="qingchu">
+					<div id="headerTopLeft">合作单位</div>
+					<div id="language"><a href="#">English</a>&nbsp;|&nbsp;<a href="#">中文</a></div>
+				</div>
+				<!-- 顶部板块中间 -->
+				<div id="headerMiddleBar" class="qingchu">
+					<!-- 顶部logo -->
+					<div id="logo"><img src="./img_blueC/logo.png" alt="logo"></div>
+					<!-- 顶部导航 -->
+					<nav id="headerNav" class="qingchu">
+						<ul id="headerUl" class="qingchu">
+							<li><a href="#">重点项目</a></li>
+							<li><a href="#">业务布局</a></li>
+							<li><a href="#">公司公告</a></li>
+							<li><a href="#">行业资讯</a></li>
+							<li><a href="#">关于我们</a>
+								<ul id="headerUl2">
+									<li><a href="#">我们的故事</a></li>
+									<li><a href="#">我们的合作</a></li>
+									<li><a href="#">联系我们</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<!-- 顶部板块底部图片部分 -->
+				<div id="headerBottom" class="qingchu">
+					<div id="headerPicBar"><img src="img_blueC/background.png" alt="背景图片"></div>
+					<div id="headerText">
+						<h1>我们的故事</h1>
+						<!-- <h3>WELCOME TO QIANYE TECHNOLOGY CO,LTD</h3> -->
+					</div>
+				</div>
+			</div>
+			<!-- 内容板块 -->
+			<div id="contenter1" class="qingchu">
+				<ul id="c1SelectBar" class="qingchu">
+					<li>公司简介</li>
+					<li>企业文化</li>
+					<li>创业背景</li>
+					<li class="c1on">董事长</li>
+				</ul>
+				<div id="c1showBox" class="qingchu">
+					<div class="c1hide">公司简介</div>
+					<div class="c1hide">企业文化</div>
+					<div class="c1hide">创业背景</div>
+					<div class="qingchu">
+						<div id="ceo" class="qingchu">
+							<h2>Chairman&amp;CEO</h2>
+							<div id="ceoBorder">&#46;<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&#46;</div>
+						</div>
+						<div id="c1showBoxTop" class="qingchu">
+								<img id="c1showBoxLeft" class="qingchu" src="img_blueC/index01_contenter.jpg" alt="董事长">
+								<div id="c1showBoxRight" class="qingchu">
+									<p>史蒂夫▪乔布斯，生于美国旧金山，苹果公司联合创办人。</p>
+									
+									<p>1976年乔布斯和朋友“斯蒂夫·盖瑞·沃兹尼亚克”成立苹果电脑公司，1985年在苹果高层权力斗争中离开苹果并成立了NeXT公司，1997年回到苹果接任行政总裁，2011年8月24日辞去苹果公司行政总裁职位。</p>
+									
+									<p>乔布斯被认为是计算机业界与娱乐业界的标志性人物，他经历了苹果公司几十年的起落与兴衰，先后领导和推出了麦金塔计算机（Macintosh）、iMac、iPod、iPhone、iPad等风靡全球的电子产品，深刻地改变了现代通讯、娱乐、生活方式。乔布斯同时也是前Pixar动画公司的董事长及行政总裁。</p>
+								
+								</div>
+						</div>
+						
+						<div id="bossName" class="qingchu">
+							<h3 class="qingchu">乔布斯</h3>
+							<div class="qingchu">
+								<p>和最优秀的人一起工作</p>
+								<p>了解消费者需求而不掌握消费者反馈意见</p>
+								<p>创新决定了你是领袖还是跟随者</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="contenter1fix"></div>
+			<!-- 版权板块 -->
+			<div id="footer" class="qingchu">
+				<div id="footerInfor" class="qingchu">
+					<div id="footerContact">
+						<h3><span class="footerSpan">联系</span>我们</h3>
+						<ul>
+							<li>商务合作:sirenhll@gmail.com</li>
+							<li>媒体合作:1193772868@qq.com</li>
+						</ul>
+					</div>
+					<div id="footerCooper">
+						<h4><span class="footerSpan">合作</span>伙伴</h4>
+						<ul>
+							<li><a href="#">中国金融认证中心</a></li>
+							<li><a href="#">华为云鲲鹏中心</a></li>
+							<li><a href="#">正确教育集团</a></li>
+							<li><a href="#">重庆仲裁委员会</a></li>
+							<li><a href="#">重庆互联网诉讼平台</a></li>
+							<li><a href="#">重庆互联网公证平台</a></li>
+						</ul>
+					</div>
+					<div id="footerLink">
+						<h4><span class="footerSpan">友情</span>链接</h4>
+						<ul>
+							<li><a href="#">火讯财经</a></li>
+							<li><a href="#">鸵鸟区块链</a></li>
+							<li><a href="#">IPFS</a></li>
+							<li><a href="#">区块链社区</a></li>
+							<li><a href="#">真牛财经</a></li>
+							<li><a href="#">SearchChain</a></li>
+						</ul>
+					</div>
+					<div id="footerAbout" class="qingchu">
+						<h4><span class="footerSpan">关于</span>我们</h4>
+						<ul>
+							<li><a href="#">常驻作者</a></li>
+							<li><a href="#">往期活动</a></li>
+							<li><a href="#">活动场地</a></li>
+							<li><a href="#">活动介绍</a></li>
+							<li><a href="#">线下商店</a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="copyright">Copyright&copy;2021-2025 余晓枫0410190109 All right reserved.</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./js/main.js"></script>
+	</body>
+</html>

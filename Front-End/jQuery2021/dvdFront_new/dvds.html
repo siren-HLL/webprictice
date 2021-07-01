@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Disc Locator - jQuery in Action, 3rd edition</title>
+      <link rel="stylesheet" href="css/main.css"/>
+      <style>
+         html
+         {
+            background-image: url("images/background.jpg");
+         }
+
+         body
+         {
+            padding: 1em;
+            background-color: #FFFFFF;
+         }
+
+         .templates
+         {
+            display: none;
+         }
+
+         .filter
+         {
+            margin-bottom: 0.5em;
+         }
+
+         .template.qualifier
+         {
+            display: inline-block;
+            /* IE 6-7 Hack */
+            *display: inline;
+            zoom: 1;
+         }
+
+         #results
+         {
+            margin: 1em auto;
+            border-collapse: collapse;
+         }
+
+         #results th,
+         #results td
+         {
+            padding: 0.2em 0.5em;
+         }
+
+         #results tr:nth-child(odd)
+         {
+            background-color: #71A9D6;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Disc Locator</h1>
+
+      <form id="form-filters" action="#">
+         <fieldset>
+            <legend>Filters</legend>
+            <div id="filters">
+
+
+
+            </div>
+            <div class="buttons-wrapper">
+               <input type="button" id="filter-add" value="Add Filter" />
+               <input type="submit" id="filter-apply" value="Apply Filters"/>
+            </div>
+         </fieldset>
+      </form>
+
+      <div id="panel-results">
+         <table id="results">
+            <tr>
+               <th>Title</th>
+               <th>Year</th>
+               <th>Binder</th>
+               <th>Page</th>
+               <th>Slot</th>
+               <th>Viewed</th>
+            </tr>
+         </table>
+      </div>
+
+      <!-- hidden templates -->
+      <div class="templates">
+
+         <div class="template filter-chooser">
+            <input type="button" class="filter-remover" value="X" />
+
+            <select name="filter" class="filter-type">
+               <option value="" data-template-type="" selected="selected">Choose a filter</option>
+               <option value="title" data-template-type="template-title">DVD Title</option>
+               <option value="binder" data-template-type="template-binder">Binder</option>
+               <option value="year" data-template-type="template-year">Release Date</option>
+               <option value="viewed" data-template-type="template-viewed">Viewed?</option>
+            </select>
+         </div>
+
+         <div class="template template-title">
+            <select name="title-condition">
+               <option value="contains">contains</option>
+               <option value="starts-with">starts with</option>
+               <option value="ends-with">ends with</option>
+               <option value="equals">is exactly</option>
+            </select>
+            <input type="text" name="title" />
+         </div>
+
+         <div class="template template-binder">
+            <input type="text" name="binder-min" class="numeric" /> <span>through</span>
+            <input type="text" name="binder-max" class="numeric" />
+         </div>
+
+         <div class="template template-year">
+            <input type="text" name="year-min" class="date" /> <span>through</span>
+            <input type="text" name="year-max" class="date" />
+         </div>
+
+         <div class="template template-viewed">
+            <label><input type="radio" name="viewed" value="true" checked="checked" /> Yes</label>
+            <label><input type="radio" name="viewed" value="false" /> No</label>
+         </div>
+
+
+
+      </div>
+
+      <script src="js/jquery.min.js"></script>
+      <script>
+         $(function () {
+            var $filters = $("#filters");
+            // $(".template.filter-chooser")
+            //         .clone()
+            //         .removeClass("filter-chooser")
+            //         .addClass("filter")
+            //         .appendTo($filters);
+
+            $filters.on("change",".filter-type",function () {
+               var $filter = $(this).closest(".filter");
+               var templateTypeName = $(this).children(":selected").data("template-type");
+               $filter.find(".qualifier").remove();
+               $(this).children("option[value='']").remove();
+               $(".template." +  templateTypeName)
+                       .clone()
+                       .addClass("qualifier")
+                       .appendTo($filter);
+
+            })
+                    .on("click",".filter-remover",function () {
+                       $(this).parent().remove();
+                    })
+
+            //添加过滤器
+            $("#filter-add").on("click",function () {
+               //被选中的option是choose a filter的时候，不允许添加过滤器
+              if($(".filter:last").find("option:selected").val()==""){
+                 return;
+              }
+//迭代
+              var filterInUse = $(".qualifier").map(function () {
+                 return $(this).attr("class").split(" ")[1]
+              }).get();
+
+              if(filterInUse.length == $(".template.filter-chooser option").length -1){
+                 return;
+              }
+
+               var $filter = $(".template.filter-chooser")
+                       .clone()
+                       .removeClass("filter-chooser")
+                       .addClass("filter")
+               $filter.find("option").filter(function () {
+                  return filterInUse.indexOf($(this).data("template-type"))>=0
+               }).remove();
+
+               $filter.appendTo($filters);
+            }).click();
+            
+            
+            //数据过滤
+            $("#filter-apply").on("click",function (event) {
+               event.preventDefault()
+               var data = $("#form-filters").serialize();
+               //发送请求到后台（servlet）
+               console.log(data);
+               $.ajax({
+                  "url":"http://localhost:8087/dvd1.0/DVDServlet",
+                  "type":"POST",
+                  "data":data,
+                  "success":function (results) {
+                     results = eval("(" + results + ")");
+                     console.log(results);
+                     showData(results);
+                  }
+               })
+
+               function showData(data) {
+                  $("#results tr").not(":first").remove();
+                  for(var i=0;i<data.length;i++){
+                     $("<tr>")
+                             .append($("<td>").text(data[i].title))
+                             .append($("<td>").text(data[i].year))
+                             .append($("<td>").text(data[i].binder))
+                             .append($("<td>").text(data[i].page))
+                             .append($("<td>").text(data[i].slot))
+                             .append($("<td>").text(data[i].viewed=="true"?"X":""))
+                             .appendTo($("table"));
+                  }
+               }
+
+
+
+
+            })
+
+         })
+
+
+      </script>
+	  <!--
+	   1.fieldset 元素可将表单内的相关元素分组 
+	  2.closest() 方法获得匹配选择器的第一个祖先元素，从当前元素开始沿 DOM 树向上
+	  3.data("template-type")拿到data-template-type;相当于用到了data函数
+	  4.prop()属性，一般属性值为布尔类型
+	  5.map() 把每个元素通过函数传递到当前匹配集合中，生成包含返回值的新的 jQuery 对象。
+	  6.each对 jQuery 对象进行迭代，为每个匹配元素执行函数。
+	  7.filter() 方法将匹配元素集合缩减为匹配指定选择器的元素。
+	  8.indexOf() 和 lastIndexOf() 方法返回的都是指定的子串在另一个字符串中的位置，如果没有找不到子串，则返回 -1。
+	  9.$.grep() 函数使用指定的函数过滤数组中的元素，并返回过滤后的数组。源数组不受影响
+	         $.grep( array, function [, invert ] )>array将被过滤的数组;
+	         function指定的过滤函数,两个参数：一为当前迭代的数组元素，二是当前迭代元素在数组中的索引;
+	         invert:默认值为false，指定是否反转过滤结果。如果参数invert为true，则结果反转
+	   -->
+   </body>
+</html>

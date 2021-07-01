@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>三级导航菜单</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.whole{
+				position: relative;
+				font-family: '楷体','宋体';
+				/*margin-top: 30px;
+				margin-left: 30px;可替换*/
+				left:30px;
+				top:30px;
+			}
+			.whole ul{
+				list-style: none;
+			}
+			.nav1>li,.nav2>li,.nav3>li{
+				width: 100px;
+				height: 40px;
+			}
+			.whole a{
+				text-decoration: none;
+				display: block;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				color: #000000;
+				width: 100px;
+			}
+			.whole .nav1>li{
+				float: left;
+			}
+			.qingchu:after{
+				content: '.';
+				height: 0;
+				visibility: hidden;
+				overflow: hidden;
+				display: block;
+				clear: both;
+			}
+			.nav1 ul{
+				position: absolute;
+			}
+			.nav1>li{
+				position: relative;
+			}
+			/*链接文字颜色*/
+			.nav2>li a{
+				text-decoration: none;
+				color: #FF0000;
+			}
+			.whole .nav1>li:hover>a{
+				color: #008000;
+			}
+			.nav3>li a{
+				color: #FFFFFF;
+			}
+			.whole .nav1>li,.nav2>li{
+				background-image: url(img10/title.jpg);
+			}
+			.whole .nav3>li{
+				background-image: url(img10/title2.jpg);
+			}
+			/*显示调整*/
+			.whole .nav2 li {
+			display: none;
+			}
+			.nav1>li:hover .nav2>li{
+				display:block;
+			}
+			.whole .nav3 li{
+				display: none;
+			}
+			.whole .nav2>li:hover .nav3>li{
+				display: block;
+			}
+			/*位置调整*/
+			.zgc .nav3{
+				top: 40px;
+				left: 100px;
+			}
+			.zgc .nav2{
+				top: 40px;
+				right: 0px;
+				left： 0px;
+			}
+			.ts .nav3{
+				top: 0px;
+				left: 100px;
+			}
+			.ts .nav2{
+				right: 0px;
+				top: 40px;
+				left:0px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>嵌套的列表</h2>
+		<nav class="whole qingchu">
+			<ul class="nav1">
+				<li class="top"><a href="#">咖啡</a></li>
+				<li class="top zgc"><a href="#">茶</a>
+					<ul class="nav2">
+						<li class="mid"><a href="#">红茶</a></li>
+						<li class="mid"><a href="#">绿茶</a>
+							<ul class="nav3">
+								<li class="sub"><a href="#">中国茶</a></li>
+								<li class="sub"><a href="#">非洲茶</a></li>
+							</ul>
+							</li>
+					</ul>
+					</li>
+				<li class="top"><a href="#">牛奶</a></li>
+				<li class="top ts"><a href="#">碳酸饮料</a>
+					<ul class="nav2">
+						<li class="mid"><a href="#">可口可乐</a>
+							<ul class="nav3">
+								<li class="sub"><a href="#">百事</a></li>
+								<li class="sub"><a href="#">天府</a></li>
+							</ul>
+							</li>
+						<li class="mid"><a href="#">雪碧</a></li>
+					</ul>
+					</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+					<li>&nbsp;</li>
+			</ul>
+		</nav>
+	</body>
+</html>

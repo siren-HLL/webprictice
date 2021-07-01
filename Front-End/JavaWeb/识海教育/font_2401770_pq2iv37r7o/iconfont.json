@@ -1,0 +1,86 @@
+{
+  "id": "2401770",
+  "name": "识海教育",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1005556",
+      "name": "箭头",
+      "font_class": "arrowRight-copy",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "13614063",
+      "name": "关机",
+      "font_class": "guanji",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "20036293",
+      "name": "4-运营看板",
+      "font_class": "4-yunyingkanban",
+      "unicode": "e807",
+      "unicode_decimal": 59399
+    },
+    {
+      "icon_id": "20036295",
+      "name": "5-销售看板",
+      "font_class": "5-xiaoshoukanban",
+      "unicode": "e808",
+      "unicode_decimal": 59400
+    },
+    {
+      "icon_id": "20036296",
+      "name": "6-销售看板",
+      "font_class": "6-xiaoshoukanban",
+      "unicode": "e809",
+      "unicode_decimal": 59401
+    },
+    {
+      "icon_id": "20036300",
+      "name": "10-管理员工具",
+      "font_class": "10-guanliyuangongju",
+      "unicode": "e80a",
+      "unicode_decimal": 59402
+    },
+    {
+      "icon_id": "20036302",
+      "name": "11-主页",
+      "font_class": "11-zhuye",
+      "unicode": "e80b",
+      "unicode_decimal": 59403
+    },
+    {
+      "icon_id": "20036305",
+      "name": "14-知识库",
+      "font_class": "14-zhishiku",
+      "unicode": "e80c",
+      "unicode_decimal": 59404
+    },
+    {
+      "icon_id": "20036309",
+      "name": "17-工作牌",
+      "font_class": "17-gongzuopai",
+      "unicode": "e80d",
+      "unicode_decimal": 59405
+    },
+    {
+      "icon_id": "20036310",
+      "name": "18-发送消息-icon",
+      "font_class": "18-fasongxiaoxi-icon",
+      "unicode": "e80e",
+      "unicode_decimal": 59406
+    },
+    {
+      "icon_id": "20036311",
+      "name": "20-搜索",
+      "font_class": "20-sousuo",
+      "unicode": "e80f",
+      "unicode_decimal": 59407
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图文混排</title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.tuwen{
+				margin: 0 auto;
+				width: 400px;
+			}
+			.tuwen h3{
+				background-image: url(./img09/tit_bg.png);
+				display: block;
+				height: 56px;
+				line-height: 56px;
+			}
+			.tuwen a:hover{
+				background-color: dodgerblue;
+				color: white;
+			}
+			.tuwen h3 a:link{
+				text-decoration: none;
+			}
+			.tuwen h4{
+				padding-top: 15px;
+				padding-bottom:15px;
+			}
+			.tuwen h4 a:link{
+				text-decoration: none;
+			}
+			.tp:after{
+				content: ".";
+				height: 0px;
+				display: block;
+				overflow: hidden;
+				visibility: hidden;
+				clear: both;
+			}
+			.tp{
+				padding-bottom:15px;
+			}
+			.fdtp{
+				float: left;
+				padding-right: 15px;
+				/*vertical-align: text-top;*/
+
+			}
+			.tp .shangwen ul{
+				list-style-type: none;
+				
+			}
+			.shangwen li a,.xiawen li a{
+				text-decoration: none;
+				color: cadetblue;
+				display: block;
+			}
+			.xiawen li a span,.tuwen h4 a,.tuwen h3 a{
+				color: #1E90FF;
+			}
+			.xiawen li a span:hover{
+				color:white;
+			}
+			
+			.tuwen .xiawen li{
+				padding-bottom: 10px;
+				margin-left: 10px;
+			}
+			.tuwen .xiawen span{
+				font-weight: bolder;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<section class="tuwen">
+			<h3><a href="#">智库</a>&bull;凤凰网</h3>
+			<h4><a href="#">大咖云集！2017凤凰国际论坛邀您与世界对话</a></h4>
+			<div class="tp">
+				<div class="fdtp">
+					<img src="./img09/newspic.jpg">
+				</div>
+				<div class="shangwen">
+					<ul>
+						<li><a href="#">年内国际油价会有大突破么？</a></li>
+						<li><a href="#">中国年轻人比美国同龄人还能花钱</a></li>
+						<li><a href="#">捧回诺贝尔经济学奖的大佬是谁</a></li>
+						<li><a href="#">诺贝尔经济学奖对中国有何启发？</a></li>
+						<li><a href="#">关爱地球，我们的生活够环保吗？</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="xiawen">
+				<ul>
+					<li class="tb"><a href="#" ><span>罗马垃圾围城引发的政治纷争</span></a></li>
+					<li><a href="#">又香又糯啥原理？告诉你东北大米为什么好吃</a></li>
+					<li><a href="#">穿得太奢侈被罚款？五百年前的欧洲人在想啥</a></li>
+					<li><a href="#">凤凰国际智库发布前任专家数据库</a></li>
+					<li><a href="#">海外动乱频发，中企安全保护如何吸取成功经验？</a></li>
+					<li><a href="#">企业家首先要思考发展的战略和资源</a></li>
+				</ul>
+			</div>
+		</section>
+	</body>
+</html>

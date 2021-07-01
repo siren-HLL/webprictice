@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        td,
+        th {
+            border: 1px solid #333;
+        }
+        
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+	<script src="jquery-1.9.0.js"></script>
+</head>
+
+<body>
+	<button>生成表格</button>
+    <table cellspacing="0" id="table">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var datas = [{//相当于json数组
+            name: '魏璎珞',
+            subject: 'JavaScript',
+            score: 100
+        }, {
+            name: '弘历',
+            subject: 'JavaScript',
+            score: 98
+        }, {
+            name: '傅恒',
+            subject: 'JavaScript',
+            score: 99
+        }, {
+            name: '明玉',
+            subject: 'JavaScript',
+            score: 88
+        }, {
+            name: '大猪蹄子',
+            subject: 'JavaScript',
+            score: 0
+        }];
+		// $(function(){
+		// 	for(var i=0 ; i < datas.length ;i++ ){
+		// 		var tr = $("<tr></tr>").css({"height":"40px"});
+		// 		tr.appendTo($("tbody"));
+		// 		for(var j=0; j < 4;j++){
+		// 			var td = $("<td></td>").css({"text-align":"center"});
+		// 			td.appendTo(tr);
+		// 		}
+		// 	}
+		// })
+		
+		$(function(){
+			for(var i=0 ; i < datas.length ;i++ ){
+				for(var temp in datas[i]){
+					//console.log(datas[i][temp]);
+				}
+				$("<tr></tr>")
+					.append($("<td></td>").text(datas[i].name))
+					.append($("<td></td>").text(datas[i].subject))
+					.append($("<td></td>").text(datas[i].score))
+					.append($("<td></td>").html("<a href='#javascript'>删除</a>"))
+					.appendTo($("tbody"))
+					.css("height","40px")
+			}
+			$("a").click(function(){
+				$(this).parents("tr").remove();
+			});
+			
+			// $.ajax({
+			// 	type:"POST",
+			// 	contentType:"application/json;charset=utf-8",
+			// 	url:"http//localhost:8087/Shopping/api/v2/account/accountInfo/{username}",
+			// 	data: {username:17767746537},
+			// 	async:true,
+			// 	dataType: "string",
+			// 	success:function(json){
+			// 				console.log(json);
+			// 			}
+				
+				
+			// })
+		})
+    </script>
+</body>
+
+</html>
